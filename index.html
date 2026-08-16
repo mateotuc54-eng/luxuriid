@@ -1,440 +1,693 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LUXURIID — Votre identité. Votre image. Votre marque.</title>
+<title>LUXURIID — Création d'identité visuelle</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #090909;
-      color: white;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    header {
-      padding: 25px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #292929;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 4px;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background: #090909;
+    color: white;
+}
 
-    .gold {
-      color: #c9a45c;
-    }
+header {
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #292929;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 14px;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.gold {
+    color: #c9a45c;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8% 7%;
+    gap: 60px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.small-title {
+    color: #c9a45c;
+    letter-spacing: 4px;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 7vw, 85px);
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.description {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 16px 25px;
+    background: white;
+    color: black;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #c9a45c;
+}
+
+.preview {
+    width: 390px;
+    height: 430px;
+    border: 1px solid #444;
+    background: linear-gradient(145deg, #171717, #090909);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-letter {
+    font-family: Georgia, serif;
+    font-size: 170px;
+    color: #c9a45c;
+}
+
+.preview-name {
+    letter-spacing: 8px;
+    font-size: 18px;
+}
+
+section {
+    padding: 100px 7%;
+    border-top: 1px solid #292929;
+}
+
+section h2 {
+    font-family: Georgia, serif;
+    font-size: 55px;
+    margin-bottom: 45px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.step {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.number {
+    color: #c9a45c;
+}
+
+.step h3 {
+    margin: 25px 0 10px;
+}
+
+.step p {
+    color: #999;
+    line-height: 1.6;
+}
+
+
+/* QUESTIONNAIRE */
+
+.questionnaire {
+    background: #111;
+}
+
+.form-box {
+    max-width: 850px;
+    margin: auto;
+    border: 1px solid #333;
+    padding: 40px;
+    background: #0b0b0b;
+}
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ddd;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 15px;
+    background: #151515;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.option {
+    border: 1px solid #444;
+    padding: 12px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.option:hover {
+    border-color: #c9a45c;
+    color: white;
+}
+
+.option.selected {
+    background: #c9a45c;
+    color: black;
+    border-color: #c9a45c;
+}
+
+
+/* RESULTAT */
+
+.result {
+    display: none;
+    background: #f4f2ec;
+    color: #111;
+    text-align: center;
+}
+
+.result-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+.result-logo {
+    font-family: Georgia, serif;
+    font-size: 90px;
+    color: #c9a45c;
+    margin: 30px;
+}
+
+.result h3 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.result p {
+    color: #555;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 30px 7%;
+    color: #777;
+    border-top: 1px solid #292929;
+    font-size: 13px;
+}
+
+
+@media(max-width:800px) {
+
+    nav {
+        display: none;
     }
 
     .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8% 7%;
-      gap: 60px;
-    }
-
-    .hero-text {
-      max-width: 650px;
-    }
-
-    .small-title {
-      color: #c9a45c;
-      letter-spacing: 4px;
-      font-size: 12px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(48px, 7vw, 85px);
-      line-height: 1;
-      margin-bottom: 30px;
-    }
-
-    .description {
-      color: #aaa;
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 30px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 16px 25px;
-      background: white;
-      color: black;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .button:hover {
-      background: #c9a45c;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .preview {
-      width: 390px;
-      height: 430px;
-      border: 1px solid #444;
-      background: linear-gradient(145deg, #171717, #090909);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 20px 80px rgba(0,0,0,0.5);
-    }
-
-    .big-letter {
-      font-family: Georgia, serif;
-      font-size: 170px;
-      color: #c9a45c;
-    }
-
-    .preview-name {
-      letter-spacing: 8px;
-      font-size: 18px;
-    }
-
-    section {
-      padding: 100px 7%;
-      border-top: 1px solid #292929;
-    }
-
-    section h2 {
-      font-family: Georgia, serif;
-      font-size: 55px;
-      margin-bottom: 50px;
+        width: 100%;
     }
 
     .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-
-    .step {
-      border-top: 1px solid #444;
-      padding-top: 20px;
-    }
-
-    .number {
-      color: #c9a45c;
-    }
-
-    .step h3 {
-      margin: 25px 0 10px;
-      font-size: 20px;
-    }
-
-    .step p {
-      color: #999;
-      line-height: 1.6;
-    }
-
-    .offers {
-      background: #111;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .card {
-      border: 1px solid #333;
-      padding: 35px;
-      min-height: 330px;
-    }
-
-    .card.featured {
-      border-color: #c9a45c;
-    }
-
-    .card h3 {
-      color: #c9a45c;
-      letter-spacing: 2px;
-    }
-
-    .price {
-      font-family: Georgia, serif;
-      font-size: 42px;
-      margin: 25px 0;
-    }
-
-    .card ul {
-      list-style: none;
-      color: #aaa;
-      line-height: 2;
-    }
-
-    .card button {
-      margin-top: 25px;
-      padding: 12px 20px;
-      border: 1px solid #555;
-      background: transparent;
-      color: white;
-      border-radius: 25px;
-    }
-
-    footer {
-      padding: 30px 7%;
-      color: #777;
-      border-top: 1px solid #292929;
-      font-size: 13px;
-    }
-
-    @media (max-width: 800px) {
-
-      nav {
-        display: none;
-      }
-
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .preview {
-        width: 100%;
-      }
-
-      .steps,
-      .cards {
         grid-template-columns: 1fr;
-      }
-
-      section h2 {
-        font-size: 42px;
-      }
     }
-  </style>
+
+    section h2 {
+        font-size: 42px;
+    }
+
+    .form-box {
+        padding: 25px;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
+
 <header>
 
-  <div class="logo">
-    LUXUR<span class="gold">I</span>ID
-  </div>
+<div class="logo">
+LUXUR<span class="gold">I</span>ID
+</div>
 
-  <nav>
-    <a href="#fonctionnement">Comment ça marche</a>
-    <a href="#offres">Tarifs</a>
-    <a href="#creer">Créer mon identité</a>
-  </nav>
+<nav>
+<a href="#fonctionnement">Comment ça marche</a>
+<a href="#creation">Créer</a>
+</nav>
 
 </header>
 
 
-<main>
+<!-- ACCUEIL -->
 
-  <section class="hero" id="creer">
+<section class="hero">
 
-    <div class="hero-text">
+<div class="hero-text">
 
-      <div class="small-title">
-        IDENTITÉ VISUELLE • INTELLIGENCE ARTIFICIELLE
-      </div>
+<div class="small-title">
+IDENTITÉ VISUELLE • INTELLIGENCE ARTIFICIELLE
+</div>
 
-      <h1>
-        Créez une identité qui vous ressemble.
-      </h1>
+<h1>
+Créez une identité qui vous ressemble.
+</h1>
 
-      <p class="description">
-        Décrivez votre entreprise. LUXURIID imagine
-        une identité visuelle élégante, cohérente et
-        prête à utiliser.
-      </p>
+<p class="description">
+Décrivez votre entreprise et votre vision.
+LUXURIID transforme vos idées en une identité
+visuelle élégante et professionnelle.
+</p>
 
-      <a href="#fonctionnement" class="button">
-        Créer mon identité →
-      </a>
+<a href="#creation" class="button">
+Créer mon identité →
+</a>
 
-    </div>
-
-
-    <div class="preview">
-
-      <div class="big-letter">
-        L
-      </div>
-
-      <div class="preview-name">
-        LUXURIID
-      </div>
-
-      <div style="margin-top:25px;color:#c9a45c;">
-        YOUR BRAND. YOUR IDENTITY.
-      </div>
-
-    </div>
-
-  </section>
+</div>
 
 
-  <section id="fonctionnement">
+<div class="preview">
 
-    <div class="small-title">
-      SIMPLE • RAPIDE • PREMIUM
-    </div>
+<div class="big-letter">
+L
+</div>
 
-    <h2>
-      De l'idée à l'identité.
-    </h2>
+<div class="preview-name">
+LUXURIID
+</div>
 
-    <div class="steps">
+<div style="margin-top:25px;color:#c9a45c;">
+YOUR BRAND. YOUR IDENTITY.
+</div>
 
-      <div class="step">
-        <div class="number">01</div>
-        <h3>Décrivez</h3>
-        <p>
-          Expliquez votre entreprise,
-          votre style et votre vision.
-        </p>
-      </div>
+</div>
 
-      <div class="step">
-        <div class="number">02</div>
-        <h3>Imaginez</h3>
-        <p>
-          LUXURIID transforme vos idées
-          en concepts visuels.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="number">03</div>
-        <h3>Personnalisez</h3>
-        <p>
-          Choisissez votre direction et
-          ajustez votre identité.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="number">04</div>
-        <h3>Téléchargez</h3>
-        <p>
-          Récupérez votre identité dans
-          les formats adaptés.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <section class="offers" id="offres">
 
-    <div class="small-title">
-      NOS OFFRES
-    </div>
+<!-- FONCTIONNEMENT -->
 
-    <h2>
-      Commencez simplement.
-    </h2>
+<section id="fonctionnement">
 
-    <div class="cards">
+<div class="small-title">
+SIMPLE • RAPIDE • PREMIUM
+</div>
 
-      <div class="card">
+<h2>
+De l'idée à l'identité.
+</h2>
 
-        <h3>ESSENTIAL</h3>
+<div class="steps">
 
-        <div class="price">
-          9,90 €
-        </div>
+<div class="step">
+<div class="number">01</div>
+<h3>Décrivez</h3>
+<p>Expliquez votre entreprise et votre vision.</p>
+</div>
 
-        <ul>
-          <li>✓ Logo HD</li>
-          <li>✓ 3 variantes</li>
-          <li>✓ Palette de couleurs</li>
-        </ul>
+<div class="step">
+<div class="number">02</div>
+<h3>Imaginez</h3>
+<p>LUXURIID transforme vos idées en concepts.</p>
+</div>
 
-        <button>
-          Choisir
-        </button>
+<div class="step">
+<div class="number">03</div>
+<h3>Personnalisez</h3>
+<p>Choisissez votre style et vos couleurs.</p>
+</div>
 
-      </div>
+<div class="step">
+<div class="number">04</div>
+<h3>Développez</h3>
+<p>Construisez une identité professionnelle.</p>
+</div>
 
+</div>
 
-      <div class="card featured">
-
-        <h3>PREMIUM</h3>
-
-        <div class="price">
-          19,90 €
-        </div>
-
-        <ul>
-          <li>✓ Logo HD + SVG</li>
-          <li>✓ Variantes</li>
-          <li>✓ Typographies</li>
-          <li>✓ Réseaux sociaux</li>
-        </ul>
-
-        <button>
-          Choisir
-        </button>
-
-      </div>
+</section>
 
 
-      <div class="card">
 
-        <h3>BUSINESS</h3>
+<!-- QUESTIONNAIRE -->
 
-        <div class="price">
-          39,90 €
-        </div>
+<section class="questionnaire" id="creation">
 
-        <ul>
-          <li>✓ Tout Premium</li>
-          <li>✓ Carte de visite</li>
-          <li>✓ Flyer</li>
-          <li>✓ Déclinaisons</li>
-        </ul>
+<div class="small-title">
+VOTRE PROJET
+</div>
 
-        <button>
-          Choisir
-        </button>
+<h2>
+Créons votre identité.
+</h2>
 
-      </div>
 
-    </div>
+<div class="form-box">
 
-  </section>
+<div class="form-group">
 
-</main>
+<label>
+Nom de votre entreprise
+</label>
+
+<input
+id="company"
+type="text"
+placeholder="Ex : Écurie du Soleil"
+>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Secteur d'activité
+</label>
+
+<select id="sector">
+
+<option value="">
+Choisissez votre secteur
+</option>
+
+<option>Automobile</option>
+<option>Équestre</option>
+<option>Agriculture</option>
+<option>Restauration</option>
+<option>BTP</option>
+<option>Mode</option>
+<option>Sport</option>
+<option>Immobilier</option>
+<option>Technologie</option>
+<option>Autre</option>
+
+</select>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Quel style recherchez-vous ?
+</label>
+
+<div class="options">
+
+<div class="option" onclick="selectOption(this)">
+Luxe
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Moderne
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Minimaliste
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Sportif
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Élégant
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Industriel
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Couleur principale
+</label>
+
+<div class="options">
+
+<div class="option" onclick="selectOption(this)">
+Noir
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Blanc
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Doré
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Rouge
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Bleu
+</div>
+
+<div class="option" onclick="selectOption(this)">
+Vert
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Décrivez votre projet
+</label>
+
+<textarea
+id="description"
+placeholder="Expliquez-nous votre entreprise et ce que vous imaginez..."
+></textarea>
+
+</div>
+
+
+
+<button
+class="button"
+onclick="generateIdentity()"
+>
+Générer mon identité →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- RESULTAT -->
+
+<section class="result" id="result">
+
+<div class="result-box">
+
+<div class="small-title">
+VOTRE CONCEPT LUXURIID
+</div>
+
+<div class="result-logo">
+L
+</div>
+
+<h3 id="resultCompany">
+Votre entreprise
+</h3>
+
+<p id="resultText">
+Votre identité commence ici.
+</p>
+
+<br>
+
+<p>
+✨ Concept généré à partir de vos critères.
+</p>
+
+</div>
+
+</section>
+
 
 
 <footer>
 
-  © 2026 LUXURIID — Votre identité. Votre image. Votre marque.
+© 2026 LUXURIID —
+Votre identité. Votre image. Votre marque.
 
 </footer>
+
+
+
+<script>
+
+function selectOption(element) {
+
+    const parent = element.parentElement;
+
+    const options = parent.querySelectorAll(".option");
+
+    options.forEach(function(option) {
+
+        option.classList.remove("selected");
+
+    });
+
+    element.classList.add("selected");
+
+}
+
+
+
+function generateIdentity() {
+
+    const company =
+        document.getElementById("company").value;
+
+    const sector =
+        document.getElementById("sector").value;
+
+    const description =
+        document.getElementById("description").value;
+
+
+    if(company === "") {
+
+        alert("Veuillez entrer le nom de votre entreprise.");
+
+        return;
+
+    }
+
+
+    if(sector === "") {
+
+        alert("Veuillez choisir votre secteur d'activité.");
+
+        return;
+
+    }
+
+
+    document.getElementById("resultCompany").innerText =
+        company;
+
+
+    document.getElementById("resultText").innerText =
+        "Une identité visuelle " +
+        sector.toLowerCase() +
+        " pensée pour votre projet.";
+
+
+    document.getElementById("result").style.display =
+        "block";
+
+
+    document.getElementById("result").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
 
 </body>
 </html>
