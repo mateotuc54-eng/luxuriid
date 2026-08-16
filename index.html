@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LUXURIID — Votre identité. Votre image. Votre marque.</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #090909;
+      color: white;
+    }
+
+    header {
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #292929;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    .gold {
+      color: #c9a45c;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8% 7%;
+      gap: 60px;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .small-title {
+      color: #c9a45c;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(48px, 7vw, 85px);
+      line-height: 1;
+      margin-bottom: 30px;
+    }
+
+    .description {
+      color: #aaa;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 16px 25px;
+      background: white;
+      color: black;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #c9a45c;
+    }
+
+    .preview {
+      width: 390px;
+      height: 430px;
+      border: 1px solid #444;
+      background: linear-gradient(145deg, #171717, #090909);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+    }
+
+    .big-letter {
+      font-family: Georgia, serif;
+      font-size: 170px;
+      color: #c9a45c;
+    }
+
+    .preview-name {
+      letter-spacing: 8px;
+      font-size: 18px;
+    }
+
+    section {
+      padding: 100px 7%;
+      border-top: 1px solid #292929;
+    }
+
+    section h2 {
+      font-family: Georgia, serif;
+      font-size: 55px;
+      margin-bottom: 50px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .step {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+    }
+
+    .number {
+      color: #c9a45c;
+    }
+
+    .step h3 {
+      margin: 25px 0 10px;
+      font-size: 20px;
+    }
+
+    .step p {
+      color: #999;
+      line-height: 1.6;
+    }
+
+    .offers {
+      background: #111;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      border: 1px solid #333;
+      padding: 35px;
+      min-height: 330px;
+    }
+
+    .card.featured {
+      border-color: #c9a45c;
+    }
+
+    .card h3 {
+      color: #c9a45c;
+      letter-spacing: 2px;
+    }
+
+    .price {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      margin: 25px 0;
+    }
+
+    .card ul {
+      list-style: none;
+      color: #aaa;
+      line-height: 2;
+    }
+
+    .card button {
+      margin-top: 25px;
+      padding: 12px 20px;
+      border: 1px solid #555;
+      background: transparent;
+      color: white;
+      border-radius: 25px;
+    }
+
+    footer {
+      padding: 30px 7%;
+      color: #777;
+      border-top: 1px solid #292929;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .preview {
+        width: 100%;
+      }
+
+      .steps,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section h2 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    LUXUR<span class="gold">I</span>ID
+  </div>
+
+  <nav>
+    <a href="#fonctionnement">Comment ça marche</a>
+    <a href="#offres">Tarifs</a>
+    <a href="#creer">Créer mon identité</a>
+  </nav>
+
+</header>
+
+
+<main>
+
+  <section class="hero" id="creer">
+
+    <div class="hero-text">
+
+      <div class="small-title">
+        IDENTITÉ VISUELLE • INTELLIGENCE ARTIFICIELLE
+      </div>
+
+      <h1>
+        Créez une identité qui vous ressemble.
+      </h1>
+
+      <p class="description">
+        Décrivez votre entreprise. LUXURIID imagine
+        une identité visuelle élégante, cohérente et
+        prête à utiliser.
+      </p>
+
+      <a href="#fonctionnement" class="button">
+        Créer mon identité →
+      </a>
+
+    </div>
+
+
+    <div class="preview">
+
+      <div class="big-letter">
+        L
+      </div>
+
+      <div class="preview-name">
+        LUXURIID
+      </div>
+
+      <div style="margin-top:25px;color:#c9a45c;">
+        YOUR BRAND. YOUR IDENTITY.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="fonctionnement">
+
+    <div class="small-title">
+      SIMPLE • RAPIDE • PREMIUM
+    </div>
+
+    <h2>
+      De l'idée à l'identité.
+    </h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="number">01</div>
+        <h3>Décrivez</h3>
+        <p>
+          Expliquez votre entreprise,
+          votre style et votre vision.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="number">02</div>
+        <h3>Imaginez</h3>
+        <p>
+          LUXURIID transforme vos idées
+          en concepts visuels.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="number">03</div>
+        <h3>Personnalisez</h3>
+        <p>
+          Choisissez votre direction et
+          ajustez votre identité.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="number">04</div>
+        <h3>Téléchargez</h3>
+        <p>
+          Récupérez votre identité dans
+          les formats adaptés.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="offers" id="offres">
+
+    <div class="small-title">
+      NOS OFFRES
+    </div>
+
+    <h2>
+      Commencez simplement.
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>ESSENTIAL</h3>
+
+        <div class="price">
+          9,90 €
+        </div>
+
+        <ul>
+          <li>✓ Logo HD</li>
+          <li>✓ 3 variantes</li>
+          <li>✓ Palette de couleurs</li>
+        </ul>
+
+        <button>
+          Choisir
+        </button>
+
+      </div>
+
+
+      <div class="card featured">
+
+        <h3>PREMIUM</h3>
+
+        <div class="price">
+          19,90 €
+        </div>
+
+        <ul>
+          <li>✓ Logo HD + SVG</li>
+          <li>✓ Variantes</li>
+          <li>✓ Typographies</li>
+          <li>✓ Réseaux sociaux</li>
+        </ul>
+
+        <button>
+          Choisir
+        </button>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>BUSINESS</h3>
+
+        <div class="price">
+          39,90 €
+        </div>
+
+        <ul>
+          <li>✓ Tout Premium</li>
+          <li>✓ Carte de visite</li>
+          <li>✓ Flyer</li>
+          <li>✓ Déclinaisons</li>
+        </ul>
+
+        <button>
+          Choisir
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  © 2026 LUXURIID — Votre identité. Votre image. Votre marque.
+
+</footer>
+
+</body>
+</html>
