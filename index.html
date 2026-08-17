@@ -9,740 +9,853 @@
 <style>
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#080808;
-    color:#fff;
+font-family:Arial,sans-serif;
+background:#080808;
+color:#fff;
 }
 
 header{
-    height:75px;
-    padding:0 7%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:1px solid #292929;
+height:75px;
+padding:0 7%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid #292929;
 }
 
 .logo{
-    font-size:21px;
-    font-weight:bold;
-    letter-spacing:4px;
+font-size:21px;
+font-weight:bold;
+letter-spacing:4px;
 }
 
 .gold{
-    color:#c9a45c;
+color:#c9a45c;
 }
 
 nav a{
-    color:#ddd;
-    text-decoration:none;
-    margin-left:25px;
-    font-size:13px;
+color:#ddd;
+text-decoration:none;
+margin-left:25px;
+font-size:13px;
 }
 
 section{
-    padding:100px 7%;
-    border-top:1px solid #292929;
+padding:100px 7%;
+border-top:1px solid #292929;
 }
 
 .eyebrow{
-    color:#c9a45c;
-    letter-spacing:4px;
-    font-size:11px;
-    margin-bottom:20px;
+color:#c9a45c;
+letter-spacing:4px;
+font-size:11px;
+margin-bottom:20px;
 }
 
 h1{
-    font-family:Georgia,serif;
-    font-size:clamp(48px,7vw,88px);
-    line-height:1;
-    margin-bottom:30px;
+font-family:Georgia,serif;
+font-size:clamp(48px,7vw,88px);
+line-height:1;
+margin-bottom:30px;
 }
 
 h2{
-    font-family:Georgia,serif;
-    font-size:clamp(40px,5vw,65px);
-    margin-bottom:45px;
+font-family:Georgia,serif;
+font-size:clamp(40px,5vw,65px);
+margin-bottom:45px;
 }
 
 .button{
-    display:inline-block;
-    border:none;
-    padding:16px 25px;
-    border-radius:30px;
-    background:#fff;
-    color:#000;
-    font-weight:bold;
-    cursor:pointer;
-    text-decoration:none;
+display:inline-block;
+border:none;
+padding:16px 25px;
+border-radius:30px;
+background:#fff;
+color:#000;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
 }
 
 .button:hover{
-    background:#c9a45c;
+background:#c9a45c;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-    min-height:85vh;
-    padding:8% 7%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:60px;
+min-height:85vh;
+padding:8% 7%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
 }
 
 .hero-content{
-    max-width:700px;
+max-width:700px;
 }
 
 .hero p{
-    color:#aaa;
-    line-height:1.7;
-    font-size:18px;
-    margin-bottom:30px;
+color:#aaa;
+line-height:1.7;
+font-size:18px;
+margin-bottom:30px;
 }
 
 .hero-card{
-    width:390px;
-    height:430px;
-    border:1px solid #444;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(145deg,#181818,#090909);
+width:390px;
+height:430px;
+border:1px solid #444;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+background:linear-gradient(145deg,#181818,#090909);
 }
 
 .hero-letter{
-    font-family:Georgia,serif;
-    font-size:170px;
-    color:#c9a45c;
+font-family:Georgia,serif;
+font-size:170px;
+color:#c9a45c;
 }
 
 .hero-name{
-    letter-spacing:7px;
+letter-spacing:7px;
 }
 
-
-/* =========================
-   STEPS
-========================= */
+/* STEPS */
 
 .steps{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
 }
 
 .step{
-    border-top:1px solid #444;
-    padding-top:20px;
+border-top:1px solid #444;
+padding-top:20px;
 }
 
 .step-number{
-    color:#c9a45c;
+color:#c9a45c;
 }
 
 .step h3{
-    margin:25px 0 10px;
+margin:25px 0 10px;
 }
 
 .step p{
-    color:#999;
-    line-height:1.6;
+color:#999;
+line-height:1.6;
 }
 
-
-/* =========================
-   FORM
-========================= */
+/* FORM */
 
 .creation{
-    background:#111;
+background:#111;
 }
 
 .form{
-    max-width:850px;
-    margin:auto;
-    background:#090909;
-    border:1px solid #333;
-    padding:40px;
+max-width:850px;
+margin:auto;
+background:#090909;
+border:1px solid #333;
+padding:40px;
 }
 
 .form-group{
-    margin-bottom:28px;
+margin-bottom:28px;
 }
 
 label{
-    display:block;
-    margin-bottom:10px;
-    font-weight:bold;
+display:block;
+margin-bottom:10px;
+font-weight:bold;
 }
 
 input,
 select,
 textarea{
-    width:100%;
-    padding:15px;
-    border:1px solid #444;
-    background:#151515;
-    color:white;
-    border-radius:5px;
+width:100%;
+padding:15px;
+border:1px solid #444;
+background:#151515;
+color:white;
+border-radius:5px;
 }
 
 textarea{
-    min-height:120px;
-    resize:vertical;
+min-height:120px;
+resize:vertical;
 }
 
 .options{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
 }
 
 .option{
-    padding:12px 18px;
-    border:1px solid #444;
-    border-radius:25px;
-    cursor:pointer;
-    color:#ccc;
-    transition:.2s;
+padding:12px 18px;
+border:1px solid #444;
+border-radius:25px;
+cursor:pointer;
+color:#ccc;
+transition:.2s;
 }
 
 .option:hover{
-    border-color:#c9a45c;
+border-color:#c9a45c;
 }
 
 .option.selected{
-    background:#c9a45c;
-    color:#000;
-    border-color:#c9a45c;
+background:#c9a45c;
+color:#000;
+border-color:#c9a45c;
 }
 
-
-/* =========================
-   LOADING
-========================= */
+/* LOADING */
 
 .loading{
-    display:none;
-    text-align:center;
-    padding:80px 20px;
-    background:#0d0d0d;
+display:none;
+text-align:center;
+padding:80px 20px;
+background:#0d0d0d;
 }
 
 .loader{
-    width:45px;
-    height:45px;
-    border:3px solid #333;
-    border-top:3px solid #c9a45c;
-    border-radius:50%;
-    margin:30px auto;
-    animation:spin 1s linear infinite;
+width:45px;
+height:45px;
+border:3px solid #333;
+border-top:3px solid #c9a45c;
+border-radius:50%;
+margin:30px auto;
+animation:spin 1s linear infinite;
 }
 
 @keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
+to{transform:rotate(360deg);}
 }
 
-
-/* =========================
-   RESULTS
-========================= */
+/* RESULTS */
 
 .results{
-    display:none;
-    background:#f1eee7;
-    color:#111;
+display:none;
+background:#f1eee7;
+color:#111;
 }
 
 .results-header{
-    text-align:center;
-    max-width:850px;
-    margin:auto;
+text-align:center;
+max-width:850px;
+margin:auto;
 }
 
 .results-header p{
-    color:#666;
-    line-height:1.6;
+color:#666;
+line-height:1.6;
 }
 
 .project-meta{
-    margin-top:20px;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
+margin-top:20px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
 }
 
 .meta-pill{
-    padding:8px 15px;
-    border:1px solid #ccc;
-    border-radius:30px;
-    color:#555;
-    font-size:12px;
+padding:8px 15px;
+border:1px solid #ccc;
+border-radius:30px;
+color:#555;
+font-size:12px;
 }
 
-
-/* =========================
-   CONCEPT GRID
-========================= */
+/* CONCEPTS */
 
 .concepts{
-    max-width:1200px;
-    margin:60px auto 0;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+max-width:1200px;
+margin:60px auto 0;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .concept-card{
-    background:#fff;
-    border:1px solid #d5d1c8;
-    padding:20px;
-    transition:transform .2s,box-shadow .2s,border .2s;
+background:#fff;
+border:1px solid #d5d1c8;
+padding:20px;
+position:relative;
+transition:.25s;
 }
 
 .concept-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
+transform:translateY(-5px);
+box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
 .concept-card.active{
-    border:2px solid #c9a45c;
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
+border:2px solid #c9a45c;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.recommended{
+position:absolute;
+top:12px;
+right:12px;
+padding:7px 10px;
+background:#111;
+color:#fff;
+font-size:9px;
+letter-spacing:2px;
+z-index:5;
 }
 
 .concept-label{
-    font-size:11px;
-    letter-spacing:3px;
-    color:#777;
-    margin-bottom:15px;
+font-size:11px;
+letter-spacing:3px;
+color:#777;
+margin-bottom:15px;
 }
 
 .logo-box{
-    height:250px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:20px;
-    overflow:hidden;
-    position:relative;
+height:250px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:20px;
+overflow:hidden;
+position:relative;
 }
 
-.concept-card h3{
-    font-family:Georgia,serif;
-    font-size:25px;
-    margin-bottom:10px;
-}
-
-.concept-card p{
-    color:#666;
-    line-height:1.6;
-    font-size:14px;
-}
-
-.choose{
-    width:100%;
-    margin-top:20px;
-    padding:13px;
-    border:1px solid #222;
-    background:#111;
-    color:#fff;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.choose:hover{
-    background:#c9a45c;
-    color:#000;
-}
-
-
-/* =========================
-   CONCEPT 01
-   SIGNATURE
-========================= */
+/* LOGO 1 */
 
 .logo-one{
-    flex-direction:column;
-    background:#0a0a0a;
-    color:var(--accent,#c9a45c);
+flex-direction:column;
+background:#0a0a0a;
+color:var(--accent,#c9a45c);
 }
 
 .logo-one .monogram{
-    width:125px;
-    height:125px;
-    border:1px solid var(--accent,#c9a45c);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:Georgia,serif;
-    font-size:60px;
-    letter-spacing:-4px;
-    position:relative;
+width:125px;
+height:125px;
+border:1px solid var(--accent,#c9a45c);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:Georgia,serif;
+font-size:60px;
+letter-spacing:-4px;
+position:relative;
 }
 
 .logo-one .monogram:before,
 .logo-one .monogram:after{
-    content:"";
-    position:absolute;
-    width:12px;
-    height:12px;
-    background:var(--accent,#c9a45c);
+content:"";
+position:absolute;
+width:12px;
+height:12px;
+background:var(--accent,#c9a45c);
 }
 
 .logo-one .monogram:before{
-    top:-6px;
-    left:-6px;
+top:-6px;
+left:-6px;
 }
 
 .logo-one .monogram:after{
-    bottom:-6px;
-    right:-6px;
+bottom:-6px;
+right:-6px;
 }
 
 .logo-one .name{
-    margin-top:22px;
-    font-family:Georgia,serif;
-    font-size:18px;
-    letter-spacing:5px;
-    text-align:center;
+margin-top:22px;
+font-family:Georgia,serif;
+font-size:18px;
+letter-spacing:5px;
+text-align:center;
 }
 
 .logo-one .sub{
-    margin-top:8px;
-    font-size:8px;
-    letter-spacing:4px;
-    opacity:.7;
+margin-top:8px;
+font-size:8px;
+letter-spacing:4px;
+opacity:.7;
 }
 
-
-/* =========================
-   CONCEPT 02
-   MODERN
-========================= */
+/* LOGO 2 */
 
 .logo-two{
-    background:#f7f7f5;
-    color:#111;
-    flex-direction:column;
+background:#f7f7f5;
+color:#111;
+flex-direction:column;
 }
 
 .logo-two .monogram{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    border:3px solid var(--accent,#111);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:43px;
-    font-weight:900;
-    letter-spacing:-4px;
+width:100px;
+height:100px;
+border-radius:50%;
+border:3px solid var(--accent,#111);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:43px;
+font-weight:900;
+letter-spacing:-4px;
 }
 
 .logo-two .name{
-    margin-top:18px;
-    font-size:17px;
-    font-weight:bold;
-    letter-spacing:4px;
-    text-align:center;
+margin-top:18px;
+font-size:17px;
+font-weight:bold;
+letter-spacing:4px;
+text-align:center;
 }
 
 .logo-two .line{
-    width:45px;
-    height:2px;
-    margin-top:10px;
-    background:var(--accent,#111);
+width:45px;
+height:2px;
+margin-top:10px;
+background:var(--accent,#111);
 }
 
-
-/* =========================
-   CONCEPT 03
-   BOLD
-========================= */
+/* LOGO 3 */
 
 .logo-three{
-    background:#111;
-    color:#fff;
-    flex-direction:column;
+background:#111;
+color:#fff;
+flex-direction:column;
 }
 
 .logo-three .monogram{
-    font-size:100px;
-    font-weight:900;
-    line-height:1;
-    color:var(--accent,#c9a45c);
-    letter-spacing:-12px;
-    text-transform:uppercase;
+font-size:100px;
+font-weight:900;
+line-height:1;
+color:var(--accent,#c9a45c);
+letter-spacing:-12px;
+text-transform:uppercase;
 }
 
 .logo-three .name{
-    margin-top:12px;
-    font-size:20px;
-    font-weight:bold;
-    letter-spacing:2px;
-    text-transform:uppercase;
+margin-top:12px;
+font-size:20px;
+font-weight:bold;
+letter-spacing:2px;
+text-transform:uppercase;
 }
 
 .logo-three .sub{
-    margin-top:9px;
-    font-size:8px;
-    letter-spacing:5px;
-    opacity:.6;
+margin-top:9px;
+font-size:8px;
+letter-spacing:5px;
+opacity:.6;
 }
 
+.concept-card h3{
+font-family:Georgia,serif;
+font-size:25px;
+margin-bottom:10px;
+}
 
-/* =========================
-   BRAND BOARD
-========================= */
+.concept-card p{
+color:#666;
+line-height:1.6;
+font-size:14px;
+}
+
+.choose{
+width:100%;
+margin-top:20px;
+padding:13px;
+border:1px solid #222;
+background:#111;
+color:#fff;
+cursor:pointer;
+}
+
+.choose:hover{
+background:#c9a45c;
+color:#000;
+}
+
+/* BRAND BOARD */
 
 .brand-board{
-    display:none;
-    max-width:1000px;
-    margin:70px auto 0;
-    background:#fff;
-    border:1px solid #ccc;
-    padding:40px;
+display:none;
+max-width:1100px;
+margin:70px auto 0;
+background:#fff;
+border:1px solid #ccc;
+padding:40px;
 }
 
 .brand-board h3{
-    font-family:Georgia,serif;
-    font-size:36px;
-    margin-bottom:10px;
+font-family:Georgia,serif;
+font-size:36px;
+margin-bottom:10px;
 }
 
 .board-description{
-    color:#666;
-    line-height:1.6;
-    margin-bottom:25px;
+color:#666;
+line-height:1.6;
+margin-bottom:25px;
 }
 
 .board-logo{
-    height:280px;
-    background:#090909;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--boardAccent,#c9a45c);
-    margin-bottom:30px;
-    position:relative;
-    overflow:hidden;
+height:280px;
+background:#090909;
+display:flex;
+align-items:center;
+justify-content:center;
+color:var(--boardAccent,#c9a45c);
+margin-bottom:30px;
+position:relative;
+overflow:hidden;
 }
 
 .board-logo.signature{
-    flex-direction:column;
+flex-direction:column;
 }
 
 .board-logo.signature .board-monogram{
-    width:145px;
-    height:145px;
-    border:1px solid var(--boardAccent,#c9a45c);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:Georgia,serif;
-    font-size:70px;
-    letter-spacing:-5px;
-    position:relative;
+width:145px;
+height:145px;
+border:1px solid var(--boardAccent,#c9a45c);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:Georgia,serif;
+font-size:70px;
+letter-spacing:-5px;
 }
 
 .board-logo.signature .board-name{
-    margin-top:20px;
-    font-family:Georgia,serif;
-    font-size:20px;
-    letter-spacing:6px;
+margin-top:20px;
+font-family:Georgia,serif;
+font-size:20px;
+letter-spacing:6px;
 }
 
 .board-logo.modern{
-    background:#f7f7f5;
-    color:#111;
-    flex-direction:column;
+background:#f7f7f5;
+color:#111;
+flex-direction:column;
 }
 
 .board-logo.modern .board-monogram{
-    width:125px;
-    height:125px;
-    border:4px solid var(--boardAccent,#111);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:55px;
-    font-weight:900;
-    letter-spacing:-5px;
+width:125px;
+height:125px;
+border:4px solid var(--boardAccent,#111);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:55px;
+font-weight:900;
+letter-spacing:-5px;
 }
 
 .board-logo.modern .board-name{
-    margin-top:20px;
-    font-size:20px;
-    font-weight:bold;
-    letter-spacing:5px;
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+letter-spacing:5px;
 }
 
 .board-logo.bold{
-    background:#111;
-    color:#fff;
-    flex-direction:column;
+background:#111;
+color:#fff;
+flex-direction:column;
 }
 
 .board-logo.bold .board-monogram{
-    font-size:120px;
-    font-weight:900;
-    color:var(--boardAccent,#c9a45c);
-    letter-spacing:-15px;
+font-size:120px;
+font-weight:900;
+color:var(--boardAccent,#c9a45c);
+letter-spacing:-15px;
 }
 
 .board-logo.bold .board-name{
-    margin-top:10px;
-    font-size:22px;
-    font-weight:bold;
-    letter-spacing:3px;
+margin-top:10px;
+font-size:22px;
+font-weight:bold;
+letter-spacing:3px;
 }
 
+/* BOARD INFO */
+
 .board-info{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-    margin-top:30px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:30px;
 }
 
 .board-block{
-    border-top:1px solid #ddd;
-    padding-top:20px;
+border-top:1px solid #ddd;
+padding-top:20px;
 }
 
 .board-block h4{
-    margin-bottom:12px;
-    font-size:13px;
-    letter-spacing:2px;
-    text-transform:uppercase;
+margin-bottom:12px;
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
 }
 
 .board-block p{
-    color:#666;
-    line-height:1.6;
+color:#666;
+line-height:1.6;
 }
+
+/* PALETTE */
 
 .palette{
-    display:flex;
-    gap:12px;
-    margin-top:15px;
-    flex-wrap:wrap;
-}
-
-.color{
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    border:1px solid #ccc;
-    position:relative;
-}
-
-.color-label{
-    font-size:9px;
-    text-align:center;
-    margin-top:6px;
-    color:#777;
+display:flex;
+gap:12px;
+margin-top:15px;
+flex-wrap:wrap;
 }
 
 .palette-item{
-    text-align:center;
+text-align:center;
 }
 
+.color{
+width:58px;
+height:58px;
+border-radius:50%;
+border:1px solid #ccc;
+}
+
+.color-label{
+font-size:9px;
+margin-top:6px;
+color:#777;
+}
+
+.color-code{
+font-size:8px;
+margin-top:2px;
+color:#999;
+}
+
+/* MOCKUPS */
+
+.mockups{
+margin-top:50px;
+}
+
+.mockups-title{
+font-family:Georgia,serif;
+font-size:30px;
+margin-bottom:25px;
+}
+
+.mockup-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.mockup{
+border:1px solid #ddd;
+padding:15px;
+background:#fafafa;
+}
+
+.mockup-label{
+font-size:10px;
+letter-spacing:2px;
+color:#777;
+margin-bottom:12px;
+}
+
+/* INSTAGRAM */
+
+.instagram{
+height:250px;
+background:#111;
+color:#fff;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+.instagram .mock-logo{
+font-family:Georgia,serif;
+font-size:60px;
+color:var(--boardAccent,#c9a45c);
+}
+
+.instagram .mock-name{
+margin-top:10px;
+font-size:12px;
+letter-spacing:4px;
+}
+
+/* SITE */
+
+.website{
+height:250px;
+background:#f5f5f5;
+color:#111;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.website .mock-logo{
+font-family:Georgia,serif;
+font-size:45px;
+color:var(--boardAccent,#c9a45c);
+}
+
+.website .mock-button{
+margin-top:15px;
+padding:7px 15px;
+background:#111;
+color:#fff;
+font-size:9px;
+letter-spacing:1px;
+}
+
+/* CARD */
+
+.business-card{
+height:250px;
+background:#111;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+}
+
+.business-card .mock-logo{
+font-family:Georgia,serif;
+font-size:45px;
+color:var(--boardAccent,#c9a45c);
+}
+
+.business-card .mock-info{
+font-size:9px;
+margin-top:15px;
+letter-spacing:2px;
+color:#aaa;
+}
+
+/* ACTIONS */
+
 .board-actions{
-    margin-top:35px;
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
+margin-top:35px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
 
 .secondary-button{
-    padding:13px 20px;
-    border:1px solid #222;
-    background:#fff;
-    color:#111;
-    cursor:pointer;
+padding:13px 20px;
+border:1px solid #222;
+background:#fff;
+color:#111;
+cursor:pointer;
 }
 
 .secondary-button:hover{
-    background:#111;
-    color:#fff;
+background:#111;
+color:#fff;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-    padding:30px 7%;
-    border-top:1px solid #292929;
-    color:#777;
-    font-size:12px;
+padding:30px 7%;
+border-top:1px solid #292929;
+color:#777;
+font-size:12px;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:800px){
 
-    nav{
-        display:none;
-    }
+nav{
+display:none;
+}
 
-    .hero{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+.hero{
+flex-direction:column;
+align-items:flex-start;
+}
 
-    .hero-card{
-        width:100%;
-    }
+.hero-card{
+width:100%;
+}
 
-    .steps{
-        grid-template-columns:1fr;
-    }
+.steps{
+grid-template-columns:1fr;
+}
 
-    .concepts{
-        grid-template-columns:1fr;
-    }
+.concepts{
+grid-template-columns:1fr;
+}
 
-    .form{
-        padding:25px;
-    }
+.form{
+padding:25px;
+}
 
-    .board-info{
-        grid-template-columns:1fr;
-    }
+.board-info,
+.mockup-grid{
+grid-template-columns:1fr;
+}
 
-    .brand-board{
-        padding:25px;
-    }
+.brand-board{
+padding:25px;
+}
 
-    .logo-box{
-        height:230px;
-    }
+.logo-box{
+height:230px;
+}
+
+}
+
+@media print{
+
+header,
+.hero,
+#fonctionnement,
+.creation,
+.loading,
+footer,
+.board-actions{
+display:none!important;
+}
+
+.results{
+display:block!important;
+padding:20px;
+}
+
+.brand-board{
+display:block!important;
+margin:0;
+border:none;
+}
 
 }
 
@@ -750,7 +863,6 @@ footer{
 </head>
 
 <body>
-
 
 <header>
 
@@ -765,10 +877,6 @@ LUXUR<span class="gold">I</span>ID
 
 </header>
 
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="hero">
 
@@ -813,10 +921,6 @@ YOUR BRAND. YOUR IDENTITY.
 </section>
 
 
-<!-- =========================
-     FONCTIONNEMENT
-========================= -->
-
 <section id="fonctionnement">
 
 <div class="eyebrow">
@@ -857,10 +961,6 @@ De l'idée à la marque.
 
 </section>
 
-
-<!-- =========================
-     CREATION
-========================= -->
 
 <section class="creation" id="creation">
 
@@ -978,10 +1078,6 @@ Générer mes concepts →
 </section>
 
 
-<!-- =========================
-     LOADING
-========================= -->
-
 <section class="loading" id="loading">
 
 <div class="eyebrow">
@@ -1002,10 +1098,6 @@ pour votre identité visuelle.
 </section>
 
 
-<!-- =========================
-     RESULTATS
-========================= -->
-
 <section class="results" id="results">
 
 <div class="results-header">
@@ -1018,9 +1110,9 @@ LUXURIID STUDIO
 Votre marque
 </h2>
 
-<p id="resultText">
-Voici trois directions professionnelles
-imaginées à partir de vos critères.
+<p>
+Trois directions créatives ont été préparées
+à partir de votre projet.
 </p>
 
 <div class="project-meta">
@@ -1045,9 +1137,11 @@ Couleur
 <div class="concepts">
 
 
-<!-- CONCEPT 01 -->
-
 <div class="concept-card" id="card1">
+
+<div class="recommended">
+RECOMMANDÉ
+</div>
 
 <div class="concept-label">
 CONCEPT 01 • SIGNATURE
@@ -1069,14 +1163,12 @@ IDENTITY STUDIO
 
 </div>
 
-<h3 id="title1">
+<h3>
 Signature
 </h3>
 
 <p id="description1">
-Une identité élégante, premium et intemporelle.
-Idéale pour une marque qui souhaite inspirer
-confiance et qualité.
+Une identité premium et intemporelle.
 </p>
 
 <button class="choose" onclick="chooseConcept(1)">
@@ -1085,8 +1177,6 @@ Choisir ce concept
 
 </div>
 
-
-<!-- CONCEPT 02 -->
 
 <div class="concept-card" id="card2">
 
@@ -1108,14 +1198,12 @@ LUXURIID
 
 </div>
 
-<h3 id="title2">
+<h3>
 Modern
 </h3>
 
 <p id="description2">
-Une identité minimaliste et contemporaine,
-pensée pour être claire et facilement
-reconnaissable.
+Une identité contemporaine et claire.
 </p>
 
 <button class="choose" onclick="chooseConcept(2)">
@@ -1124,8 +1212,6 @@ Choisir ce concept
 
 </div>
 
-
-<!-- CONCEPT 03 -->
 
 <div class="concept-card" id="card3">
 
@@ -1149,13 +1235,12 @@ EST. 2026
 
 </div>
 
-<h3 id="title3">
+<h3>
 Bold
 </h3>
 
 <p id="description3">
-Une direction forte et mémorable pour les
-marques qui veulent se démarquer.
+Une identité forte et distinctive.
 </p>
 
 <button class="choose" onclick="chooseConcept(3)">
@@ -1166,10 +1251,6 @@ Choisir ce concept
 
 </div>
 
-
-<!-- =========================
-     BRAND BOARD
-========================= -->
 
 <div class="brand-board" id="brandBoard">
 
@@ -1234,7 +1315,7 @@ Typographie
 </h4>
 
 <p id="boardTypography">
-Typographie premium et contemporaine.
+Typographie premium.
 </p>
 
 </div>
@@ -1247,9 +1328,87 @@ Positionnement
 </h4>
 
 <p id="boardPosition">
-Une identité pensée pour construire
-une marque cohérente et mémorable.
+Une identité cohérente et mémorable.
 </p>
+
+</div>
+
+</div>
+
+
+<!-- MOCKUPS -->
+
+<div class="mockups">
+
+<div class="mockups-title">
+Votre identité en situation
+</div>
+
+<div class="mockup-grid">
+
+
+<div class="mockup">
+
+<div class="mockup-label">
+INSTAGRAM
+</div>
+
+<div class="instagram">
+
+<div class="mock-logo" id="instagramLogo">
+L
+</div>
+
+<div class="mock-name" id="instagramName">
+MARQUE
+</div>
+
+</div>
+
+</div>
+
+
+<div class="mockup">
+
+<div class="mockup-label">
+SITE INTERNET
+</div>
+
+<div class="website">
+
+<div class="mock-logo" id="websiteLogo">
+MARQUE
+</div>
+
+<div class="mock-button">
+DÉCOUVRIR
+</div>
+
+</div>
+
+</div>
+
+
+<div class="mockup">
+
+<div class="mockup-label">
+CARTE DE VISITE
+</div>
+
+<div class="business-card">
+
+<div class="mock-logo" id="cardLogo">
+L
+</div>
+
+<div class="mock-info" id="cardInfo">
+MARQUE • CONTACT
+</div>
+
+</div>
+
+</div>
+
 
 </div>
 
@@ -1283,691 +1442,538 @@ Votre identité. Votre image. Votre marque.
 
 <script>
 
-let selectedStyle = "";
-let selectedColor = "";
-let companyName = "";
-let projectSector = "";
-let projectDescription = "";
-let selectedConcept = 0;
+let selectedStyle="";
+let selectedColor="";
+let companyName="";
+let projectSector="";
+let projectDescription="";
+let selectedConcept=0;
 
 
-/* =========================
-   STYLES
-========================= */
+/* STYLE */
 
 function selectStyle(element){
 
-    const container = element.parentElement;
+element.parentElement
+.querySelectorAll(".option")
+.forEach(function(option){
+option.classList.remove("selected");
+});
 
-    container
-    .querySelectorAll(".option")
-    .forEach(function(option){
-        option.classList.remove("selected");
-    });
+element.classList.add("selected");
 
-    element.classList.add("selected");
+selectedStyle=element.innerText;
 
-    selectedStyle = element.innerText;
 }
 
 
-/* =========================
-   COULEURS
-========================= */
+/* COULEUR */
 
 function selectColor(element){
 
-    const container = element.parentElement;
+element.parentElement
+.querySelectorAll(".option")
+.forEach(function(option){
+option.classList.remove("selected");
+});
 
-    container
-    .querySelectorAll(".option")
-    .forEach(function(option){
-        option.classList.remove("selected");
-    });
+element.classList.add("selected");
 
-    element.classList.add("selected");
+selectedColor=element.innerText;
 
-    selectedColor = element.innerText;
 }
 
 
-/* =========================
-   MONOGRAMME
-========================= */
+/* MONOGRAMME */
 
 function createMonogram(name){
 
-    const clean = name
-        .replace(/[^a-zA-ZÀ-ÿ0-9 ]/g,"")
-        .trim();
+const clean=name
+.replace(/[^a-zA-ZÀ-ÿ0-9 ]/g,"")
+.trim();
 
-    if(!clean){
-        return "L";
-    }
+if(!clean){
+return "L";
+}
 
-    const words = clean
-        .split(/\s+/)
-        .filter(Boolean);
+const words=clean
+.split(/\s+/)
+.filter(Boolean);
 
-    if(words.length >= 2){
+if(words.length>=2){
 
-        return (
-            words[0].charAt(0) +
-            words[1].charAt(0)
-        ).toUpperCase();
+return (
+words[0].charAt(0)+
+words[1].charAt(0)
+).toUpperCase();
 
-    }
+}
 
-    const word = words[0];
+if(words[0].length>=6){
 
-    if(word.length >= 6){
+return (
+words[0].charAt(0)+
+words[0].charAt(1)
+).toUpperCase();
 
-        return (
-            word.charAt(0) +
-            word.charAt(1)
-        ).toUpperCase();
+}
 
-    }
+return words[0].charAt(0).toUpperCase();
 
-    return word.charAt(0).toUpperCase();
 }
 
 
-/* =========================
-   COULEUR
-========================= */
+/* ACCENT */
 
 function getColor(){
 
-    const colors = {
+const colors={
 
-        "Noir":"#111111",
+"Noir":"#111111",
+"Blanc":"#111111",
+"Doré":"#c9a45c",
+"Rouge":"#a92d2d",
+"Bleu":"#315c91",
+"Vert":"#48735b"
 
-        "Blanc":"#111111",
+};
 
-        "Doré":"#c9a45c",
+return colors[selectedColor]||"#c9a45c";
 
-        "Rouge":"#a92d2d",
-
-        "Bleu":"#315c91",
-
-        "Vert":"#48735b"
-
-    };
-
-    return colors[selectedColor] || "#c9a45c";
 }
 
 
-/* =========================
-   PALETTE
-========================= */
+/* PALETTE */
 
 function getPalette(){
 
-    const palettes = {
+const palettes={
 
-        "Noir":[
-            ["#080808","Noir"],
-            ["#242424","Graphite"],
-            ["#777777","Gris"],
-            ["#F5F5F5","Ivoire"]
-        ],
+"Noir":[
+["#080808","Noir"],
+["#242424","Graphite"],
+["#777777","Gris"],
+["#F5F5F5","Ivoire"]
+],
 
-        "Blanc":[
-            ["#FFFFFF","Blanc"],
-            ["#111111","Noir"],
-            ["#D8D8D8","Gris"],
-            ["#777777","Graphite"]
-        ],
+"Blanc":[
+["#FFFFFF","Blanc"],
+["#111111","Noir"],
+["#D8D8D8","Gris"],
+["#777777","Graphite"]
+],
 
-        "Doré":[
-            ["#C9A45C","Doré"],
-            ["#080808","Noir"],
-            ["#F4EFE5","Ivoire"],
-            ["#777777","Gris"]
-        ],
+"Doré":[
+["#C9A45C","Doré"],
+["#080808","Noir"],
+["#F4EFE5","Ivoire"],
+["#777777","Gris"]
+],
 
-        "Rouge":[
-            ["#9E2525","Rouge"],
-            ["#111111","Noir"],
-            ["#F4F1EC","Ivoire"],
-            ["#777777","Gris"]
-        ],
+"Rouge":[
+["#9E2525","Rouge"],
+["#111111","Noir"],
+["#F4F1EC","Ivoire"],
+["#777777","Gris"]
+],
 
-        "Bleu":[
-            ["#315C91","Bleu"],
-            ["#0B111A","Nuit"],
-            ["#F4F5F7","Blanc"],
-            ["#777777","Gris"]
-        ],
+"Bleu":[
+["#315C91","Bleu"],
+["#0B111A","Nuit"],
+["#F4F5F7","Blanc"],
+["#777777","Gris"]
+],
 
-        "Vert":[
-            ["#48735B","Vert"],
-            ["#101713","Forêt"],
-            ["#F1F0E9","Ivoire"],
-            ["#777777","Gris"]
-        ]
+"Vert":[
+["#48735B","Vert"],
+["#101713","Forêt"],
+["#F1F0E9","Ivoire"],
+["#777777","Gris"]
+]
 
-    };
+};
 
-    return palettes[selectedColor] || palettes["Doré"];
+return palettes[selectedColor]||palettes["Doré"];
+
 }
 
 
-/* =========================
-   APPLICATION COULEUR
-========================= */
+/* APPLICATION COULEUR */
 
 function applyAccent(){
 
-    const accent = getColor();
+const accent=getColor();
 
-    document
-        .querySelectorAll(".logo-one")
-        .forEach(function(el){
-            el.style.setProperty("--accent",accent);
-        });
-
-    document
-        .querySelectorAll(".logo-two")
-        .forEach(function(el){
-            el.style.setProperty("--accent",accent);
-        });
-
-    document
-        .querySelectorAll(".logo-three")
-        .forEach(function(el){
-            el.style.setProperty("--accent",accent);
-        });
+document
+.querySelectorAll(".logo-one,.logo-two,.logo-three")
+.forEach(function(el){
+el.style.setProperty("--accent",accent);
+});
 
 }
 
 
-/* =========================
-   GENERATION
-========================= */
+/* GENERATION */
 
 function generateConcepts(){
 
-    companyName =
-        document.getElementById("company")
-        .value
-        .trim();
+companyName=
+document.getElementById("company")
+.value.trim();
 
-    projectSector =
-        document.getElementById("sector")
-        .value;
+projectSector=
+document.getElementById("sector")
+.value;
 
-    projectDescription =
-        document.getElementById("description")
-        .value
-        .trim();
+projectDescription=
+document.getElementById("description")
+.value.trim();
 
 
-    if(companyName === ""){
+if(companyName===""){
+alert("Veuillez entrer le nom de votre entreprise.");
+return;
+}
 
-        alert(
-            "Veuillez entrer le nom de votre entreprise."
-        );
+if(projectSector===""){
+alert("Veuillez choisir votre secteur.");
+return;
+}
 
-        return;
-    }
+if(selectedStyle===""){
+alert("Veuillez choisir un style.");
+return;
+}
 
-
-    if(projectSector === ""){
-
-        alert(
-            "Veuillez choisir votre secteur."
-        );
-
-        return;
-    }
-
-
-    if(selectedStyle === ""){
-
-        alert(
-            "Veuillez choisir un style."
-        );
-
-        return;
-    }
+if(selectedColor===""){
+alert("Veuillez choisir une couleur principale.");
+return;
+}
 
 
-    if(selectedColor === ""){
-
-        alert(
-            "Veuillez choisir une couleur principale."
-        );
-
-        return;
-    }
+document
+.getElementById("loading")
+.style.display="block";
 
 
-    document
-        .getElementById("loading")
-        .style.display = "block";
+document
+.getElementById("loading")
+.scrollIntoView({
+behavior:"smooth"
+});
 
 
-    document
-        .getElementById("loading")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+setTimeout(function(){
+
+const monogram=createMonogram(companyName);
 
 
-    setTimeout(function(){
+document.getElementById("resultCompany")
+.innerText=companyName;
 
-        const monogram =
-            createMonogram(companyName);
+document.getElementById("symbol1")
+.innerText=monogram;
 
+document.getElementById("symbol2")
+.innerText=monogram;
 
-        document
-            .getElementById("resultCompany")
-            .innerText = companyName;
+document.getElementById("symbol3")
+.innerText=monogram;
 
+document.getElementById("name1")
+.innerText=companyName.toUpperCase();
 
-        document
-            .getElementById("symbol1")
-            .innerText = monogram;
+document.getElementById("name2")
+.innerText=companyName.toUpperCase();
 
-        document
-            .getElementById("symbol2")
-            .innerText = monogram;
+document.getElementById("name3")
+.innerText=companyName.toUpperCase();
 
-        document
-            .getElementById("symbol3")
-            .innerText = monogram;
+document.getElementById("sectorResult")
+.innerText=projectSector;
 
+document.getElementById("styleResult")
+.innerText=selectedStyle;
 
-        document
-            .getElementById("name1")
-            .innerText =
-            companyName.toUpperCase();
-
-        document
-            .getElementById("name2")
-            .innerText =
-            companyName.toUpperCase();
-
-        document
-            .getElementById("name3")
-            .innerText =
-            companyName.toUpperCase();
+document.getElementById("colorResult")
+.innerText=selectedColor;
 
 
-        document
-            .getElementById("sectorResult")
-            .innerText =
-            projectSector;
+updateConceptTexts();
+
+applyAccent();
 
 
-        document
-            .getElementById("styleResult")
-            .innerText =
-            selectedStyle;
+document.getElementById("loading")
+.style.display="none";
 
+document.getElementById("results")
+.style.display="block";
 
-        document
-            .getElementById("colorResult")
-            .innerText =
-            selectedColor;
+document.getElementById("results")
+.scrollIntoView({
+behavior:"smooth"
+});
 
-
-        updateConceptTexts();
-
-
-        applyAccent();
-
-
-        document
-            .getElementById("loading")
-            .style.display = "none";
-
-
-        document
-            .getElementById("results")
-            .style.display = "block";
-
-
-        document
-            .getElementById("results")
-            .scrollIntoView({
-                behavior:"smooth"
-            });
-
-    },1800);
+},1800);
 
 }
 
 
-/* =========================
-   TEXTES CONCEPTS
-========================= */
+/* TEXTES */
 
 function updateConceptTexts(){
 
-    const style = selectedStyle;
-    const sector = projectSector;
+document.getElementById("description1")
+.innerText=
+"Une direction premium et intemporelle pensée pour "
++companyName+
+". Son langage visuel privilégie la confiance, la qualité et l'élégance dans le secteur "
++projectSector+".";
 
 
-    document
-        .getElementById("description1")
-        .innerText =
-        "Une direction premium et intemporelle pensée pour "
-        + companyName
-        + ". Son langage visuel privilégie l'élégance, la confiance et la qualité dans le secteur "
-        + sector
-        + ".";
+document.getElementById("description2")
+.innerText=
+"Une identité contemporaine et facilement identifiable pour "
++companyName+
+". Une approche particulièrement adaptée à un univers "
++selectedStyle.toLowerCase()+".";
 
 
-    document
-        .getElementById("description2")
-        .innerText =
-        "Une identité claire et contemporaine qui transforme "
-        + companyName
-        + " en une marque facilement identifiable. Une approche particulièrement adaptée à un univers "
-        + style.toLowerCase()
-        + ".";
-
-
-    document
-        .getElementById("description3")
-        .innerText =
-        "Une direction forte et distinctive conçue pour permettre à "
-        + companyName
-        + " de se démarquer dans le secteur "
-        + sector
-        + " avec une présence visuelle plus audacieuse.";
-
-
-    if(style === "Sportif"){
-
-        document
-            .getElementById("title3")
-            .innerText =
-            "Performance";
-
-    }else if(style === "Industriel"){
-
-        document
-            .getElementById("title3")
-            .innerText =
-            "Industrial";
-
-    }else if(style === "Minimaliste"){
-
-        document
-            .getElementById("title2")
-            .innerText =
-            "Pure";
-
-    }else{
-
-        document
-            .getElementById("title1")
-            .innerText =
-            "Signature";
-
-        document
-            .getElementById("title2")
-            .innerText =
-            "Modern";
-
-        document
-            .getElementById("title3")
-            .innerText =
-            "Bold";
-    }
+document.getElementById("description3")
+.innerText=
+"Une direction forte et distinctive conçue pour permettre à "
++companyName+
+" de se démarquer dans le secteur "
++projectSector+
+" avec une présence visuelle plus audacieuse.";
 
 }
 
 
-/* =========================
-   CHOIX CONCEPT
-========================= */
+/* CHOIX */
 
 function chooseConcept(number){
 
-    selectedConcept = number;
+selectedConcept=number;
 
 
-    document
-        .querySelectorAll(".concept-card")
-        .forEach(function(card){
-
-            card.classList.remove("active");
-
-        });
+document
+.querySelectorAll(".concept-card")
+.forEach(function(card){
+card.classList.remove("active");
+});
 
 
-    document
-        .getElementById("card" + number)
-        .classList.add("active");
+document
+.getElementById("card"+number)
+.classList.add("active");
 
 
-    const monogram =
-        createMonogram(companyName);
+const monogram=createMonogram(companyName);
+
+const boardLogo=document.getElementById("boardLogo");
+
+boardLogo.className="board-logo";
 
 
-    const boardLogo =
-        document.getElementById("boardLogo");
+if(number===1){
+boardLogo.classList.add("signature");
+}
+
+if(number===2){
+boardLogo.classList.add("modern");
+}
+
+if(number===3){
+boardLogo.classList.add("bold");
+}
 
 
-    boardLogo.className =
-        "board-logo";
+boardLogo.style.setProperty(
+"--boardAccent",
+getColor()
+);
 
 
-    if(number === 1){
+document.getElementById("boardLetter")
+.innerText=monogram;
 
-        boardLogo.classList.add("signature");
+document.getElementById("boardLogoName")
+.innerText=companyName.toUpperCase();
 
-    }
-
-    if(number === 2){
-
-        boardLogo.classList.add("modern");
-
-    }
-
-    if(number === 3){
-
-        boardLogo.classList.add("bold");
-
-    }
+document.getElementById("boardName")
+.innerText=companyName;
 
 
-    boardLogo
-        .style
-        .setProperty(
-            "--boardAccent",
-            getColor()
-        );
+const styles={
+
+1:"Signature — Élégant, premium & intemporel",
+
+2:"Modern — Minimaliste, clair & contemporain",
+
+3:"Bold — Fort, distinctif & audacieux"
+
+};
+
+document.getElementById("boardStyle")
+.innerText=styles[number];
 
 
-    document
-        .getElementById("boardLetter")
-        .innerText =
-        monogram;
+const typography={
+
+1:"Georgia / serif — perception premium, élégante et institutionnelle.",
+
+2:"Arial / sans-serif — identité moderne, claire et digitale.",
+
+3:"Arial Bold / sans-serif — présence forte et mémorable."
+
+};
+
+document.getElementById("boardTypography")
+.innerText=typography[number];
 
 
-    document
-        .getElementById("boardLogoName")
-        .innerText =
-        companyName.toUpperCase();
+document.getElementById("boardDescription")
+.innerText=
+"Direction sélectionnée pour "
++companyName+
+", dans le secteur "
++projectSector+
+", avec une dominante "
++selectedColor.toLowerCase()+".";
 
 
-    document
-        .getElementById("boardName")
-        .innerText =
-        companyName;
+document.getElementById("boardPosition")
+.innerText=
+"Une identité construite pour "
++companyName+
+" et pensée pour créer une image cohérente, reconnaissable et professionnelle.";
 
 
-    const styles = {
+buildPalette();
 
-        1:
-        "Signature — Élégant, premium & intemporel",
-
-        2:
-        "Modern — Minimaliste, clair & contemporain",
-
-        3:
-        "Bold — Fort, distinctif & audacieux"
-
-    };
+updateMockups(monogram);
 
 
-    document
-        .getElementById("boardStyle")
-        .innerText =
-        styles[number];
+document.getElementById("brandBoard")
+.style.display="block";
 
 
-    const typography = {
-
-        1:
-        "Georgia / serif — pour une perception premium, élégante et institutionnelle.",
-
-        2:
-        "Arial / sans-serif — pour une identité moderne, claire et digitale.",
-
-        3:
-        "Arial Bold / sans-serif — pour une présence forte, sportive et mémorable."
-
-    };
-
-
-    document
-        .getElementById("boardTypography")
-        .innerText =
-        typography[number];
-
-
-    document
-        .getElementById("boardDescription")
-        .innerText =
-        "Direction sélectionnée pour "
-        + companyName
-        + ", dans le secteur "
-        + projectSector
-        + ", avec une dominante "
-        + selectedColor.toLowerCase()
-        + ".";
-
-
-    document
-        .getElementById("boardPosition")
-        .innerText =
-        "Une identité construite pour "
-        + companyName
-        + " et pensée pour créer une image cohérente, reconnaissable et professionnelle.";
-
-
-    buildPalette();
-
-
-    document
-        .getElementById("brandBoard")
-        .style.display =
-        "block";
-
-
-    document
-        .getElementById("brandBoard")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+document.getElementById("brandBoard")
+.scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
 
-/* =========================
-   PALETTE BRAND BOARD
-========================= */
+/* PALETTE */
 
 function buildPalette(){
 
-    const palette =
-        document.getElementById("boardPalette");
+const palette=document.getElementById("boardPalette");
+
+palette.innerHTML="";
+
+getPalette().forEach(function(item){
+
+const wrapper=document.createElement("div");
+
+wrapper.className="palette-item";
 
 
-    palette.innerHTML = "";
+const circle=document.createElement("div");
+
+circle.className="color";
+
+circle.style.background=item[0];
 
 
-    getPalette().forEach(function(item){
+const label=document.createElement("div");
 
-        const wrapper =
-            document.createElement("div");
+label.className="color-label";
 
-        wrapper.className =
-            "palette-item";
+label.innerText=item[1];
 
 
-        const circle =
-            document.createElement("div");
+const code=document.createElement("div");
 
-        circle.className =
-            "color";
+code.className="color-code";
 
-
-        circle.style.background =
-            item[0];
+code.innerText=item[0];
 
 
-        const label =
-            document.createElement("div");
+wrapper.appendChild(circle);
 
-        label.className =
-            "color-label";
+wrapper.appendChild(label);
 
+wrapper.appendChild(code);
 
-        label.innerText =
-            item[1];
+palette.appendChild(wrapper);
 
-
-        wrapper.appendChild(circle);
-
-        wrapper.appendChild(label);
-
-        palette.appendChild(wrapper);
-
-    });
+});
 
 }
 
 
-/* =========================
-   RETOUR CONCEPTS
-========================= */
+/* MOCKUPS */
+
+function updateMockups(monogram){
+
+const accent=getColor();
+
+
+document
+.querySelectorAll(".instagram,.website,.business-card")
+.forEach(function(el){
+
+el.style.setProperty(
+"--boardAccent",
+accent
+);
+
+});
+
+
+document.getElementById("instagramLogo")
+.innerText=monogram;
+
+document.getElementById("instagramName")
+.innerText=
+companyName.toUpperCase();
+
+
+document.getElementById("websiteLogo")
+.innerText=
+companyName.toUpperCase();
+
+
+document.getElementById("cardLogo")
+.innerText=monogram;
+
+document.getElementById("cardInfo")
+.innerText=
+projectSector.toUpperCase()
++" • "
++companyName.toUpperCase();
+
+}
+
+
+/* RETOUR */
 
 function backToConcepts(){
 
-    document
-        .getElementById("brandBoard")
-        .style.display =
-        "none";
+document.getElementById("brandBoard")
+.style.display="none";
 
-
-    document
-        .querySelector(".concepts")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+document.querySelector(".concepts")
+.scrollIntoView({
+behavior:"smooth"
+});
 
 }
-
-
-/* =========================
-   RESET SELECTION
-========================= */
-
-window.addEventListener("beforeprint",function(){
-
-    document.body.style.background =
-        "#fff";
-
-});
 
 </script>
 
