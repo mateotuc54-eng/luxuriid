@@ -7,7 +7,6 @@
 <title>LUXURIID — Créateur d'identité visuelle</title>
 
 <style>
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,10 +20,8 @@ html {
 body {
     font-family: Arial, sans-serif;
     background: #080808;
-    color: #ffffff;
+    color: #fff;
 }
-
-/* NAVIGATION */
 
 header {
     height: 75px;
@@ -52,19 +49,9 @@ nav a {
     font-size: 13px;
 }
 
-/* HERO */
-
-.hero {
-    min-height: 85vh;
-    padding: 8% 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-.hero-content {
-    max-width: 700px;
+section {
+    padding: 100px 7%;
+    border-top: 1px solid #292929;
 }
 
 .eyebrow {
@@ -81,11 +68,10 @@ h1 {
     margin-bottom: 30px;
 }
 
-.hero p {
-    color: #aaa;
-    line-height: 1.7;
-    font-size: 18px;
-    margin-bottom: 30px;
+h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 5vw, 65px);
+    margin-bottom: 45px;
 }
 
 .button {
@@ -96,11 +82,32 @@ h1 {
     color: #000;
     font-weight: bold;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .button:hover {
     background: #c9a45c;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 85vh;
+    padding: 8% 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero p {
+    color: #aaa;
+    line-height: 1.7;
+    font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .hero-card {
@@ -122,19 +129,6 @@ h1 {
 
 .hero-name {
     letter-spacing: 7px;
-}
-
-/* SECTIONS */
-
-section {
-    padding: 100px 7%;
-    border-top: 1px solid #292929;
-}
-
-h2 {
-    font-family: Georgia, serif;
-    font-size: clamp(40px,5vw,65px);
-    margin-bottom: 45px;
 }
 
 /* STEPS */
@@ -163,7 +157,7 @@ h2 {
     line-height: 1.6;
 }
 
-/* QUESTIONNAIRE */
+/* FORM */
 
 .creation {
     background: #111;
@@ -218,148 +212,243 @@ textarea {
 
 .option.selected {
     background: #c9a45c;
-    color: black;
+    color: #000;
     border-color: #c9a45c;
 }
 
-/* RESULTAT */
+/* LOADING */
 
-.result {
+.loading {
+    display: none;
+    text-align: center;
+    padding: 80px 20px;
+    background: #0d0d0d;
+}
+
+.loader {
+    width: 45px;
+    height: 45px;
+    border: 3px solid #333;
+    border-top: 3px solid #c9a45c;
+    border-radius: 50%;
+    margin: 30px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* CONCEPTS */
+
+.results {
     display: none;
     background: #f1eee7;
     color: #111;
 }
 
-.result-header {
+.results-header {
     text-align: center;
     max-width: 800px;
     margin: auto;
 }
 
-.result-header .eyebrow {
-    color: #8d6c32;
-}
-
-.result-header p {
+.results-header p {
     color: #666;
     line-height: 1.6;
+}
+
+.concepts {
+    max-width: 1100px;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.concept-card {
+    background: #fff;
+    border: 1px solid #d5d1c8;
+    padding: 20px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.concept-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,.12);
+}
+
+.concept-card.active {
+    border: 2px solid #c9a45c;
+}
+
+.concept-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.logo-box {
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* LOGO 01 */
+
+.logo-one {
+    background: #0a0a0a;
+    color: #c9a45c;
+}
+
+.logo-one .symbol {
+    font-family: Georgia, serif;
+    font-size: 95px;
+}
+
+.logo-one .name {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    letter-spacing: 6px;
+}
+
+/* LOGO 02 */
+
+.logo-two {
+    background: #f5f5f5;
+    color: #111;
+    flex-direction: column;
+}
+
+.logo-two .symbol {
+    border: 3px solid #111;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.logo-two .name {
+    margin-top: 15px;
+    letter-spacing: 4px;
+    font-size: 17px;
+}
+
+/* LOGO 03 */
+
+.logo-three {
+    background: #111;
+    color: #fff;
+    flex-direction: column;
+}
+
+.logo-three .symbol {
+    font-size: 80px;
+    font-weight: 900;
+    color: #c9a45c;
+}
+
+.logo-three .name {
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* CONCEPT INFO */
+
+.concept-card h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.concept-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.choose {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+    border: 1px solid #222;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+}
+
+.choose:hover {
+    background: #c9a45c;
+    color: #000;
 }
 
 /* BRAND BOARD */
 
 .brand-board {
-    max-width: 1100px;
-    margin: 60px auto 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: none;
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 40px;
 }
 
-.brand-card {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 35px;
-    min-height: 280px;
+.brand-board h3 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
-.brand-card h3 {
-    font-size: 12px;
-    letter-spacing: 3px;
-    color: #777;
-    margin-bottom: 30px;
-}
-
-.logo-preview {
-    height: 180px;
+.board-logo {
+    height: 220px;
+    background: #090909;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0a0a0a;
     color: #c9a45c;
     font-family: Georgia, serif;
-    font-size: 70px;
-}
-
-.brand-name {
-    text-align: center;
-    margin-top: 15px;
-    letter-spacing: 5px;
+    font-size: 90px;
+    margin-bottom: 25px;
 }
 
 .palette {
     display: flex;
-    gap: 12px;
+    gap: 10px;
+    margin: 20px 0;
 }
 
 .color {
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     border: 1px solid #ccc;
 }
 
-.color.black {
+.black {
     background: #080808;
 }
 
-.color.white {
-    background: #ffffff;
+.white {
+    background: #fff;
 }
 
-.color.gold {
+.gold-color {
     background: #c9a45c;
 }
 
-.color.grey {
-    background: #777777;
+.grey {
+    background: #777;
 }
-
-.font-preview {
-    font-family: Georgia, serif;
-    font-size: 40px;
-}
-
-.concept {
-    grid-column: span 2;
-}
-
-.concept p {
-    color: #555;
-    line-height: 1.8;
-}
-
-/* CONCEPTS */
-
-.concepts {
-    max-width: 1100px;
-    margin: 60px auto 0;
-}
-
-.concepts-title {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.concept-buttons {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 15px;
-}
-
-.concept-button {
-    padding: 18px;
-    border: 1px solid #bbb;
-    background: white;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.concept-button:hover {
-    background: #111;
-    color: white;
-}
-
-/* FOOTER */
 
 footer {
     padding: 30px 7%;
@@ -367,7 +456,6 @@ footer {
     color: #777;
     font-size: 12px;
 }
-
 
 /* MOBILE */
 
@@ -390,29 +478,18 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .brand-board {
-        grid-template-columns: 1fr;
-    }
-
-    .concept {
-        grid-column: span 1;
-    }
-
-    .concept-buttons {
+    .concepts {
         grid-template-columns: 1fr;
     }
 
     .form {
         padding: 25px;
     }
-
 }
-
 </style>
 </head>
 
 <body>
-
 
 <header>
 
@@ -454,7 +531,6 @@ Créer mon identité →
 
 </div>
 
-
 <div class="hero-card">
 
 <div class="hero-letter">
@@ -491,33 +567,25 @@ De l'idée à la marque.
 <div class="step">
 <div class="step-number">01</div>
 <h3>Décrivez</h3>
-<p>
-Présentez votre entreprise et votre vision.
-</p>
+<p>Présentez votre entreprise et votre vision.</p>
 </div>
 
 <div class="step">
 <div class="step-number">02</div>
 <h3>Imaginez</h3>
-<p>
-LUXURIID transforme vos critères en concepts.
-</p>
+<p>LUXURIID transforme vos critères en concepts.</p>
 </div>
 
 <div class="step">
 <div class="step-number">03</div>
-<h3>Personnalisez</h3>
-<p>
-Choisissez votre univers visuel.
-</p>
+<h3>Choisissez</h3>
+<p>Comparez plusieurs directions créatives.</p>
 </div>
 
 <div class="step">
 <div class="step-number">04</div>
 <h3>Développez</h3>
-<p>
-Construisez une identité cohérente.
-</p>
+<p>Construisez votre identité professionnelle.</p>
 </div>
 
 </div>
@@ -536,7 +604,6 @@ VOTRE PROJET
 <h2>
 Créons votre identité.
 </h2>
-
 
 <div class="form">
 
@@ -562,9 +629,7 @@ Secteur d'activité
 
 <select id="sector">
 
-<option value="">
-Choisissez votre secteur
-</option>
+<option value="">Choisissez votre secteur</option>
 
 <option>Automobile</option>
 <option>Équestre</option>
@@ -591,29 +656,12 @@ Style recherché
 
 <div class="options">
 
-<div class="option" onclick="selectOption(this)">
-Luxe
-</div>
-
-<div class="option" onclick="selectOption(this)">
-Moderne
-</div>
-
-<div class="option" onclick="selectOption(this)">
-Minimaliste
-</div>
-
-<div class="option" onclick="selectOption(this)">
-Sportif
-</div>
-
-<div class="option" onclick="selectOption(this)">
-Élégant
-</div>
-
-<div class="option" onclick="selectOption(this)">
-Industriel
-</div>
+<div class="option" onclick="selectStyle(this)">Luxe</div>
+<div class="option" onclick="selectStyle(this)">Moderne</div>
+<div class="option" onclick="selectStyle(this)">Minimaliste</div>
+<div class="option" onclick="selectStyle(this)">Sportif</div>
+<div class="option" onclick="selectStyle(this)">Élégant</div>
+<div class="option" onclick="selectStyle(this)">Industriel</div>
 
 </div>
 
@@ -628,29 +676,12 @@ Couleur principale
 
 <div class="options">
 
-<div class="option" onclick="selectColor(this)">
-Noir
-</div>
-
-<div class="option" onclick="selectColor(this)">
-Blanc
-</div>
-
-<div class="option" onclick="selectColor(this)">
-Doré
-</div>
-
-<div class="option" onclick="selectColor(this)">
-Rouge
-</div>
-
-<div class="option" onclick="selectColor(this)">
-Bleu
-</div>
-
-<div class="option" onclick="selectColor(this)">
-Vert
-</div>
+<div class="option" onclick="selectColor(this)">Noir</div>
+<div class="option" onclick="selectColor(this)">Blanc</div>
+<div class="option" onclick="selectColor(this)">Doré</div>
+<div class="option" onclick="selectColor(this)">Rouge</div>
+<div class="option" onclick="selectColor(this)">Bleu</div>
+<div class="option" onclick="selectColor(this)">Vert</div>
 
 </div>
 
@@ -665,17 +696,14 @@ Décrivez votre projet
 
 <textarea
 id="description"
-placeholder="Expliquez votre activité, vos valeurs et ce que vous imaginez..."
+placeholder="Expliquez votre activité, vos valeurs et votre vision..."
 ></textarea>
 
 </div>
 
 
-<button
-class="button"
-onclick="generateBrand()"
->
-Générer mon identité →
+<button class="button" onclick="generateConcepts()">
+Générer mes concepts →
 </button>
 
 </div>
@@ -683,148 +711,206 @@ Générer mon identité →
 </section>
 
 
-<!-- RESULTAT -->
+<!-- CHARGEMENT -->
 
-<section class="result" id="result">
-
-<div class="result-header">
+<section class="loading" id="loading">
 
 <div class="eyebrow">
-LUXURIID BRAND CONCEPT
+LUXURIID STUDIO
+</div>
+
+<h2>
+Création de vos concepts...
+</h2>
+
+<div class="loader"></div>
+
+<p>
+Nous préparons plusieurs directions
+pour votre identité visuelle.
+</p>
+
+</section>
+
+
+<!-- RESULTATS -->
+
+<section class="results" id="results">
+
+<div class="results-header">
+
+<div class="eyebrow">
+LUXURIID STUDIO
 </div>
 
 <h2 id="resultCompany">
 Votre marque
 </h2>
 
-<p id="resultDescription">
-Votre identité professionnelle commence ici.
-</p>
-
-</div>
-
-
-<div class="brand-board">
-
-
-<!-- LOGO -->
-
-<div class="brand-card">
-
-<h3>
-LOGO PRINCIPAL
-</h3>
-
-<div class="logo-preview">
-<span id="logoLetter">
-L
-</span>
-</div>
-
-<div class="brand-name" id="brandName">
-LUXURIID
-</div>
-
-</div>
-
-
-<!-- PALETTE -->
-
-<div class="brand-card">
-
-<h3>
-PALETTE
-</h3>
-
-<div class="palette">
-
-<div class="color black"></div>
-<div class="color white"></div>
-<div class="color gold"></div>
-<div class="color grey"></div>
-
-</div>
-
-<br>
-
 <p>
-Une palette professionnelle et
-facilement adaptable aux supports
-numériques et imprimés.
+Voici trois directions professionnelles
+imaginées à partir de vos critères.
 </p>
-
-</div>
-
-
-<!-- TYPOGRAPHIE -->
-
-<div class="brand-card">
-
-<h3>
-TYPOGRAPHIE
-</h3>
-
-<div class="font-preview">
-Aa
-</div>
-
-<br>
-
-<p>
-Georgia — élégante, lisible et
-adaptée aux identités premium.
-</p>
-
-</div>
-
-
-<!-- CONCEPT -->
-
-<div class="brand-card">
-
-<h3>
-CONCEPT DE MARQUE
-</h3>
-
-<p id="conceptText">
-Votre concept apparaîtra ici.
-</p>
-
-</div>
-
 
 </div>
 
 
 <div class="concepts">
 
-<div class="concepts-title">
+
+<!-- CONCEPT 1 -->
+
+<div class="concept-card" id="card1">
+
+<div class="concept-label">
+CONCEPT 01
+</div>
+
+<div class="logo-box logo-one">
+
+<div class="symbol" id="symbol1">
+L
+</div>
+
+<div class="name" id="name1">
+LUXURIID
+</div>
+
+</div>
+
+<h3>
+Signature
+</h3>
+
+<p>
+Une identité élégante, premium et intemporelle.
+Idéale pour une marque qui souhaite inspirer
+confiance et qualité.
+</p>
+
+<button class="choose" onclick="chooseConcept(1)">
+Choisir ce concept
+</button>
+
+</div>
+
+
+<!-- CONCEPT 2 -->
+
+<div class="concept-card" id="card2">
+
+<div class="concept-label">
+CONCEPT 02
+</div>
+
+<div class="logo-box logo-two">
+
+<div class="symbol" id="symbol2">
+L
+</div>
+
+<div class="name" id="name2">
+LUXURIID
+</div>
+
+</div>
+
+<h3>
+Modern
+</h3>
+
+<p>
+Une identité minimaliste et contemporaine,
+pensée pour être claire et facilement
+reconnaissable.
+</p>
+
+<button class="choose" onclick="chooseConcept(2)">
+Choisir ce concept
+</button>
+
+</div>
+
+
+<!-- CONCEPT 3 -->
+
+<div class="concept-card" id="card3">
+
+<div class="concept-label">
+CONCEPT 03
+</div>
+
+<div class="logo-box logo-three">
+
+<div class="symbol" id="symbol3">
+L
+</div>
+
+<div class="name" id="name3">
+LUXURIID
+</div>
+
+</div>
+
+<h3>
+Bold
+</h3>
+
+<p>
+Une direction forte et mémorable pour les
+marques qui veulent se démarquer.
+</p>
+
+<button class="choose" onclick="chooseConcept(3)">
+Choisir ce concept
+</button>
+
+</div>
+
+</div>
+
+
+<!-- BRAND BOARD -->
+
+<div class="brand-board" id="brandBoard">
+
+<div class="eyebrow">
+IDENTITÉ SÉLECTIONNÉE
+</div>
+
+<h3 id="boardName">
+Votre marque
+</h3>
+
+<div class="board-logo">
+<span id="boardLetter">
+L
+</span>
+</div>
+
+<p id="boardStyle">
+Concept sélectionné
+</p>
+
+<br>
+
 <strong>
-Choisissez votre direction
+Palette recommandée
 </strong>
-</div>
 
-<div class="concept-buttons">
+<div class="palette">
 
-<button
-class="concept-button"
-onclick="chooseConcept('Élégant')">
-CONCEPT 01 — ÉLÉGANT
-</button>
-
-<button
-class="concept-button"
-onclick="chooseConcept('Moderne')">
-CONCEPT 02 — MODERNE
-</button>
-
-<button
-class="concept-button"
-onclick="chooseConcept('Audacieux')">
-CONCEPT 03 — AUDACIEUX
-</button>
+<div class="color black"></div>
+<div class="color white"></div>
+<div class="color gold-color"></div>
+<div class="color grey"></div>
 
 </div>
+
+<p>
+Cette identité constitue la base de votre
+future marque LUXURIID.
+</p>
 
 </div>
 
@@ -843,141 +929,150 @@ Votre identité. Votre image. Votre marque.
 
 let selectedStyle = "";
 let selectedColor = "";
+let companyName = "";
 
 
-function selectOption(element) {
+function selectStyle(element) {
 
     document
-    .querySelectorAll(".option")
+    .querySelectorAll(".form-group:nth-child(3) .option")
     .forEach(function(option) {
-
         option.classList.remove("selected");
-
     });
 
     element.classList.add("selected");
 
     selectedStyle = element.innerText;
-
 }
 
 
 function selectColor(element) {
 
     document
-    .querySelectorAll(".option")
+    .querySelectorAll(".form-group:nth-child(4) .option")
     .forEach(function(option) {
-
         option.classList.remove("selected");
-
     });
 
     element.classList.add("selected");
 
     selectedColor = element.innerText;
-
 }
 
 
-function generateBrand() {
+function generateConcepts() {
 
-    const company =
+    companyName =
         document.getElementById("company").value.trim();
 
     const sector =
         document.getElementById("sector").value;
 
-    const description =
-        document.getElementById("description").value.trim();
-
-
-    if (company === "") {
+    if (companyName === "") {
 
         alert("Veuillez entrer le nom de votre entreprise.");
 
         return;
-
     }
-
 
     if (sector === "") {
 
         alert("Veuillez choisir votre secteur.");
 
         return;
-
     }
 
 
-    document.getElementById("resultCompany")
-        .innerText = company;
+    document.getElementById("loading").style.display = "block";
 
-
-    document.getElementById("brandName")
-        .innerText = company.toUpperCase();
-
-
-    document.getElementById("logoLetter")
-        .innerText = company.charAt(0).toUpperCase();
-
-
-    let text =
-        "Une identité visuelle professionnelle conçue pour " +
-        company +
-        ", dans le secteur " +
-        sector.toLowerCase() +
-        ".";
-
-
-    if (selectedStyle !== "") {
-
-        text +=
-        " Direction artistique : " +
-        selectedStyle.toLowerCase() +
-        ".";
-
-    }
-
-
-    if (description !== "") {
-
-        text +=
-        " Votre vision : " +
-        description;
-
-    }
-
-
-    document.getElementById("resultDescription")
-        .innerText = text;
-
-
-    document.getElementById("conceptText")
-        .innerText =
-        "LUXURIID propose une identité " +
-        (selectedStyle || "professionnelle").toLowerCase() +
-        ", pensée pour donner à votre entreprise une image cohérente, mémorable et professionnelle.";
-
-
-    document.getElementById("result")
-        .style.display = "block";
-
-
-    document.getElementById("result")
+    document.getElementById("loading")
         .scrollIntoView({
             behavior: "smooth"
         });
 
+
+    setTimeout(function() {
+
+        const letter =
+            companyName.charAt(0).toUpperCase();
+
+        document.getElementById("resultCompany")
+            .innerText = companyName;
+
+        document.getElementById("symbol1")
+            .innerText = letter;
+
+        document.getElementById("symbol2")
+            .innerText = letter;
+
+        document.getElementById("symbol3")
+            .innerText = letter;
+
+        document.getElementById("name1")
+            .innerText = companyName.toUpperCase();
+
+        document.getElementById("name2")
+            .innerText = companyName.toUpperCase();
+
+        document.getElementById("name3")
+            .innerText = companyName.toUpperCase();
+
+
+        document.getElementById("loading")
+            .style.display = "none";
+
+        document.getElementById("results")
+            .style.display = "block";
+
+        document.getElementById("results")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }, 1800);
+
 }
 
 
-function chooseConcept(style) {
+function chooseConcept(number) {
 
-    document.getElementById("conceptText")
-        .innerText =
-        "Direction sélectionnée : " +
-        style +
-        ". Cette direction pourra ensuite être transformée en véritable identité visuelle par le moteur IA de LUXURIID.";
+    document
+    .querySelectorAll(".concept-card")
+    .forEach(function(card) {
+        card.classList.remove("active");
+    });
+
+    document
+    .getElementById("card" + number)
+    .classList.add("active");
+
+
+    const styles = [
+        "",
+        "Signature — Élégant & Premium",
+        "Modern — Minimaliste & Contemporain",
+        "Bold — Fort & Audacieux"
+    ];
+
+
+    document.getElementById("boardName")
+        .innerText = companyName;
+
+    document.getElementById("boardLetter")
+        .innerText = companyName.charAt(0).toUpperCase();
+
+    document.getElementById("boardStyle")
+        .innerText = styles[number];
+
+
+    document.getElementById("brandBoard")
+        .style.display = "block";
+
+
+    document.getElementById("brandBoard")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
 }
 
