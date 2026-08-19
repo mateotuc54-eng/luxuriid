@@ -3,20 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>LUXURIID — Créateur d'identité visuelle</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-html{
-scroll-behavior:smooth;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
 body{
 font-family:Arial,sans-serif;
@@ -39,9 +30,7 @@ font-weight:bold;
 letter-spacing:4px;
 }
 
-.gold{
-color:#c9a45c;
-}
+.gold{color:#c9a45c}
 
 nav a{
 color:#ddd;
@@ -102,9 +91,7 @@ justify-content:space-between;
 gap:60px;
 }
 
-.hero-content{
-max-width:700px;
-}
+.hero-content{max-width:700px}
 
 .hero p{
 color:#aaa;
@@ -130,9 +117,7 @@ font-size:170px;
 color:#c9a45c;
 }
 
-.hero-name{
-letter-spacing:7px;
-}
+.hero-name{letter-spacing:7px}
 
 /* STEPS */
 
@@ -147,13 +132,9 @@ border-top:1px solid #444;
 padding-top:20px;
 }
 
-.step-number{
-color:#c9a45c;
-}
+.step-number{color:#c9a45c}
 
-.step h3{
-margin:25px 0 10px;
-}
+.step h3{margin:25px 0 10px}
 
 .step p{
 color:#999;
@@ -162,9 +143,7 @@ line-height:1.6;
 
 /* FORM */
 
-.creation{
-background:#111;
-}
+.creation{background:#111}
 
 .form{
 max-width:850px;
@@ -174,9 +153,7 @@ border:1px solid #333;
 padding:40px;
 }
 
-.form-group{
-margin-bottom:28px;
-}
+.form-group{margin-bottom:28px}
 
 label{
 display:block;
@@ -184,9 +161,7 @@ margin-bottom:10px;
 font-weight:bold;
 }
 
-input,
-select,
-textarea{
+input,select,textarea{
 width:100%;
 padding:15px;
 border:1px solid #444;
@@ -215,9 +190,7 @@ color:#ccc;
 transition:.2s;
 }
 
-.option:hover{
-border-color:#c9a45c;
-}
+.option:hover{border-color:#c9a45c}
 
 .option.selected{
 background:#c9a45c;
@@ -245,9 +218,7 @@ animation:spin 1s linear infinite;
 }
 
 @keyframes spin{
-to{
-transform:rotate(360deg);
-}
+to{transform:rotate(360deg)}
 }
 
 /* RESULTS */
@@ -304,7 +275,7 @@ transition:.25s;
 }
 
 .concept-card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
@@ -333,7 +304,7 @@ margin-bottom:15px;
 }
 
 .logo-box{
-height:250px;
+height:280px;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -342,98 +313,107 @@ overflow:hidden;
 position:relative;
 }
 
-/* LOGO SIGNATURE */
+/* LOGO 1 */
 
 .logo-one{
-flex-direction:column;
-background:#0a0a0a;
+background:#0b0b0b;
 color:var(--accent,#c9a45c);
+flex-direction:column;
 }
 
-.logo-one .monogram{
-width:125px;
-height:125px;
+.logo-one .symbol-wrap{
+width:150px;
+height:150px;
 border:1px solid var(--accent,#c9a45c);
 display:flex;
 align-items:center;
 justify-content:center;
-font-family:Georgia,serif;
-font-size:58px;
-letter-spacing:-5px;
 position:relative;
 }
 
-.logo-one .monogram:before,
-.logo-one .monogram:after{
+.logo-one .symbol-wrap:before{
 content:"";
 position:absolute;
-width:12px;
-height:12px;
-background:var(--accent,#c9a45c);
+width:170px;
+height:170px;
+border:1px solid var(--accent,#c9a45c);
+transform:rotate(45deg);
+opacity:.35;
 }
 
-.logo-one .monogram:before{
-top:-6px;
-left:-6px;
-}
-
-.logo-one .monogram:after{
-bottom:-6px;
-right:-6px;
+.logo-one .symbol{
+font-family:Georgia,serif;
+font-size:62px;
+letter-spacing:-7px;
+position:relative;
+z-index:2;
 }
 
 .logo-one .name{
-margin-top:22px;
 font-family:Georgia,serif;
 font-size:18px;
 letter-spacing:5px;
+margin-top:25px;
 text-align:center;
 }
 
 .logo-one .sub{
-margin-top:8px;
 font-size:8px;
 letter-spacing:4px;
-opacity:.7;
+margin-top:8px;
+opacity:.6;
 }
 
-/* LOGO MODERN */
+/* LOGO 2 */
 
 .logo-two{
-background:#f7f7f5;
+background:#f8f8f6;
 color:#111;
 flex-direction:column;
 }
 
-.logo-two .monogram{
-width:100px;
-height:100px;
+.logo-two .symbol-wrap{
+width:120px;
+height:120px;
 border:3px solid var(--accent,#111);
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:43px;
+position:relative;
+}
+
+.logo-two .symbol{
+font-size:48px;
 font-weight:900;
-letter-spacing:-5px;
+letter-spacing:-7px;
+}
+
+.logo-two .symbol-wrap:after{
+content:"";
+position:absolute;
+width:145px;
+height:1px;
+background:var(--accent,#111);
+opacity:.4;
 }
 
 .logo-two .name{
-margin-top:18px;
+margin-top:24px;
 font-size:17px;
 font-weight:bold;
-letter-spacing:4px;
+letter-spacing:5px;
 text-align:center;
 }
 
-.logo-two .line{
-width:45px;
-height:2px;
-margin-top:10px;
-background:var(--accent,#111);
+.logo-two .sub{
+margin-top:8px;
+font-size:8px;
+letter-spacing:3px;
+color:#777;
 }
 
-/* LOGO BOLD */
+/* LOGO 3 */
 
 .logo-three{
 background:#111;
@@ -441,28 +421,33 @@ color:#fff;
 flex-direction:column;
 }
 
-.logo-three .monogram{
-font-size:100px;
+.logo-three .symbol{
+font-size:105px;
 font-weight:900;
-line-height:1;
+letter-spacing:-15px;
 color:var(--accent,#c9a45c);
-letter-spacing:-12px;
-text-transform:uppercase;
+line-height:1;
+}
+
+.logo-three .slash{
+width:100px;
+height:5px;
+background:var(--accent,#c9a45c);
+margin-top:12px;
 }
 
 .logo-three .name{
-margin-top:12px;
+margin-top:14px;
 font-size:20px;
 font-weight:bold;
-letter-spacing:2px;
-text-transform:uppercase;
+letter-spacing:3px;
 }
 
 .logo-three .sub{
-margin-top:9px;
+margin-top:8px;
 font-size:8px;
 letter-spacing:5px;
-opacity:.6;
+opacity:.55;
 }
 
 .concept-card h3{
@@ -524,38 +509,38 @@ margin-bottom:25px;
 }
 
 .board-logo{
-height:280px;
+height:300px;
 background:#090909;
 display:flex;
 align-items:center;
 justify-content:center;
-color:var(--boardAccent,#c9a45c);
-margin-bottom:30px;
 position:relative;
 overflow:hidden;
+margin-bottom:30px;
+color:var(--boardAccent,#c9a45c);
 }
 
 .board-logo.signature{
 flex-direction:column;
 }
 
-.board-logo.signature .board-monogram{
-width:145px;
-height:145px;
+.board-logo.signature .board-symbol{
+width:155px;
+height:155px;
 border:1px solid var(--boardAccent,#c9a45c);
 display:flex;
 align-items:center;
 justify-content:center;
 font-family:Georgia,serif;
 font-size:70px;
-letter-spacing:-5px;
+letter-spacing:-7px;
 }
 
 .board-logo.signature .board-name{
-margin-top:20px;
 font-family:Georgia,serif;
 font-size:20px;
 letter-spacing:6px;
+margin-top:22px;
 }
 
 .board-logo.modern{
@@ -564,9 +549,9 @@ color:#111;
 flex-direction:column;
 }
 
-.board-logo.modern .board-monogram{
-width:125px;
-height:125px;
+.board-logo.modern .board-symbol{
+width:130px;
+height:130px;
 border:4px solid var(--boardAccent,#111);
 border-radius:50%;
 display:flex;
@@ -574,14 +559,14 @@ align-items:center;
 justify-content:center;
 font-size:55px;
 font-weight:900;
-letter-spacing:-5px;
+letter-spacing:-7px;
 }
 
 .board-logo.modern .board-name{
-margin-top:20px;
 font-size:20px;
 font-weight:bold;
 letter-spacing:5px;
+margin-top:22px;
 }
 
 .board-logo.bold{
@@ -590,21 +575,21 @@ color:#fff;
 flex-direction:column;
 }
 
-.board-logo.bold .board-monogram{
-font-size:120px;
+.board-logo.bold .board-symbol{
+font-size:125px;
 font-weight:900;
+letter-spacing:-18px;
 color:var(--boardAccent,#c9a45c);
-letter-spacing:-15px;
 }
 
 .board-logo.bold .board-name{
-margin-top:10px;
 font-size:22px;
 font-weight:bold;
 letter-spacing:3px;
+margin-top:12px;
 }
 
-/* BOARD INFO */
+/* BOARD */
 
 .board-info{
 display:grid;
@@ -630,8 +615,6 @@ color:#666;
 line-height:1.6;
 }
 
-/* PALETTE */
-
 .palette{
 display:flex;
 gap:12px;
@@ -639,9 +622,7 @@ margin-top:15px;
 flex-wrap:wrap;
 }
 
-.palette-item{
-text-align:center;
-}
+.palette-item{text-align:center}
 
 .color{
 width:58px;
@@ -664,9 +645,7 @@ color:#999;
 
 /* MOCKUPS */
 
-.mockups{
-margin-top:50px;
-}
+.mockups{margin-top:50px}
 
 .mockups-title{
 font-family:Georgia,serif;
@@ -693,68 +672,56 @@ color:#777;
 margin-bottom:12px;
 }
 
-.instagram{
+.instagram,
+.website,
+.business-card{
 height:250px;
-background:#111;
-color:#fff;
 display:flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
+flex-direction:column;
 }
 
-.instagram .mock-logo{
+.instagram{
+background:#111;
+color:#fff;
+}
+
+.instagram .mock-logo,
+.website .mock-logo,
+.business-card .mock-logo{
 font-family:Georgia,serif;
-font-size:60px;
+font-size:55px;
 color:var(--boardAccent,#c9a45c);
 }
 
 .instagram .mock-name{
 margin-top:10px;
-font-size:12px;
+font-size:11px;
 letter-spacing:4px;
 }
 
 .website{
-height:250px;
 background:#f5f5f5;
 color:#111;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
 }
 
 .website .mock-logo{
-font-family:Georgia,serif;
-font-size:45px;
-color:var(--boardAccent,#c9a45c);
+font-size:35px;
 text-align:center;
 }
 
-.website .mock-button{
+.mock-button{
 margin-top:15px;
 padding:7px 15px;
 background:#111;
 color:#fff;
 font-size:9px;
-letter-spacing:1px;
 }
 
 .business-card{
-height:250px;
 background:#111;
 color:#fff;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-}
-
-.business-card .mock-logo{
-font-family:Georgia,serif;
-font-size:45px;
-color:var(--boardAccent,#c9a45c);
 }
 
 .business-card .mock-info{
@@ -763,8 +730,6 @@ margin-top:15px;
 letter-spacing:2px;
 color:#aaa;
 }
-
-/* ACTIONS */
 
 .board-actions{
 margin-top:35px;
@@ -786,8 +751,6 @@ background:#111;
 color:#fff;
 }
 
-/* FOOTER */
-
 footer{
 padding:30px 7%;
 border-top:1px solid #292929;
@@ -799,45 +762,31 @@ font-size:12px;
 
 @media(max-width:800px){
 
-nav{
-display:none;
-}
+nav{display:none}
 
 .hero{
 flex-direction:column;
 align-items:flex-start;
 }
 
-.hero-card{
-width:100%;
-}
+.hero-card{width:100%}
 
-.steps{
-grid-template-columns:1fr;
-}
+.steps{grid-template-columns:1fr}
 
-.concepts{
-grid-template-columns:1fr;
-}
+.concepts{grid-template-columns:1fr}
 
-.form{
-padding:25px;
-}
+.form{padding:25px}
 
 .board-info,
 .mockup-grid{
 grid-template-columns:1fr;
 }
 
-.brand-board{
-padding:25px;
-}
-
-.logo-box{
-height:230px;
-}
+.brand-board{padding:25px}
 
 }
+
+/* PRINT */
 
 @media print{
 
@@ -863,7 +812,6 @@ border:none;
 }
 
 }
-
 </style>
 </head>
 
@@ -882,8 +830,6 @@ LUXUR<span class="gold">I</span>ID
 
 </header>
 
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -911,13 +857,9 @@ Créer mon identité →
 
 <div class="hero-card">
 
-<div class="hero-letter">
-L
-</div>
+<div class="hero-letter">L</div>
 
-<div class="hero-name">
-LUXURIID
-</div>
+<div class="hero-name">LUXURIID</div>
 
 <div style="margin-top:20px;color:#c9a45c;">
 YOUR BRAND. YOUR IDENTITY.
@@ -928,17 +870,11 @@ YOUR BRAND. YOUR IDENTITY.
 </section>
 
 
-<!-- FONCTIONNEMENT -->
-
 <section id="fonctionnement">
 
-<div class="eyebrow">
-NOTRE MÉTHODE
-</div>
+<div class="eyebrow">NOTRE MÉTHODE</div>
 
-<h2>
-De l'idée à la marque.
-</h2>
+<h2>De l'idée à la marque.</h2>
 
 <div class="steps">
 
@@ -971,25 +907,17 @@ De l'idée à la marque.
 </section>
 
 
-<!-- CREATION -->
-
 <section class="creation" id="creation">
 
-<div class="eyebrow">
-VOTRE PROJET
-</div>
+<div class="eyebrow">VOTRE PROJET</div>
 
-<h2>
-Créons votre identité.
-</h2>
+<h2>Créons votre identité.</h2>
 
 <div class="form">
 
 <div class="form-group">
 
-<label>
-Nom de votre entreprise
-</label>
+<label>Nom de votre entreprise</label>
 
 <input
 id="company"
@@ -1001,9 +929,7 @@ placeholder="Ex : Écurie du Soleil"
 
 <div class="form-group">
 
-<label>
-Secteur d'activité
-</label>
+<label>Secteur d'activité</label>
 
 <select id="sector">
 
@@ -1030,9 +956,7 @@ Secteur d'activité
 
 <div class="form-group">
 
-<label>
-Style recherché
-</label>
+<label>Style recherché</label>
 
 <div class="options">
 
@@ -1050,9 +974,7 @@ Style recherché
 
 <div class="form-group">
 
-<label>
-Couleur principale
-</label>
+<label>Couleur principale</label>
 
 <div class="options">
 
@@ -1070,9 +992,7 @@ Couleur principale
 
 <div class="form-group">
 
-<label>
-Décrivez votre projet
-</label>
+<label>Décrivez votre projet</label>
 
 <textarea
 id="description"
@@ -1091,8 +1011,6 @@ Générer mes concepts →
 </section>
 
 
-<!-- LOADING -->
-
 <section class="loading" id="loading">
 
 <div class="eyebrow">
@@ -1100,26 +1018,24 @@ LUXURIID STUDIO
 </div>
 
 <h2>
-Analyse de votre projet...
+Création de vos concepts...
 </h2>
 
 <div class="loader"></div>
 
 <p id="loadingText">
-Analyse du secteur et de votre direction artistique...
+Analyse de votre projet...
 </p>
 
 </section>
 
-
-<!-- RESULTS -->
 
 <section class="results" id="results">
 
 <div class="results-header">
 
 <div class="eyebrow">
-LUXURIID STUDIO • V4-D
+LUXURIID STUDIO • V4-E
 </div>
 
 <h2 id="resultCompany">
@@ -1127,23 +1043,14 @@ Votre marque
 </h2>
 
 <p id="resultIntro">
-Trois directions créatives ont été préparées
-à partir de votre projet.
+Trois directions créatives ont été préparées.
 </p>
 
 <div class="project-meta">
 
-<div class="meta-pill" id="sectorResult">
-Secteur
-</div>
-
-<div class="meta-pill" id="styleResult">
-Style
-</div>
-
-<div class="meta-pill" id="colorResult">
-Couleur
-</div>
+<div class="meta-pill" id="sectorResult">Secteur</div>
+<div class="meta-pill" id="styleResult">Style</div>
+<div class="meta-pill" id="colorResult">Couleur</div>
 
 </div>
 
@@ -1152,8 +1059,6 @@ Couleur
 
 <div class="concepts">
 
-
-<!-- CONCEPT 1 -->
 
 <div class="concept-card" id="card1">
 
@@ -1167,30 +1072,23 @@ CONCEPT 01 • SIGNATURE
 
 <div class="logo-box logo-one" id="logoOne">
 
-<div class="monogram" id="symbol1">
-L
+<div class="symbol-wrap">
+<div class="symbol" id="symbol1">LS</div>
 </div>
 
-<div class="name" id="name1">
-LUXURIID
-</div>
+<div class="name" id="name1">LUXURIID</div>
 
-<div class="sub" id="sub1">
-IDENTITY STUDIO
-</div>
+<div class="sub">SIGNATURE IDENTITY</div>
 
 </div>
 
-<h3 id="title1">
-Signature
-</h3>
+<h3 id="title1">Signature</h3>
 
 <p id="description1">
-Une direction premium et intemporelle.
+Une identité premium et intemporelle.
 </p>
 
-<div class="concept-sector" id="sectorConcept1">
-</div>
+<div class="concept-sector" id="sectorConcept1"></div>
 
 <button class="choose" onclick="chooseConcept(1)">
 Choisir ce concept
@@ -1198,8 +1096,6 @@ Choisir ce concept
 
 </div>
 
-
-<!-- CONCEPT 2 -->
 
 <div class="concept-card" id="card2">
 
@@ -1209,28 +1105,23 @@ CONCEPT 02 • MODERN
 
 <div class="logo-box logo-two" id="logoTwo">
 
-<div class="monogram" id="symbol2">
-L
+<div class="symbol-wrap">
+<div class="symbol" id="symbol2">LS</div>
 </div>
 
-<div class="name" id="name2">
-LUXURIID
-</div>
+<div class="name" id="name2">LUXURIID</div>
 
-<div class="line"></div>
+<div class="sub">MODERN IDENTITY</div>
 
 </div>
 
-<h3 id="title2">
-Modern
-</h3>
+<h3 id="title2">Modern</h3>
 
 <p id="description2">
 Une identité contemporaine et claire.
 </p>
 
-<div class="concept-sector" id="sectorConcept2">
-</div>
+<div class="concept-sector" id="sectorConcept2"></div>
 
 <button class="choose" onclick="chooseConcept(2)">
 Choisir ce concept
@@ -1238,8 +1129,6 @@ Choisir ce concept
 
 </div>
 
-
-<!-- CONCEPT 3 -->
 
 <div class="concept-card" id="card3">
 
@@ -1249,30 +1138,23 @@ CONCEPT 03 • BOLD
 
 <div class="logo-box logo-three" id="logoThree">
 
-<div class="monogram" id="symbol3">
-L
-</div>
+<div class="symbol" id="symbol3">LS</div>
 
-<div class="name" id="name3">
-LUXURIID
-</div>
+<div class="slash"></div>
 
-<div class="sub" id="sub3">
-EST. 2026
-</div>
+<div class="name" id="name3">LUXURIID</div>
+
+<div class="sub">BOLD IDENTITY</div>
 
 </div>
 
-<h3 id="title3">
-Bold
-</h3>
+<h3 id="title3">Bold</h3>
 
 <p id="description3">
 Une identité forte et distinctive.
 </p>
 
-<div class="concept-sector" id="sectorConcept3">
-</div>
+<div class="concept-sector" id="sectorConcept3"></div>
 
 <button class="choose" onclick="chooseConcept(3)">
 Choisir ce concept
@@ -1282,8 +1164,6 @@ Choisir ce concept
 
 </div>
 
-
-<!-- BRAND BOARD -->
 
 <div class="brand-board" id="brandBoard">
 
@@ -1302,8 +1182,8 @@ Votre direction visuelle sélectionnée.
 
 <div class="board-logo" id="boardLogo">
 
-<div class="board-monogram" id="boardLetter">
-L
+<div class="board-symbol" id="boardLetter">
+LS
 </div>
 
 <div class="board-name" id="boardLogoName">
@@ -1317,9 +1197,7 @@ LUXURIID
 
 <div class="board-block">
 
-<h4>
-Direction artistique
-</h4>
+<h4>Direction artistique</h4>
 
 <p id="boardStyle">
 Concept sélectionné
@@ -1330,21 +1208,16 @@ Concept sélectionné
 
 <div class="board-block">
 
-<h4>
-Palette recommandée
-</h4>
+<h4>Palette recommandée</h4>
 
-<div class="palette" id="boardPalette">
-</div>
+<div class="palette" id="boardPalette"></div>
 
 </div>
 
 
 <div class="board-block">
 
-<h4>
-Typographie
-</h4>
+<h4>Typographie</h4>
 
 <p id="boardTypography">
 Typographie premium.
@@ -1355,9 +1228,7 @@ Typographie premium.
 
 <div class="board-block">
 
-<h4>
-Positionnement
-</h4>
+<h4>Positionnement</h4>
 
 <p id="boardPosition">
 Une identité cohérente et mémorable.
@@ -1367,8 +1238,6 @@ Une identité cohérente et mémorable.
 
 </div>
 
-
-<!-- MOCKUPS -->
 
 <div class="mockups">
 
@@ -1387,12 +1256,10 @@ INSTAGRAM
 
 <div class="instagram">
 
-<div class="mock-logo" id="instagramLogo">
-L
-</div>
+<div class="mock-logo" id="instagramLogo">LS</div>
 
 <div class="mock-name" id="instagramName">
-MARQUE
+LUXURIID
 </div>
 
 </div>
@@ -1409,7 +1276,7 @@ SITE INTERNET
 <div class="website">
 
 <div class="mock-logo" id="websiteLogo">
-MARQUE
+LUXURIID
 </div>
 
 <div class="mock-button">
@@ -1430,11 +1297,11 @@ CARTE DE VISITE
 <div class="business-card">
 
 <div class="mock-logo" id="cardLogo">
-L
+LS
 </div>
 
 <div class="mock-info" id="cardInfo">
-MARQUE • CONTACT
+LUXURIID • CONTACT
 </div>
 
 </div>
@@ -1465,10 +1332,7 @@ Imprimer / sauvegarder
 
 
 <footer>
-
-© 2026 LUXURIID —
-Votre identité. Votre image. Votre marque.
-
+© 2026 LUXURIID — Votre identité. Votre image. Votre marque.
 </footer>
 
 
@@ -1479,12 +1343,7 @@ let selectedColor="";
 let companyName="";
 let projectSector="";
 let projectDescription="";
-let selectedConcept=0;
 
-
-/* =========================
-STYLE
-========================= */
 
 function selectStyle(element){
 
@@ -1501,10 +1360,6 @@ selectedStyle=element.innerText;
 }
 
 
-/* =========================
-COULEUR
-========================= */
-
 function selectColor(element){
 
 element.parentElement
@@ -1520,21 +1375,11 @@ selectedColor=element.innerText;
 }
 
 
-/* =========================
-MONOGRAMME
-========================= */
-
 function createMonogram(name){
 
-const clean=name
+const words=name
 .replace(/[^a-zA-ZÀ-ÿ0-9 ]/g,"")
-.trim();
-
-if(!clean){
-return "L";
-}
-
-const words=clean
+.trim()
 .split(/\s+/)
 .filter(Boolean);
 
@@ -1546,6 +1391,8 @@ words[1].charAt(0)
 ).toUpperCase();
 
 }
+
+if(words.length===1){
 
 if(words[0].length>=6){
 
@@ -1560,22 +1407,20 @@ return words[0].charAt(0).toUpperCase();
 
 }
 
+return "L";
 
-/* =========================
-COULEUR
-========================= */
+}
+
 
 function getColor(){
 
 const colors={
-
 "Noir":"#111111",
-"Blanc":"#111111",
+"Blanc":"#222222",
 "Doré":"#c9a45c",
 "Rouge":"#a92d2d",
 "Bleu":"#315c91",
 "Vert":"#48735b"
-
 };
 
 return colors[selectedColor]||"#c9a45c";
@@ -1583,11 +1428,434 @@ return colors[selectedColor]||"#c9a45c";
 }
 
 
-/* =========================
-PALETTES
-========================= */
+const sectorData={
 
-function getPalette(){
+"Équestre":{
+keywords:"élégance, mouvement, confiance et patrimoine",
+recommended:"Signature",
+typography:"Georgia / serif — élégante, traditionnelle et premium.",
+position:"Une identité raffinée inspirée de l'univers équestre, pensée pour transmettre maîtrise, confiance et prestige.",
+concepts:[
+"Une signature inspirée des blasons, de la sellerie et des grandes maisons équestres.",
+"Une interprétation contemporaine de l'univers du cheval, pensée pour le digital.",
+"Une identité plus sportive inspirée du mouvement, de la puissance et de la performance."
+]
+},
+
+"Automobile":{
+keywords:"performance, précision, vitesse et innovation",
+recommended:"Bold",
+typography:"Arial Bold — précise, moderne et dynamique.",
+position:"Une identité conçue pour exprimer la performance, la précision et la puissance automobile.",
+concepts:[
+"Une identité premium inspirée des constructeurs haut de gamme.",
+"Une direction moderne inspirée de la précision mécanique et technologique.",
+"Une identité agressive et dynamique pensée pour communiquer vitesse et performance."
+]
+},
+
+"Agriculture":{
+keywords:"authenticité, terroir, nature et savoir-faire",
+recommended:"Signature",
+typography:"Georgia — authentique et institutionnelle.",
+position:"Une identité qui valorise le savoir-faire et l'authenticité.",
+concepts:[
+"Une identité authentique inspirée du terroir.",
+"Une approche contemporaine pour moderniser l'image agricole.",
+"Une direction robuste et identifiable adaptée aux activités agricoles."
+]
+},
+
+"Restauration":{
+keywords:"goût, expérience, convivialité et caractère",
+recommended:"Signature",
+typography:"Georgia — gastronomique et chaleureuse.",
+position:"Une identité pensée pour créer une expérience visuelle mémorable.",
+concepts:[
+"Une identité gastronomique élégante inspirée des grandes maisons.",
+"Une direction moderne adaptée au digital et aux réseaux sociaux.",
+"Une identité expressive destinée à créer une marque immédiatement reconnaissable."
+]
+},
+
+"BTP":{
+keywords:"solidité, construction, fiabilité et précision",
+recommended:"Bold",
+typography:"Arial Bold — robuste et professionnelle.",
+position:"Une identité solide qui communique fiabilité et expertise.",
+concepts:[
+"Une identité institutionnelle construite autour de la confiance.",
+"Une direction géométrique inspirée de l'architecture.",
+"Une identité forte utilisant des formes franches et puissantes."
+]
+},
+
+"Mode":{
+keywords:"élégance, tendance, personnalité et distinction",
+recommended:"Signature",
+typography:"Georgia — éditoriale et haut de gamme.",
+position:"Une identité distinctive pensée pour construire une marque de mode forte.",
+concepts:[
+"Une identité haute couture élégante et intemporelle.",
+"Une direction minimaliste pensée pour le digital.",
+"Une identité expressive destinée à créer une signature forte."
+]
+},
+
+"Sport":{
+keywords:"énergie, mouvement, performance et dépassement",
+recommended:"Bold",
+typography:"Arial Bold — énergique et impactante.",
+position:"Une identité dynamique conçue pour communiquer performance et dépassement.",
+concepts:[
+"Une identité premium inspirée de la performance.",
+"Une direction digitale moderne et minimaliste.",
+"Une identité forte et énergique immédiatement reconnaissable."
+]
+},
+
+"Immobilier":{
+keywords:"confiance, patrimoine, architecture et prestige",
+recommended:"Signature",
+typography:"Georgia — institutionnelle et premium.",
+position:"Une identité conçue pour valoriser le patrimoine et renforcer la confiance.",
+concepts:[
+"Une identité immobilière premium.",
+"Une direction architecturale moderne et géométrique.",
+"Une identité forte destinée aux acteurs immobiliers différenciants."
+]
+},
+
+"Technologie":{
+keywords:"innovation, simplicité, intelligence et futur",
+recommended:"Modern",
+typography:"Arial — digitale et contemporaine.",
+position:"Une identité digitale conçue pour communiquer innovation et modernité.",
+concepts:[
+"Une identité technologique premium.",
+"Une direction minimaliste pensée pour les produits numériques.",
+"Une identité audacieuse destinée à marquer les esprits."
+]
+},
+
+"Commerce":{
+keywords:"proximité, confiance, efficacité et reconnaissance",
+recommended:"Modern",
+typography:"Arial — claire et accessible.",
+position:"Une identité claire et mémorable conçue pour développer la reconnaissance.",
+concepts:[
+"Une identité premium qui valorise la qualité.",
+"Une direction moderne pour les supports digitaux et physiques.",
+"Une identité forte destinée à améliorer la visibilité commerciale."
+]
+},
+
+"Beauté":{
+keywords:"élégance, soin, douceur et sophistication",
+recommended:"Signature",
+typography:"Georgia — raffinée et premium.",
+position:"Une identité élégante conçue pour transmettre soin et sophistication.",
+concepts:[
+"Une identité beauté luxueuse et raffinée.",
+"Une direction minimaliste et lumineuse.",
+"Une identité audacieuse pour une marque contemporaine."
+]
+},
+
+"Hôtellerie":{
+keywords:"hospitalité, expérience, prestige et confort",
+recommended:"Signature",
+typography:"Georgia — élégante et chaleureuse.",
+position:"Une identité pensée pour transformer l'expérience client en univers de marque.",
+concepts:[
+"Une identité hôtelière premium.",
+"Une direction moderne pour les voyageurs contemporains.",
+"Une identité distinctive pour les établissements à forte personnalité."
+]
+},
+
+"Autre":{
+keywords:"personnalité, cohérence, différenciation et confiance",
+recommended:"Modern",
+typography:"Arial — polyvalente et contemporaine.",
+position:"Une identité construite autour de la personnalité de l'entreprise.",
+concepts:[
+"Une direction premium et intemporelle.",
+"Une identité moderne et reconnaissable.",
+"Une direction forte destinée à différencier la marque."
+]
+}
+
+};
+
+
+const styleData={
+
+"Luxe":"premium, sophistiqué et exclusif",
+"Moderne":"contemporain, digital et épuré",
+"Minimaliste":"simple, précis et fonctionnel",
+"Sportif":"dynamique, énergique et impactant",
+"Élégant":"raffiné, équilibré et intemporel",
+"Industriel":"robuste, structuré et authentique"
+
+};
+
+
+function applyAccent(){
+
+const accent=getColor();
+
+document
+.querySelectorAll(".logo-one,.logo-two,.logo-three")
+.forEach(function(el){
+
+el.style.setProperty("--accent",accent);
+
+});
+
+}
+
+
+function generateConcepts(){
+
+companyName=
+document.getElementById("company").value.trim();
+
+projectSector=
+document.getElementById("sector").value;
+
+projectDescription=
+document.getElementById("description").value.trim();
+
+
+if(companyName===""){
+alert("Veuillez entrer le nom de votre entreprise.");
+return;
+}
+
+if(projectSector===""){
+alert("Veuillez choisir votre secteur.");
+return;
+}
+
+if(selectedStyle===""){
+alert("Veuillez choisir un style.");
+return;
+}
+
+if(selectedColor===""){
+alert("Veuillez choisir une couleur principale.");
+return;
+}
+
+
+document.getElementById("loading").style.display="block";
+
+document.getElementById("loading")
+.scrollIntoView({behavior:"smooth"});
+
+
+setTimeout(function(){
+
+const monogram=createMonogram(companyName);
+
+const data=
+sectorData[projectSector]||
+sectorData["Autre"];
+
+const style=
+styleData[selectedStyle]||
+styleData["Moderne"];
+
+
+document.getElementById("resultCompany")
+.innerText=companyName;
+
+document.getElementById("resultIntro")
+.innerText=
+"Trois directions visuelles adaptées au secteur "
++projectSector+
+", au style "
++selectedStyle.toLowerCase()+
+" et à votre projet.";
+
+
+document.getElementById("sectorResult")
+.innerText=projectSector;
+
+document.getElementById("styleResult")
+.innerText=selectedStyle;
+
+document.getElementById("colorResult")
+.innerText=selectedColor;
+
+
+document.getElementById("symbol1").innerText=monogram;
+document.getElementById("symbol2").innerText=monogram;
+document.getElementById("symbol3").innerText=monogram;
+
+
+document.getElementById("name1").innerText=companyName.toUpperCase();
+document.getElementById("name2").innerText=companyName.toUpperCase();
+document.getElementById("name3").innerText=companyName.toUpperCase();
+
+
+document.getElementById("description1").innerText=
+data.concepts[0]+
+" Cette direction privilégie un univers "+
+style+
+".";
+
+document.getElementById("description2").innerText=
+data.concepts[1]+
+" Le rendu reste volontairement "+
+style+
+".";
+
+document.getElementById("description3").innerText=
+data.concepts[2]+
+" Une présence visuelle "+
+style+
+" renforce la personnalité de la marque.";
+
+
+document.getElementById("title1").innerText="Signature";
+
+document.getElementById("title2").innerText="Modern";
+
+document.getElementById("title3").innerText="Bold";
+
+
+document.getElementById("sectorConcept1").innerText=
+projectSector+" • "+data.keywords;
+
+document.getElementById("sectorConcept2").innerText=
+projectSector+" • "+selectedStyle;
+
+document.getElementById("sectorConcept3").innerText=
+projectSector+" • "+style;
+
+
+applyAccent();
+
+
+document.getElementById("loading").style.display="none";
+
+document.getElementById("results").style.display="block";
+
+document.getElementById("brandBoard").style.display="none";
+
+document.getElementById("results")
+.scrollIntoView({behavior:"smooth"});
+
+},1800);
+
+}
+
+
+function chooseConcept(number){
+
+document
+.querySelectorAll(".concept-card")
+.forEach(function(card){
+card.classList.remove("active");
+});
+
+document
+.getElementById("card"+number)
+.classList.add("active");
+
+
+const monogram=createMonogram(companyName);
+
+const data=
+sectorData[projectSector]||
+sectorData["Autre"];
+
+
+const boardLogo=
+document.getElementById("boardLogo");
+
+boardLogo.className="board-logo";
+
+if(number===1){
+boardLogo.classList.add("signature");
+}
+
+if(number===2){
+boardLogo.classList.add("modern");
+}
+
+if(number===3){
+boardLogo.classList.add("bold");
+}
+
+
+boardLogo.style.setProperty(
+"--boardAccent",
+getColor()
+);
+
+
+document.getElementById("boardLetter")
+.innerText=monogram;
+
+document.getElementById("boardLogoName")
+.innerText=companyName.toUpperCase();
+
+document.getElementById("boardName")
+.innerText=companyName;
+
+
+const directionNames={
+1:"Signature — "+data.concepts[0],
+2:"Modern — "+data.concepts[1],
+3:"Bold — "+data.concepts[2]
+};
+
+
+document.getElementById("boardStyle")
+.innerText=directionNames[number];
+
+document.getElementById("boardTypography")
+.innerText=data.typography;
+
+document.getElementById("boardPosition")
+.innerText=data.position;
+
+
+document.getElementById("boardDescription")
+.innerText=
+"Identité créée pour "+
+companyName+
+", secteur "+
+projectSector+
+", style "+
+selectedStyle+
+" et palette "+
+selectedColor+".";
+
+
+buildPalette();
+
+updateMockups(monogram);
+
+
+document.getElementById("brandBoard")
+.style.display="block";
+
+document.getElementById("brandBoard")
+.scrollIntoView({behavior:"smooth"});
+
+}
+
+
+function buildPalette(){
+
+const palette=document.getElementById("boardPalette");
+
+palette.innerHTML="";
+
 
 const palettes={
 
@@ -1613,7 +1881,7 @@ const palettes={
 ],
 
 "Rouge":[
-["#9E2525","Rouge"],
+["#A92D2D","Rouge"],
 ["#111111","Noir"],
 ["#F4F1EC","Ivoire"],
 ["#777777","Gris"]
@@ -1635,637 +1903,40 @@ const palettes={
 
 };
 
-return palettes[selectedColor]||palettes["Doré"];
 
-}
+const paletteData=
+palettes[selectedColor]||palettes["Doré"];
 
 
-/* =========================
-MOTEUR SECTORIEL
-========================= */
+paletteData.forEach(function(item){
 
-const sectorData={
-
-"Équestre":{
-keywords:"élégance, mouvement, confiance et patrimoine",
-recommended:"Signature",
-typography:"Georgia / serif — élégante, traditionnelle et premium.",
-position:"Une identité raffinée inspirée de l'univers équestre, pensée pour transmettre maîtrise, confiance et prestige.",
-concepts:[
-"Une identité équestre premium inspirée des blasons, des selleries et de l'élégance des grandes maisons.",
-"Une interprétation contemporaine de l'univers équestre avec une construction plus simple et digitale.",
-"Une direction plus forte et sportive, inspirée du mouvement et de la performance du cheval."
-]
-},
-
-"Automobile":{
-keywords:"performance, précision, vitesse et innovation",
-recommended:"Bold",
-typography:"Arial Bold / sans-serif — précise, moderne et dynamique.",
-position:"Une identité conçue pour exprimer la performance, la précision et la puissance automobile.",
-concepts:[
-"Une identité premium inspirée des constructeurs haut de gamme et de la précision mécanique.",
-"Une direction moderne et technologique basée sur des lignes nettes et une construction minimaliste.",
-"Une identité agressive et dynamique pensée pour communiquer vitesse et performance."
-]
-},
-
-"Agriculture":{
-keywords:"authenticité, terroir, nature et savoir-faire",
-recommended:"Signature",
-typography:"Georgia / serif — authentique, chaleureuse et institutionnelle.",
-position:"Une identité qui valorise le savoir-faire, la proximité et l'authenticité du monde agricole.",
-concepts:[
-"Une identité authentique inspirée du terroir et des marques agricoles traditionnelles.",
-"Une approche contemporaine permettant de moderniser l'image de l'exploitation.",
-"Une direction robuste et identifiable adaptée aux activités agricoles modernes."
-]
-},
-
-"Restauration":{
-keywords:"goût, expérience, convivialité et caractère",
-recommended:"Signature",
-typography:"Georgia / serif — gastronomique, chaleureuse et élégante.",
-position:"Une identité pensée pour créer une expérience visuelle aussi mémorable que l'expérience client.",
-concepts:[
-"Une identité gastronomique élégante inspirée des grandes maisons.",
-"Une direction moderne et lisible adaptée au digital et aux réseaux sociaux.",
-"Une identité forte et expressive destinée à créer une marque immédiatement reconnaissable."
-]
-},
-
-"BTP":{
-keywords:"solidité, construction, fiabilité et précision",
-recommended:"Bold",
-typography:"Arial Bold / sans-serif — robuste, lisible et professionnelle.",
-position:"Une identité solide et structurée qui communique fiabilité, expertise et professionnalisme.",
-concepts:[
-"Une identité institutionnelle construite autour de la confiance et du savoir-faire.",
-"Une direction géométrique et contemporaine inspirée de l'architecture.",
-"Une identité forte utilisant des formes franches et une présence visuelle importante."
-]
-},
-
-"Mode":{
-keywords:"élégance, tendance, personnalité et distinction",
-recommended:"Signature",
-typography:"Georgia / serif — éditoriale, élégante et haut de gamme.",
-position:"Une identité éditoriale et distinctive pensée pour construire une marque de mode forte.",
-concepts:[
-"Une identité haute couture, élégante et intemporelle.",
-"Une direction minimaliste pensée pour fonctionner parfaitement sur le digital.",
-"Une identité expressive et audacieuse destinée à créer une signature visuelle forte."
-]
-},
-
-"Sport":{
-keywords:"énergie, mouvement, performance et dépassement",
-recommended:"Bold",
-typography:"Arial Bold / sans-serif — énergique, sportive et impactante.",
-position:"Une identité dynamique conçue pour communiquer énergie, performance et dépassement de soi.",
-concepts:[
-"Une identité premium inspirée de la performance sportive.",
-"Une direction digitale moderne et minimaliste.",
-"Une identité forte et énergique conçue pour être immédiatement reconnaissable."
-]
-},
-
-"Immobilier":{
-keywords:"confiance, patrimoine, architecture et prestige",
-recommended:"Signature",
-typography:"Georgia / serif — institutionnelle, premium et rassurante.",
-position:"Une identité conçue pour valoriser le patrimoine et renforcer la confiance des clients.",
-concepts:[
-"Une identité immobilière premium inspirée des grandes maisons.",
-"Une direction architecturale moderne basée sur des formes géométriques.",
-"Une identité forte destinée aux acteurs immobiliers souhaitant se différencier."
-]
-},
-
-"Technologie":{
-keywords:"innovation, simplicité, intelligence et futur",
-recommended:"Modern",
-typography:"Arial / sans-serif — digitale, claire et contemporaine.",
-position:"Une identité digitale conçue pour communiquer innovation, simplicité et modernité.",
-concepts:[
-"Une identité technologique premium et sophistiquée.",
-"Une direction minimaliste pensée pour les produits numériques.",
-"Une identité plus audacieuse et expérimentale destinée à marquer les esprits."
-]
-},
-
-"Commerce":{
-keywords:"proximité, confiance, efficacité et reconnaissance",
-recommended:"Modern",
-typography:"Arial / sans-serif — lisible, accessible et moderne.",
-position:"Une identité claire et mémorable conçue pour développer la reconnaissance de la marque.",
-concepts:[
-"Une identité premium qui valorise la qualité et la confiance.",
-"Une direction moderne pensée pour les supports digitaux et physiques.",
-"Une identité forte destinée à améliorer la visibilité commerciale."
-]
-},
-
-"Beauté":{
-keywords:"élégance, soin, douceur et sophistication",
-recommended:"Signature",
-typography:"Georgia / serif — raffinée, féminine et premium.",
-position:"Une identité élégante conçue pour transmettre soin, qualité et sophistication.",
-concepts:[
-"Une identité beauté luxueuse et raffinée.",
-"Une direction minimaliste et lumineuse.",
-"Une identité plus audacieuse destinée aux marques beauté contemporaines."
-]
-},
-
-"Hôtellerie":{
-keywords:"hospitalité, expérience, prestige et confort",
-recommended:"Signature",
-typography:"Georgia / serif — élégante, chaleureuse et institutionnelle.",
-position:"Une identité pensée pour transformer l'expérience client en véritable univers de marque.",
-concepts:[
-"Une identité hôtelière premium inspirée des établissements de prestige.",
-"Une direction moderne et minimaliste adaptée aux voyageurs contemporains.",
-"Une identité distinctive destinée aux établissements avec une forte personnalité."
-]
-},
-
-"Autre":{
-keywords:"personnalité, cohérence, différenciation et confiance",
-recommended:"Modern",
-typography:"Arial / sans-serif — polyvalente, claire et contemporaine.",
-position:"Une identité construite autour de la personnalité et du positionnement spécifique de votre entreprise.",
-concepts:[
-"Une direction premium et intemporelle.",
-"Une identité moderne et facilement reconnaissable.",
-"Une direction forte destinée à différencier la marque."
-]
-}
-
-};
-
-
-/* =========================
-STYLE DATA
-========================= */
-
-const styleData={
-
-"Luxe":{
-modifier:"premium, sophistiqué et exclusif",
-accent:"#c9a45c"
-},
-
-"Moderne":{
-modifier:"contemporain, digital et épuré",
-accent:"#315c91"
-},
-
-"Minimaliste":{
-modifier:"simple, précis et fonctionnel",
-accent:"#111111"
-},
-
-"Sportif":{
-modifier:"dynamique, énergique et impactant",
-accent:"#a92d2d"
-},
-
-"Élégant":{
-modifier:"raffiné, équilibré et intemporel",
-accent:"#c9a45c"
-},
-
-"Industriel":{
-modifier:"robuste, structuré et authentique",
-accent:"#777777"
-}
-
-};
-
-
-/* =========================
-ACCENT
-========================= */
-
-function applyAccent(){
-
-const accent=getColor();
-
-document
-.querySelectorAll(".logo-one,.logo-two,.logo-three")
-.forEach(function(el){
-
-el.style.setProperty(
-"--accent",
-accent
-);
-
-});
-
-}
-
-
-/* =========================
-GENERATION
-========================= */
-
-function generateConcepts(){
-
-companyName=
-document.getElementById("company")
-.value.trim();
-
-projectSector=
-document.getElementById("sector")
-.value;
-
-projectDescription=
-document.getElementById("description")
-.value.trim();
-
-
-if(companyName===""){
-alert("Veuillez entrer le nom de votre entreprise.");
-return;
-}
-
-if(projectSector===""){
-alert("Veuillez choisir votre secteur.");
-return;
-}
-
-if(selectedStyle===""){
-alert("Veuillez choisir un style.");
-return;
-}
-
-if(selectedColor===""){
-alert("Veuillez choisir une couleur principale.");
-return;
-}
-
-
-document.getElementById("loading")
-.style.display="block";
-
-
-document.getElementById("loading")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-
-const loadingMessages=[
-
-"Analyse du secteur d'activité...",
-
-"Analyse de votre direction artistique...",
-
-"Construction des concepts graphiques...",
-
-"Préparation de votre identité visuelle..."
-
-];
-
-let index=0;
-
-const messageInterval=setInterval(function(){
-
-document.getElementById("loadingText")
-.innerText=loadingMessages[index];
-
-index=(index+1)%loadingMessages.length;
-
-},450);
-
-
-setTimeout(function(){
-
-clearInterval(messageInterval);
-
-const monogram=createMonogram(companyName);
-
-const data=
-sectorData[projectSector]||
-sectorData["Autre"];
-
-const style=
-styleData[selectedStyle]||
-styleData["Moderne"];
-
-
-document.getElementById("resultCompany")
-.innerText=companyName;
-
-
-document.getElementById("resultIntro")
-.innerText=
-"Trois directions créatives adaptées au secteur "
-+projectSector+
-", au style "
-+selectedStyle.toLowerCase()+
-" et à votre vision de marque.";
-
-
-document.getElementById("symbol1")
-.innerText=monogram;
-
-document.getElementById("symbol2")
-.innerText=monogram;
-
-document.getElementById("symbol3")
-.innerText=monogram;
-
-
-document.getElementById("name1")
-.innerText=companyName.toUpperCase();
-
-document.getElementById("name2")
-.innerText=companyName.toUpperCase();
-
-document.getElementById("name3")
-.innerText=companyName.toUpperCase();
-
-
-document.getElementById("sectorResult")
-.innerText=projectSector;
-
-document.getElementById("styleResult")
-.innerText=selectedStyle;
-
-document.getElementById("colorResult")
-.innerText=selectedColor;
-
-
-document.getElementById("description1")
-.innerText=
-data.concepts[0]+
-" La direction privilégie un univers "+
-style.modifier+
-" et utilise "+data.keywords+".";
-
-
-document.getElementById("description2")
-.innerText=
-data.concepts[1]+
-" Le rendu est volontairement "+
-style.modifier+
-" afin de conserver une identité claire.";
-
-
-document.getElementById("description3")
-.innerText=
-data.concepts[2]+
-" Cette direction privilégie une présence "+
-style.modifier+
-" pour renforcer la personnalité de "+companyName+".";
-
-
-document.getElementById("title1")
-.innerText=
-data.recommended==="Signature"
-?
-"Signature"
-:
-"Premium";
-
-
-document.getElementById("title2")
-.innerText=
-data.recommended==="Modern"
-?
-"Modern"
-:
-"Contemporary";
-
-
-document.getElementById("title3")
-.innerText=
-data.recommended==="Bold"
-?
-"Bold"
-:
-"Impact";
-
-
-document.getElementById("sectorConcept1")
-.innerText=
-projectSector+" • "+style.modifier;
-
-document.getElementById("sectorConcept2")
-.innerText=
-projectSector+" • "+data.keywords;
-
-document.getElementById("sectorConcept3")
-.innerText=
-projectSector+" • "+style.modifier;
-
-
-applyAccent();
-
-
-document.getElementById("loading")
-.style.display="none";
-
-document.getElementById("results")
-.style.display="block";
-
-
-document.getElementById("brandBoard")
-.style.display="none";
-
-
-document.getElementById("results")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-},1800);
-
-}
-
-
-/* =========================
-CHOIX CONCEPT
-========================= */
-
-function chooseConcept(number){
-
-selectedConcept=number;
-
-
-document
-.querySelectorAll(".concept-card")
-.forEach(function(card){
-
-card.classList.remove("active");
-
-});
-
-
-document
-.getElementById("card"+number)
-.classList.add("active");
-
-
-const monogram=
-createMonogram(companyName);
-
-const data=
-sectorData[projectSector]||
-sectorData["Autre"];
-
-const style=
-styleData[selectedStyle]||
-styleData["Moderne"];
-
-
-const boardLogo=
-document.getElementById("boardLogo");
-
-
-boardLogo.className="board-logo";
-
-
-if(number===1){
-
-boardLogo.classList.add("signature");
-
-}
-
-if(number===2){
-
-boardLogo.classList.add("modern");
-
-}
-
-if(number===3){
-
-boardLogo.classList.add("bold");
-
-}
-
-
-boardLogo.style.setProperty(
-"--boardAccent",
-getColor()
-);
-
-
-document.getElementById("boardLetter")
-.innerText=monogram;
-
-
-document.getElementById("boardLogoName")
-.innerText=
-companyName.toUpperCase();
-
-
-document.getElementById("boardName")
-.innerText=
-companyName;
-
-
-const directions={
-
-1:"Signature — "+data.concepts[0],
-
-2:"Modern — "+data.concepts[1],
-
-3:"Bold — "+data.concepts[2]
-
-};
-
-
-document.getElementById("boardStyle")
-.innerText=
-directions[number];
-
-
-document.getElementById("boardTypography")
-.innerText=
-data.typography;
-
-
-document.getElementById("boardDescription")
-.innerText=
-"Direction sélectionnée pour "+
-companyName+
-", dans le secteur "+
-projectSector+
-", avec un positionnement "+
-style.modifier+".";
-
-
-document.getElementById("boardPosition")
-.innerText=
-data.position;
-
-
-buildPalette();
-
-
-updateMockups(monogram);
-
-
-document.getElementById("brandBoard")
-.style.display="block";
-
-
-document.getElementById("brandBoard")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* =========================
-PALETTE
-========================= */
-
-function buildPalette(){
-
-const palette=
-document.getElementById("boardPalette");
-
-palette.innerHTML="";
-
-
-getPalette().forEach(function(item){
-
-const wrapper=
-document.createElement("div");
+const wrapper=document.createElement("div");
 
 wrapper.className="palette-item";
 
 
-const circle=
-document.createElement("div");
+const color=document.createElement("div");
 
-circle.className="color";
+color.className="color";
 
-circle.style.background=item[0];
+color.style.background=item[0];
 
 
-const label=
-document.createElement("div");
+const label=document.createElement("div");
 
 label.className="color-label";
 
 label.innerText=item[1];
 
 
-const code=
-document.createElement("div");
+const code=document.createElement("div");
 
 code.className="color-code";
 
 code.innerText=item[0];
 
 
-wrapper.appendChild(circle);
+wrapper.appendChild(color);
 
 wrapper.appendChild(label);
 
@@ -2277,10 +1948,6 @@ palette.appendChild(wrapper);
 
 }
 
-
-/* =========================
-MOCKUPS
-========================= */
 
 function updateMockups(monogram){
 
@@ -2302,20 +1969,14 @@ accent
 document.getElementById("instagramLogo")
 .innerText=monogram;
 
-
 document.getElementById("instagramName")
-.innerText=
-companyName.toUpperCase();
-
+.innerText=companyName.toUpperCase();
 
 document.getElementById("websiteLogo")
-.innerText=
-companyName.toUpperCase();
-
+.innerText=companyName.toUpperCase();
 
 document.getElementById("cardLogo")
 .innerText=monogram;
-
 
 document.getElementById("cardInfo")
 .innerText=
@@ -2326,21 +1987,14 @@ projectSector.toUpperCase()
 }
 
 
-/* =========================
-RETOUR CONCEPTS
-========================= */
-
 function backToConcepts(){
 
 document.getElementById("brandBoard")
 .style.display="none";
 
-
 document
 .querySelector(".concepts")
-.scrollIntoView({
-behavior:"smooth"
-});
+.scrollIntoView({behavior:"smooth"});
 
 }
 
