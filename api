@@ -1,1 +1,361 @@
+export default async function handler(request) {
+  // Autoriser uniquement POST
+  if (request.method !== "POST") {
+    return new Response(
+      JSON.stringify({
+        error: "Méthode non autorisée."
+      }),
+      {
+        status: 405,
+        headers: {
+          "Content-Type": "application/json",
+          "Allow": "POST"
+        }
+      }
+    );
+  }
 
+  // Vérifier que la clé API existe
+  const apiKey = process.env.OPENAI_API_KEY;
+
+  if (!apiKey) {
+    return new Response(
+      JSON.stringify({
+        error: "OPENAI_API_KEY n'est pas configurée sur le serveur."
+      }),
+      {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+  }
+
+  try {
+    // Récupérer les données envoyées par LUXURIID
+    const body = await request.json();
+
+    const {
+      company,
+      sector,
+      style,
+      color,
+      target,
+      values,
+      goal,
+      description
+    } = body;
+
+    // Vérification minimale
+    if (!company || !sector) {
+      return new Response(
+        JSON.stringify({
+          error: "Le nom de l'entreprise et le secteur sont obligatoires."
+        }),
+        {
+          status: 400,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+    }
+
+    // Brief transmis à l'IA
+    const brandBrief = `
+Nom de l'entreprise :
+${company}
+
+Secteur :
+${sector}
+
+Style recherché :
+${style || "Non précisé"}
+
+Couleur principale :
+${color || "Non précisée"}
+
+Clientèle cible :
+${target || "Non précisée"}
+
+Valeurs :
+${values || "Non précisées"}
+
+Objectif :
+${goal || "Non précisé"}
+
+Description :
+${description || "Non précisée"}
+`;
+
+    // Appel direct à l'API OpenAI
+    const openAIResponse = await fetch(
+      "https://api.openai.com/v1/responses",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${apiKey}`
+        },
+
+        body: JSON.stringify({
+
+          model: "gpt-5",
+
+          input: [
+            {
+              role: "system",
+
+              content: [
+                {
+                  type: "input_text",
+
+                  text: `
+Tu es le directeur artistique de LUXURIID,
+une plateforme professionnelle de création d'identités visuelles.
+
+Ta mission est d'analyser le brief d'une entreprise
+et de proposer trois directions créatives réellement différentes.
+
+Pour chaque concept, définis :
+
+- nom du concept
+- positionnement
+- personnalité
+- description visuelle
+- idée du logo
+- idée du monogramme
+- typographies
+- palette de couleurs avec codes HEX
+- slogan
+- prompt détaillé pour générer le logo
+- prompt détaillé pour générer l'univers visuel
+
+Les trois concepts doivent être différents :
+
+CONCEPT 1 :
+Premium / Signature / intemporel
+
+CONCEPT 2 :
+Modern / minimaliste / contemporain
+
+CONCEPT 3 :
+Bold / impactant / audacieux
+
+Adapte obligatoirement les propositions
+au secteur, à la cible, aux valeurs,
+au style et aux couleurs du client.
+
+Ne donne aucune explication inutile.
+
+Retourne UNIQUEMENT un JSON valide
+respectant exactement cette structure :
+
+{
+  "brand": {
+    "name": "",
+    "positioning": "",
+    "personality": "",
+    "target": ""
+  },
+
+  "concepts": [
+    {
+      "id": 1,
+      "name": "",
+      "positioning": "",
+      "personality": "",
+      "description": "",
+      "logoIdea": "",
+      "monogram": "",
+      "fonts": "",
+      "slogan": "",
+      "palette": [
+        {
+          "name": "",
+          "hex": ""
+        }
+      ],
+      "logoPrompt": "",
+      "visualPrompt": ""
+    },
+    {
+      "id": 2,
+      "name": "",
+      "positioning": "",
+      "personality": "",
+      "description": "",
+      "logoIdea": "",
+      "monogram": "",
+      "fonts": "",
+      "slogan": "",
+      "palette": [
+        {
+          "name": "",
+          "hex": ""
+        }
+      ],
+      "logoPrompt": "",
+      "visualPrompt": ""
+    },
+    {
+      "id": 3,
+      "name": "",
+      "positioning": "",
+      "personality": "",
+      "description": "",
+      "logoIdea": "",
+      "monogram": "",
+      "fonts": "",
+      "slogan": "",
+      "palette": [
+        {
+          "name": "",
+          "hex": ""
+        }
+      ],
+      "logoPrompt": "",
+      "visualPrompt": ""
+    }
+  ]
+}
+`
+                }
+              ]
+            },
+
+            {
+              role: "user",
+
+              content: [
+                {
+                  type: "input_text",
+                  text: brandBrief
+                }
+              ]
+            }
+          ]
+        })
+      }
+    );
+
+    // Vérifier la réponse OpenAI
+    if (!openAIResponse.ok) {
+
+      const errorText =
+        await openAIResponse.text();
+
+      console.error(
+        "OpenAI error:",
+        errorText
+      );
+
+      return new Response(
+        JSON.stringify({
+          error: "Erreur lors de la génération IA.",
+          details: errorText
+        }),
+        {
+          status: 502,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+    }
+
+    const data =
+      await openAIResponse.json();
+
+    // Récupérer le texte généré
+    const outputText =
+      data.output_text ||
+      "";
+
+    if (!outputText) {
+
+      return new Response(
+        JSON.stringify({
+          error: "L'IA n'a retourné aucun résultat."
+        }),
+        {
+          status: 502,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+    }
+
+    // Nettoyage éventuel du JSON
+    let cleanJSON =
+      outputText
+        .replace(/```json/gi, "")
+        .replace(/```/g, "")
+        .trim();
+
+    let result;
+
+    try {
+
+      result =
+        JSON.parse(cleanJSON);
+
+    } catch (jsonError) {
+
+      console.error(
+        "JSON parsing error:",
+        jsonError
+      );
+
+      return new Response(
+        JSON.stringify({
+          error: "La réponse de l'IA n'est pas un JSON valide.",
+          raw: outputText
+        }),
+        {
+          status: 502,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+    }
+
+    // Réponse envoyée à LUXURIID
+    return new Response(
+      JSON.stringify({
+        success: true,
+        data: result
+      }),
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          "Cache-Control": "no-store"
+        }
+      }
+    );
+
+  } catch (error) {
+
+    console.error(
+      "Server error:",
+      error
+    );
+
+    return new Response(
+      JSON.stringify({
+        error: "Erreur interne du serveur."
+      }),
+      {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+  }
+}
