@@ -3,12 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>LUXURIID — Créateur d'identité visuelle</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 
-html{scroll-behavior:smooth}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 font-family:Arial,sans-serif;
@@ -17,7 +25,7 @@ color:#fff;
 }
 
 header{
-height:75px;
+height:76px;
 padding:0 7%;
 display:flex;
 align-items:center;
@@ -31,7 +39,9 @@ font-weight:bold;
 letter-spacing:4px;
 }
 
-.gold{color:#c9a45c}
+.gold{
+color:#c9a45c;
+}
 
 nav a{
 color:#ddd;
@@ -48,14 +58,14 @@ border-top:1px solid #292929;
 .eyebrow{
 color:#c9a45c;
 letter-spacing:4px;
-font-size:11px;
+font-size:10px;
 margin-bottom:20px;
 }
 
 h1{
 font-family:Georgia,serif;
 font-size:clamp(48px,7vw,88px);
-line-height:1;
+line-height:.98;
 margin-bottom:30px;
 }
 
@@ -77,7 +87,22 @@ cursor:pointer;
 text-decoration:none;
 }
 
-.button:hover{background:#c9a45c}
+.button:hover{
+background:#c9a45c;
+}
+
+.secondary-button{
+padding:13px 20px;
+border:1px solid #222;
+background:#fff;
+color:#111;
+cursor:pointer;
+}
+
+.secondary-button:hover{
+background:#111;
+color:#fff;
+}
 
 /* HERO */
 
@@ -90,7 +115,9 @@ justify-content:space-between;
 gap:60px;
 }
 
-.hero-content{max-width:700px}
+.hero-content{
+max-width:720px;
+}
 
 .hero p{
 color:#aaa;
@@ -116,7 +143,9 @@ font-size:170px;
 color:#c9a45c;
 }
 
-.hero-name{letter-spacing:7px}
+.hero-name{
+letter-spacing:7px;
+}
 
 /* STEPS */
 
@@ -131,28 +160,36 @@ border-top:1px solid #444;
 padding-top:20px;
 }
 
-.step-number{color:#c9a45c}
+.step-number{
+color:#c9a45c;
+}
 
-.step h3{margin:25px 0 10px}
+.step h3{
+margin:25px 0 10px;
+}
 
 .step p{
 color:#999;
 line-height:1.6;
 }
 
-/* FORM */
+/* CREATION */
 
-.creation{background:#111}
+.creation{
+background:#111;
+}
 
 .form{
-max-width:850px;
+max-width:900px;
 margin:auto;
 background:#090909;
 border:1px solid #333;
 padding:40px;
 }
 
-.form-group{margin-bottom:28px}
+.form-group{
+margin-bottom:28px;
+}
 
 label{
 display:block;
@@ -160,13 +197,22 @@ margin-bottom:10px;
 font-weight:bold;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
 width:100%;
 padding:15px;
 border:1px solid #444;
 background:#151515;
-color:white;
+color:#fff;
 border-radius:5px;
+outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#c9a45c;
 }
 
 textarea{
@@ -189,7 +235,9 @@ color:#ccc;
 transition:.2s;
 }
 
-.option:hover{border-color:#c9a45c}
+.option:hover{
+border-color:#c9a45c;
+}
 
 .option.selected{
 background:#c9a45c;
@@ -202,13 +250,13 @@ border-color:#c9a45c;
 .loading{
 display:none;
 text-align:center;
-padding:80px 20px;
+padding:90px 20px;
 background:#0d0d0d;
 }
 
 .loader{
-width:45px;
-height:45px;
+width:48px;
+height:48px;
 border:3px solid #333;
 border-top:3px solid #c9a45c;
 border-radius:50%;
@@ -217,7 +265,15 @@ animation:spin 1s linear infinite;
 }
 
 @keyframes spin{
-to{transform:rotate(360deg)}
+to{
+transform:rotate(360deg);
+}
+}
+
+.loading-status{
+color:#999;
+font-size:14px;
+margin-top:20px;
 }
 
 /* RESULTS */
@@ -229,14 +285,14 @@ color:#111;
 }
 
 .results-header{
-text-align:center;
-max-width:900px;
+max-width:1000px;
 margin:auto;
+text-align:center;
 }
 
 .results-header p{
 color:#666;
-line-height:1.6;
+line-height:1.7;
 }
 
 .project-meta{
@@ -244,7 +300,7 @@ display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:10px;
-margin-top:20px;
+margin-top:22px;
 }
 
 .meta-pill{
@@ -252,7 +308,47 @@ padding:8px 15px;
 border:1px solid #ccc;
 border-radius:30px;
 color:#555;
-font-size:12px;
+font-size:11px;
+}
+
+/* BRIEF */
+
+.brief{
+max-width:1100px;
+margin:45px auto 0;
+background:#fff;
+border:1px solid #d5d1c8;
+padding:25px;
+}
+
+.brief-title{
+font-family:Georgia,serif;
+font-size:25px;
+margin-bottom:20px;
+}
+
+.brief-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.brief-item{
+border-top:1px solid #ddd;
+padding-top:12px;
+}
+
+.brief-label{
+font-size:9px;
+letter-spacing:2px;
+color:#999;
+text-transform:uppercase;
+margin-bottom:8px;
+}
+
+.brief-value{
+font-size:13px;
+font-weight:bold;
 }
 
 /* CONCEPTS */
@@ -275,12 +371,12 @@ transition:.25s;
 
 .concept-card:hover{
 transform:translateY(-7px);
-box-shadow:0 18px 45px rgba(0,0,0,.14);
+box-shadow:0 18px 45px rgba(0,0,0,.13);
 }
 
 .concept-card.active{
 border:2px solid var(--accent,#c9a45c);
-box-shadow:0 18px 45px rgba(0,0,0,.16);
+box-shadow:0 18px 45px rgba(0,0,0,.15);
 }
 
 .concept-label{
@@ -301,8 +397,6 @@ background:#111;
 color:#fff;
 }
 
-/* LOGO AREA */
-
 .logo-box{
 height:310px;
 margin-bottom:20px;
@@ -310,7 +404,7 @@ position:relative;
 overflow:hidden;
 }
 
-/* CONCEPT 1 */
+/* SIGNATURE */
 
 .logo-signature{
 background:#0a0a0a;
@@ -326,10 +420,10 @@ width:170px;
 height:170px;
 border:1px solid var(--accent,#c9a45c);
 border-radius:50%;
-position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
+position:relative;
 }
 
 .signature-orbit:before{
@@ -344,8 +438,8 @@ transform:rotate(45deg);
 .signature-orbit:after{
 content:"";
 position:absolute;
-width:195px;
-height:60px;
+width:205px;
+height:65px;
 border:1px solid var(--accent,#c9a45c);
 border-radius:50%;
 transform:rotate(-25deg);
@@ -354,17 +448,17 @@ opacity:.4;
 
 .signature-monogram{
 position:relative;
-z-index:3;
+z-index:2;
 font-family:Georgia,serif;
-font-size:58px;
-letter-spacing:-8px;
+font-size:60px;
+letter-spacing:-9px;
 }
 
 .signature-name{
 font-family:Georgia,serif;
 font-size:18px;
 letter-spacing:5px;
-margin-top:25px;
+margin-top:24px;
 text-align:center;
 }
 
@@ -375,10 +469,10 @@ background:var(--accent,#c9a45c);
 margin-top:12px;
 }
 
-/* CONCEPT 2 */
+/* MODERN */
 
 .logo-modern{
-background:#f8f8f6;
+background:#f7f7f5;
 color:#111;
 display:flex;
 align-items:center;
@@ -403,19 +497,15 @@ font-size:42px;
 font-weight:900;
 }
 
-.modern-cell:first-child{
-background:var(--accent,#111);
-color:#fff;
-}
-
+.modern-cell:first-child,
 .modern-cell:nth-child(4){
-background:#111;
+background:var(--accent,#111);
 color:#fff;
 }
 
 .modern-name{
 position:absolute;
-bottom:27px;
+bottom:28px;
 font-size:16px;
 font-weight:bold;
 letter-spacing:5px;
@@ -429,7 +519,7 @@ letter-spacing:3px;
 color:#777;
 }
 
-/* CONCEPT 3 */
+/* BOLD */
 
 .logo-bold{
 background:#111;
@@ -440,8 +530,8 @@ justify-content:center;
 }
 
 .bold-mark{
-width:185px;
-height:185px;
+width:190px;
+height:190px;
 background:var(--accent,#c9a45c);
 clip-path:polygon(
 50% 0,
@@ -456,8 +546,8 @@ justify-content:center;
 }
 
 .bold-inner{
-width:160px;
-height:160px;
+width:162px;
+height:162px;
 background:#111;
 clip-path:polygon(
 50% 0,
@@ -504,7 +594,7 @@ margin-bottom:10px;
 color:#666;
 line-height:1.6;
 font-size:14px;
-min-height:68px;
+min-height:70px;
 }
 
 .concept-sector{
@@ -554,13 +644,13 @@ margin-bottom:25px;
 }
 
 .board-logo{
-height:330px;
+height:350px;
 position:relative;
 overflow:hidden;
 margin-bottom:30px;
 }
 
-/* BOARD 1 */
+/* BOARD SIGNATURE */
 
 .board-logo.signature{
 background:#0a0a0a;
@@ -572,8 +662,8 @@ flex-direction:column;
 }
 
 .board-signature-orbit{
-width:170px;
-height:170px;
+width:175px;
+height:175px;
 border:1px solid var(--boardAccent,#c9a45c);
 border-radius:50%;
 display:flex;
@@ -585,7 +675,7 @@ position:relative;
 .board-signature-orbit:after{
 content:"";
 position:absolute;
-width:205px;
+width:210px;
 height:65px;
 border:1px solid var(--boardAccent,#c9a45c);
 border-radius:50%;
@@ -595,20 +685,20 @@ opacity:.4;
 
 .board-signature-monogram{
 font-family:Georgia,serif;
-font-size:65px;
-letter-spacing:-9px;
+font-size:68px;
+letter-spacing:-10px;
 position:relative;
 z-index:2;
 }
 
 .board-signature-name{
 font-family:Georgia,serif;
-font-size:20px;
+font-size:21px;
 letter-spacing:6px;
 margin-top:25px;
 }
 
-/* BOARD 2 */
+/* BOARD MODERN */
 
 .board-logo.modern{
 background:#f7f7f5;
@@ -620,8 +710,8 @@ flex-direction:column;
 }
 
 .board-modern-grid{
-width:170px;
-height:170px;
+width:175px;
+height:175px;
 display:grid;
 grid-template-columns:1fr 1fr;
 grid-template-rows:1fr 1fr;
@@ -645,12 +735,12 @@ color:#fff;
 
 .board-modern-name{
 margin-top:25px;
-font-size:20px;
+font-size:21px;
 font-weight:bold;
 letter-spacing:5px;
 }
 
-/* BOARD 3 */
+/* BOARD BOLD */
 
 .board-logo.bold{
 background:#111;
@@ -662,8 +752,8 @@ flex-direction:column;
 }
 
 .board-bold-mark{
-width:195px;
-height:210px;
+width:200px;
+height:215px;
 background:var(--boardAccent,#c9a45c);
 clip-path:polygon(
 50% 0,
@@ -678,8 +768,8 @@ justify-content:center;
 }
 
 .board-bold-inner{
-width:168px;
-height:183px;
+width:172px;
+height:187px;
 background:#111;
 clip-path:polygon(
 50% 0,
@@ -694,7 +784,7 @@ justify-content:center;
 }
 
 .board-bold-monogram{
-font-size:72px;
+font-size:73px;
 font-weight:900;
 letter-spacing:-10px;
 color:var(--boardAccent,#c9a45c);
@@ -722,7 +812,7 @@ padding-top:20px;
 }
 
 .board-block h4{
-font-size:12px;
+font-size:11px;
 letter-spacing:2px;
 text-transform:uppercase;
 margin-bottom:12px;
@@ -739,7 +829,9 @@ gap:12px;
 flex-wrap:wrap;
 }
 
-.palette-item{text-align:center}
+.palette-item{
+text-align:center;
+}
 
 .color{
 width:58px;
@@ -770,7 +862,7 @@ border-left:3px solid var(--boardAccent,#c9a45c);
 }
 
 .brand-voice h4{
-font-size:12px;
+font-size:11px;
 letter-spacing:2px;
 text-transform:uppercase;
 margin-bottom:12px;
@@ -780,12 +872,13 @@ margin-bottom:12px;
 font-family:Georgia,serif;
 font-size:22px;
 line-height:1.4;
-color:#222;
 }
 
 /* MOCKUPS */
 
-.mockups{margin-top:50px}
+.mockups{
+margin-top:50px;
+}
 
 .mockups-title{
 font-family:Georgia,serif;
@@ -871,6 +964,8 @@ letter-spacing:2px;
 color:#aaa;
 }
 
+/* ACTIONS */
+
 .board-actions{
 margin-top:35px;
 display:flex;
@@ -878,18 +973,7 @@ gap:10px;
 flex-wrap:wrap;
 }
 
-.secondary-button{
-padding:13px 20px;
-border:1px solid #222;
-background:#fff;
-color:#111;
-cursor:pointer;
-}
-
-.secondary-button:hover{
-background:#111;
-color:#fff;
-}
+/* FOOTER */
 
 footer{
 padding:30px 7%;
@@ -902,27 +986,43 @@ font-size:12px;
 
 @media(max-width:800px){
 
-nav{display:none}
+nav{
+display:none;
+}
 
 .hero{
 flex-direction:column;
 align-items:flex-start;
 }
 
-.hero-card{width:100%}
+.hero-card{
+width:100%;
+}
 
-.steps{grid-template-columns:1fr}
+.steps{
+grid-template-columns:1fr;
+}
 
-.concepts{grid-template-columns:1fr}
+.concepts{
+grid-template-columns:1fr;
+}
 
-.form{padding:25px}
+.form{
+padding:25px;
+}
+
+.brief-grid{
+grid-template-columns:1fr 1fr;
+}
 
 .board-info,
 .mockup-grid{
 grid-template-columns:1fr;
 }
 
-.brand-board{padding:25px}
+.brand-board{
+padding:25px;
+}
 
 }
 
@@ -945,7 +1045,8 @@ display:block!important;
 padding:20px;
 }
 
-.concepts{
+.concepts,
+.brief{
 display:none!important;
 }
 
@@ -962,6 +1063,7 @@ border:none;
 
 <body>
 
+
 <header>
 
 <div class="logo">
@@ -976,6 +1078,8 @@ LUXUR<span class="gold">I</span>ID
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
 <div class="hero-content">
@@ -989,9 +1093,9 @@ Créez une identité qui vous ressemble.
 </h1>
 
 <p>
-Décrivez votre entreprise et votre vision.
-LUXURIID transforme vos idées en une identité
-visuelle professionnelle.
+Décrivez votre entreprise, votre vision et votre style.
+LUXURIID transforme votre brief en plusieurs directions
+créatives professionnelles.
 </p>
 
 <a href="#creation" class="button">
@@ -1002,9 +1106,13 @@ Créer mon identité →
 
 <div class="hero-card">
 
-<div class="hero-letter">L</div>
+<div class="hero-letter">
+L
+</div>
 
-<div class="hero-name">LUXURIID</div>
+<div class="hero-name">
+LUXURIID
+</div>
 
 <div style="margin-top:20px;color:#c9a45c;">
 YOUR BRAND. YOUR IDENTITY.
@@ -1014,6 +1122,8 @@ YOUR BRAND. YOUR IDENTITY.
 
 </section>
 
+
+<!-- METHODE -->
 
 <section id="fonctionnement">
 
@@ -1028,33 +1138,82 @@ De l'idée à la marque.
 <div class="steps">
 
 <div class="step">
-<div class="step-number">01</div>
-<h3>Décrivez</h3>
-<p>Présentez votre entreprise et votre vision.</p>
+
+<div class="step-number">
+01
 </div>
 
-<div class="step">
-<div class="step-number">02</div>
-<h3>Imaginez</h3>
-<p>LUXURIID transforme vos critères en concepts.</p>
+<h3>
+Décrivez
+</h3>
+
+<p>
+Présentez votre entreprise, son secteur
+et votre vision.
+</p>
+
 </div>
 
-<div class="step">
-<div class="step-number">03</div>
-<h3>Choisissez</h3>
-<p>Comparez plusieurs directions créatives.</p>
-</div>
 
 <div class="step">
-<div class="step-number">04</div>
-<h3>Développez</h3>
-<p>Construisez votre identité professionnelle.</p>
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Analysez
+</h3>
+
+<p>
+Votre brief définit la direction créative
+de votre identité.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+Choisissez
+</h3>
+
+<p>
+Comparez plusieurs directions visuelles
+et sélectionnez votre préférée.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+Développez
+</h3>
+
+<p>
+Votre concept devient une véritable
+base de marque.
+</p>
+
 </div>
 
 </div>
 
 </section>
 
+
+<!-- CREATION -->
 
 <section class="creation" id="creation">
 
@@ -1066,11 +1225,15 @@ VOTRE PROJET
 Créons votre identité.
 </h2>
 
+
 <div class="form">
+
 
 <div class="form-group">
 
-<label>Nom de votre entreprise</label>
+<label>
+Nom de votre entreprise
+</label>
 
 <input
 id="company"
@@ -1082,7 +1245,9 @@ placeholder="Ex : Écurie du Soleil"
 
 <div class="form-group">
 
-<label>Secteur d'activité</label>
+<label>
+Secteur d'activité
+</label>
 
 <select id="sector">
 
@@ -1111,16 +1276,35 @@ Choisissez votre secteur
 
 <div class="form-group">
 
-<label>Style recherché</label>
+<label>
+Style recherché
+</label>
 
 <div class="options">
 
-<div class="option" onclick="selectStyle(this)">Luxe</div>
-<div class="option" onclick="selectStyle(this)">Moderne</div>
-<div class="option" onclick="selectStyle(this)">Minimaliste</div>
-<div class="option" onclick="selectStyle(this)">Sportif</div>
-<div class="option" onclick="selectStyle(this)">Élégant</div>
-<div class="option" onclick="selectStyle(this)">Industriel</div>
+<div class="option" onclick="selectStyle(this)">
+Luxe
+</div>
+
+<div class="option" onclick="selectStyle(this)">
+Moderne
+</div>
+
+<div class="option" onclick="selectStyle(this)">
+Minimaliste
+</div>
+
+<div class="option" onclick="selectStyle(this)">
+Sportif
+</div>
+
+<div class="option" onclick="selectStyle(this)">
+Élégant
+</div>
+
+<div class="option" onclick="selectStyle(this)">
+Industriel
+</div>
 
 </div>
 
@@ -1129,16 +1313,35 @@ Choisissez votre secteur
 
 <div class="form-group">
 
-<label>Couleur principale</label>
+<label>
+Couleur principale
+</label>
 
 <div class="options">
 
-<div class="option" onclick="selectColor(this)">Noir</div>
-<div class="option" onclick="selectColor(this)">Blanc</div>
-<div class="option" onclick="selectColor(this)">Doré</div>
-<div class="option" onclick="selectColor(this)">Rouge</div>
-<div class="option" onclick="selectColor(this)">Bleu</div>
-<div class="option" onclick="selectColor(this)">Vert</div>
+<div class="option" onclick="selectColor(this)">
+Noir
+</div>
+
+<div class="option" onclick="selectColor(this)">
+Blanc
+</div>
+
+<div class="option" onclick="selectColor(this)">
+Doré
+</div>
+
+<div class="option" onclick="selectColor(this)">
+Rouge
+</div>
+
+<div class="option" onclick="selectColor(this)">
+Bleu
+</div>
+
+<div class="option" onclick="selectColor(this)">
+Vert
+</div>
 
 </div>
 
@@ -1147,11 +1350,13 @@ Choisissez votre secteur
 
 <div class="form-group">
 
-<label>Décrivez votre projet</label>
+<label>
+Décrivez votre projet
+</label>
 
 <textarea
 id="description"
-placeholder="Expliquez votre activité, vos valeurs et votre vision..."
+placeholder="Expliquez votre activité, vos valeurs, votre clientèle et votre vision..."
 ></textarea>
 
 </div>
@@ -1164,10 +1369,13 @@ onclick="generateConcepts()"
 Générer mes concepts →
 </button>
 
+
 </div>
 
 </section>
 
+
+<!-- LOADING -->
 
 <section class="loading" id="loading">
 
@@ -1176,24 +1384,27 @@ LUXURIID STUDIO
 </div>
 
 <h2>
-Création de votre identité...
+Analyse de votre marque...
 </h2>
 
 <div class="loader"></div>
 
-<p id="loadingText">
-Analyse de votre secteur et de votre direction artistique...
+<p class="loading-status" id="loadingStatus">
+Analyse du secteur...
 </p>
 
 </section>
 
 
+<!-- RESULTS -->
+
 <section class="results" id="results">
+
 
 <div class="results-header">
 
 <div class="eyebrow">
-LUXURIID STUDIO • V4-G
+LUXURIID STUDIO • V4-H
 </div>
 
 <h2 id="resultCompany">
@@ -1201,9 +1412,10 @@ Votre marque
 </h2>
 
 <p>
-Trois directions créatives personnalisées
-à partir de vos critères.
+Votre brief a été transformé en trois
+directions créatives.
 </p>
+
 
 <div class="project-meta">
 
@@ -1224,18 +1436,104 @@ Couleur
 </div>
 
 
+<!-- BRIEF -->
+
+<div class="brief">
+
+<div class="brief-title">
+Votre brief
+</div>
+
+<div class="brief-grid">
+
+<div class="brief-item">
+
+<div class="brief-label">
+Entreprise
+</div>
+
+<div
+class="brief-value"
+id="briefCompany"
+>
+—
+</div>
+
+</div>
+
+
+<div class="brief-item">
+
+<div class="brief-label">
+Secteur
+</div>
+
+<div
+class="brief-value"
+id="briefSector"
+>
+—
+</div>
+
+</div>
+
+
+<div class="brief-item">
+
+<div class="brief-label">
+Style
+</div>
+
+<div
+class="brief-value"
+id="briefStyle"
+>
+—
+</div>
+
+</div>
+
+
+<div class="brief-item">
+
+<div class="brief-label">
+Couleur
+</div>
+
+<div
+class="brief-value"
+id="briefColor"
+>
+—
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CONCEPTS -->
+
 <div class="concepts">
 
 
 <!-- CONCEPT 1 -->
 
-<div class="concept-card" id="card1">
+<div
+class="concept-card"
+id="card1"
+>
 
-<div class="concept-badge">PREMIUM</div>
+<div class="concept-badge">
+PREMIUM
+</div>
 
 <div class="concept-label">
 CONCEPT 01 • SIGNATURE
 </div>
+
 
 <div
 class="logo-box logo-signature"
@@ -1264,7 +1562,10 @@ LUXURIID
 
 </div>
 
-<h3>Signature</h3>
+
+<h3>
+Signature
+</h3>
 
 <p id="description1">
 Une identité premium et intemporelle.
@@ -1288,13 +1589,19 @@ Choisir ce concept
 
 <!-- CONCEPT 2 -->
 
-<div class="concept-card" id="card2">
+<div
+class="concept-card"
+id="card2"
+>
 
-<div class="concept-badge">DIGITAL</div>
+<div class="concept-badge">
+DIGITAL
+</div>
 
 <div class="concept-label">
 CONCEPT 02 • MODERN
 </div>
+
 
 <div
 class="logo-box logo-modern"
@@ -1303,10 +1610,33 @@ id="logoModern"
 
 <div class="modern-grid">
 
-<div class="modern-cell" id="modernCell1">L</div>
-<div class="modern-cell" id="modernCell2">S</div>
-<div class="modern-cell" id="modernCell3">•</div>
-<div class="modern-cell" id="modernCell4">ID</div>
+<div
+class="modern-cell"
+id="modernCell1"
+>
+L
+</div>
+
+<div
+class="modern-cell"
+id="modernCell2"
+>
+S
+</div>
+
+<div
+class="modern-cell"
+id="modernCell3"
+>
+•
+</div>
+
+<div
+class="modern-cell"
+id="modernCell4"
+>
+ID
+</div>
 
 </div>
 
@@ -1323,7 +1653,10 @@ MODERN SYSTEM
 
 </div>
 
-<h3>Modern</h3>
+
+<h3>
+Modern
+</h3>
 
 <p id="description2">
 Une identité contemporaine et digitale.
@@ -1347,13 +1680,19 @@ Choisir ce concept
 
 <!-- CONCEPT 3 -->
 
-<div class="concept-card" id="card3">
+<div
+class="concept-card"
+id="card3"
+>
 
-<div class="concept-badge">IMPACT</div>
+<div class="concept-badge">
+IMPACT
+</div>
 
 <div class="concept-label">
 CONCEPT 03 • BOLD
 </div>
+
 
 <div
 class="logo-box logo-bold"
@@ -1388,7 +1727,10 @@ BRAND EMBLEM
 
 </div>
 
-<h3>Bold</h3>
+
+<h3>
+Bold
+</h3>
 
 <p id="description3">
 Une identité forte et mémorable.
@@ -1408,6 +1750,7 @@ Choisir ce concept
 </button>
 
 </div>
+
 
 </div>
 
@@ -1498,8 +1841,11 @@ Une identité cohérente.
 
 </div>
 
+
 </div>
 
+
+<!-- SIGNATURE -->
 
 <div class="brand-voice">
 
@@ -1514,11 +1860,14 @@ Une marque pensée pour durer.
 </div>
 
 
+<!-- MOCKUPS -->
+
 <div class="mockups">
 
 <div class="mockups-title">
 Votre identité en situation
 </div>
+
 
 <div class="mockup-grid">
 
@@ -1529,9 +1878,7 @@ Votre identité en situation
 INSTAGRAM
 </div>
 
-<div
-class="instagram"
->
+<div class="instagram">
 
 <div
 class="mock-logo"
@@ -1626,6 +1973,7 @@ Imprimer / sauvegarder
 
 </div>
 
+
 </div>
 
 </section>
@@ -1641,6 +1989,7 @@ Votre identité. Votre image. Votre marque.
 
 <script>
 
+
 let selectedStyle="";
 let selectedColor="";
 let companyName="";
@@ -1649,7 +1998,7 @@ let projectDescription="";
 let selectedConcept=0;
 
 
-/* STYLES */
+/* STYLE */
 
 function selectStyle(element){
 
@@ -1668,7 +2017,7 @@ selectedStyle=element.innerText;
 }
 
 
-/* COULEURS */
+/* COULEUR */
 
 function selectColor(element){
 
@@ -1697,6 +2046,7 @@ const words=name
 .split(/\s+/)
 .filter(Boolean);
 
+
 if(words.length>=2){
 
 return (
@@ -1705,6 +2055,7 @@ words[1].charAt(0)
 ).toUpperCase();
 
 }
+
 
 if(words.length===1){
 
@@ -1723,12 +2074,13 @@ return word.charAt(0).toUpperCase();
 
 }
 
+
 return "L";
 
 }
 
 
-/* COULEURS */
+/* ACCENT */
 
 function getAccent(){
 
@@ -1752,12 +2104,14 @@ return colors[selectedColor] || "#c9a45c";
 
 const sectorData={
 
+
 "Équestre":{
 keywords:"Élégance • mouvement • maîtrise",
 description:"Une identité inspirée de l'univers équestre, du mouvement et du prestige.",
 position:"Une image raffinée qui transmet maîtrise, confiance et savoir-faire.",
 voice:"L'élégance en mouvement."
 },
+
 
 "Automobile":{
 keywords:"Performance • précision • vitesse",
@@ -1766,12 +2120,14 @@ position:"Une identité dynamique qui communique puissance et performance.",
 voice:"La performance comme signature."
 },
 
+
 "Agriculture":{
 keywords:"Nature • terroir • savoir-faire",
 description:"Une direction authentique inspirée du terroir et du savoir-faire.",
 position:"Une identité qui valorise l'authenticité et l'expérience.",
 voice:"Le savoir-faire au cœur de la marque."
 },
+
 
 "Restauration":{
 keywords:"Goût • expérience • caractère",
@@ -1780,12 +2136,14 @@ position:"Une identité mémorable pensée pour créer une véritable expérienc
 voice:"Une expérience qui reste en mémoire."
 },
 
+
 "BTP":{
 keywords:"Solidité • structure • fiabilité",
 description:"Une direction structurée inspirée de l'architecture et de la construction.",
 position:"Une identité forte qui communique sérieux et fiabilité.",
 voice:"Construire. Imaginer. Durablement."
 },
+
 
 "Mode":{
 keywords:"Élégance • tendance • distinction",
@@ -1794,12 +2152,14 @@ position:"Une identité distinctive conçue comme une véritable signature.",
 voice:"Votre style. Votre signature."
 },
 
+
 "Sport":{
 keywords:"Énergie • mouvement • performance",
 description:"Une direction dynamique pensée autour de la performance.",
 position:"Une identité forte destinée à communiquer énergie et dépassement.",
 voice:"Dépassez les limites."
 },
+
 
 "Immobilier":{
 keywords:"Patrimoine • architecture • confiance",
@@ -1808,12 +2168,14 @@ position:"Une identité qui renforce confiance, prestige et valeur.",
 voice:"Donner une identité à vos projets."
 },
 
+
 "Technologie":{
 keywords:"Innovation • digital • futur",
 description:"Une direction digitale pensée autour de l'innovation.",
 position:"Une identité contemporaine pour une marque tournée vers demain.",
 voice:"Imaginez la suite."
 },
+
 
 "Commerce":{
 keywords:"Proximité • confiance • reconnaissance",
@@ -1822,6 +2184,7 @@ position:"Une identité accessible et immédiatement reconnaissable.",
 voice:"Une marque que l'on reconnaît."
 },
 
+
 "Beauté":{
 keywords:"Soin • élégance • sophistication",
 description:"Une direction raffinée inspirée de l'univers beauté.",
@@ -1829,12 +2192,14 @@ position:"Une identité élégante qui communique soin et qualité.",
 voice:"L'élégance dans chaque détail."
 },
 
+
 "Hôtellerie":{
 keywords:"Hospitalité • prestige • expérience",
 description:"Une direction pensée autour de l'expérience client.",
 position:"Une identité premium qui crée un véritable univers.",
 voice:"L'expérience commence par l'image."
 },
+
 
 "Autre":{
 keywords:"Personnalité • cohérence • différenciation",
@@ -1863,27 +2228,34 @@ document.getElementById("description").value.trim();
 if(!companyName){
 
 alert("Veuillez entrer le nom de votre entreprise.");
+
 return;
 
 }
+
 
 if(!projectSector){
 
 alert("Veuillez choisir votre secteur.");
+
 return;
 
 }
+
 
 if(!selectedStyle){
 
 alert("Veuillez choisir un style.");
+
 return;
 
 }
 
+
 if(!selectedColor){
 
 alert("Veuillez choisir une couleur principale.");
+
 return;
 
 }
@@ -1892,35 +2264,97 @@ return;
 document.getElementById("loading")
 .style.display="block";
 
+
 document.getElementById("loading")
 .scrollIntoView({
 behavior:"smooth"
 });
 
 
+const status=
+document.getElementById("loadingStatus");
+
+
+status.innerText=
+"Analyse du secteur "+projectSector+"...";
+
+
 setTimeout(function(){
+
+status.innerText=
+"Analyse du style "+selectedStyle+"...";
+
+},500);
+
+
+setTimeout(function(){
+
+status.innerText=
+"Construction des directions créatives...";
+
+},1000);
+
+
+setTimeout(function(){
+
+status.innerText=
+"Finalisation de votre identité...";
+
+},1450);
+
+
+setTimeout(function(){
+
+buildResults();
+
+},1900);
+
+}
+
+
+/* RESULTATS */
+
+function buildResults(){
 
 const monogram=
 createMonogram(companyName);
+
+const accent=
+getAccent();
 
 const data=
 sectorData[projectSector] ||
 sectorData["Autre"];
 
-const accent=
-getAccent();
-
 
 document.getElementById("resultCompany")
 .innerText=companyName;
 
+
 document.getElementById("sectorResult")
 .innerText=projectSector;
+
 
 document.getElementById("styleResult")
 .innerText=selectedStyle;
 
+
 document.getElementById("colorResult")
+.innerText=selectedColor;
+
+
+/* BRIEF */
+
+document.getElementById("briefCompany")
+.innerText=companyName;
+
+document.getElementById("briefSector")
+.innerText=projectSector;
+
+document.getElementById("briefStyle")
+.innerText=selectedStyle;
+
+document.getElementById("briefColor")
 .innerText=selectedColor;
 
 
@@ -1938,7 +2372,7 @@ document.getElementById("description1")
 data.description+
 " Une approche "+
 selectedStyle.toLowerCase()+
-" pensée pour une image premium.";
+" pensée pour créer une signature forte.";
 
 document.getElementById("sectorConcept1")
 .innerText=
@@ -1949,14 +2383,18 @@ data.keywords;
 
 /* CONCEPT 2 */
 
-const letters=
-monogram.split("");
+const first=
+monogram.charAt(0) || "L";
+
+const second=
+monogram.charAt(1) || "X";
+
 
 document.getElementById("modernCell1")
-.innerText=letters[0] || "L";
+.innerText=first;
 
 document.getElementById("modernCell2")
-.innerText=letters[1] || "X";
+.innerText=second;
 
 document.getElementById("modernCell3")
 .innerText="•";
@@ -1970,11 +2408,9 @@ companyName.toUpperCase();
 
 document.getElementById("description2")
 .innerText=
-"Une construction graphique contemporaine adaptée à "+
+"Une construction graphique contemporaine pour "+
 companyName+
-", avec une approche "+
-selectedStyle.toLowerCase()+
-" et digitale.";
+", pensée pour une utilisation digitale et une lecture immédiate.";
 
 document.getElementById("sectorConcept2")
 .innerText=
@@ -1995,7 +2431,7 @@ document.getElementById("description3")
 .innerText=
 "Un emblème fort conçu pour donner à "+
 companyName+
-" une présence immédiate et reconnaissable.";
+" une présence visuelle immédiatement reconnaissable.";
 
 document.getElementById("sectorConcept3")
 .innerText=
@@ -2004,7 +2440,7 @@ projectSector+
 data.keywords;
 
 
-/* ACCENT */
+/* COULEUR */
 
 document
 .querySelectorAll(
@@ -2020,6 +2456,8 @@ accent
 });
 
 
+/* RESET */
+
 document
 .querySelectorAll(".concept-card")
 .forEach(function(card){
@@ -2032,23 +2470,24 @@ card.classList.remove("active");
 document.getElementById("brandBoard")
 .style.display="none";
 
+
 document.getElementById("loading")
 .style.display="none";
 
+
 document.getElementById("results")
 .style.display="block";
+
 
 document.getElementById("results")
 .scrollIntoView({
 behavior:"smooth"
 });
 
-},1800);
-
 }
 
 
-/* CHOIX CONCEPT */
+/* CHOIX */
 
 function chooseConcept(number){
 
@@ -2062,6 +2501,7 @@ document
 card.classList.remove("active");
 
 });
+
 
 document
 .getElementById("card"+number)
@@ -2081,6 +2521,7 @@ sectorData["Autre"];
 
 const board=
 document.getElementById("boardLogo");
+
 
 board.innerHTML="";
 
@@ -2123,19 +2564,23 @@ if(number===2){
 
 board.classList.add("modern");
 
-const l1=monogram.charAt(0) || "L";
-const l2=monogram.charAt(1) || "X";
+const a=
+monogram.charAt(0) || "L";
+
+const b=
+monogram.charAt(1) || "X";
+
 
 board.innerHTML=`
 
 <div class="board-modern-grid">
 
 <div class="board-modern-cell">
-${l1}
+${a}
 </div>
 
 <div class="board-modern-cell">
-${l2}
+${b}
 </div>
 
 <div class="board-modern-cell">
@@ -2192,7 +2637,7 @@ document.getElementById("boardName")
 
 document.getElementById("boardDescription")
 .innerText=
-"Identité visuelle créée pour "+
+"Identité visuelle développée pour "+
 companyName+
 " — "+
 projectSector+
@@ -2214,8 +2659,10 @@ const directions=[
 
 ];
 
+
 document.getElementById("boardStyle")
-.innerText=directions[number];
+.innerText=
+directions[number];
 
 
 document.getElementById("boardTypography")
@@ -2247,7 +2694,11 @@ data.voice;
 
 buildPalette();
 
-updateMockups(monogram,accent);
+
+updateMockups(
+monogram,
+accent
+);
 
 
 document.getElementById("brandBoard")
@@ -2274,12 +2725,14 @@ palette.innerHTML="";
 
 const palettes={
 
+
 "Noir":[
 ["#0A0A0A","Noir"],
 ["#222222","Graphite"],
 ["#777777","Gris"],
 ["#F4F4F4","Ivoire"]
 ],
+
 
 "Blanc":[
 ["#FFFFFF","Blanc"],
@@ -2288,12 +2741,14 @@ const palettes={
 ["#777777","Graphite"]
 ],
 
+
 "Doré":[
 ["#C9A45C","Doré"],
 ["#0A0A0A","Noir"],
 ["#F4EFE5","Ivoire"],
 ["#777777","Gris"]
 ],
+
 
 "Rouge":[
 ["#A52D32","Rouge"],
@@ -2302,12 +2757,14 @@ const palettes={
 ["#777777","Gris"]
 ],
 
+
 "Bleu":[
 ["#315F91","Bleu"],
 ["#0B111A","Nuit"],
 ["#F4F5F7","Blanc"],
 ["#777777","Gris"]
 ],
+
 
 "Vert":[
 ["#4B765E","Vert"],
@@ -2357,7 +2814,9 @@ code.innerText=item[0];
 
 
 wrapper.appendChild(color);
+
 wrapper.appendChild(label);
+
 wrapper.appendChild(code);
 
 palette.appendChild(wrapper);
@@ -2388,16 +2847,20 @@ accent
 document.getElementById("instagramLogo")
 .innerText=monogram;
 
+
 document.getElementById("instagramName")
 .innerText=
 companyName.toUpperCase();
+
 
 document.getElementById("websiteLogo")
 .innerText=
 companyName.toUpperCase();
 
+
 document.getElementById("cardLogo")
 .innerText=monogram;
+
 
 document.getElementById("cardInfo")
 .innerText=
@@ -2414,6 +2877,7 @@ function backToConcepts(){
 
 document.getElementById("brandBoard")
 .style.display="none";
+
 
 document
 .querySelector(".concepts")
