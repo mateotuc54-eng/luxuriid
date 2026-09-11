@@ -1,0 +1,32 @@
+LUXURIID — CHECKLIST AVANT OUVERTURE AU PUBLIC
+
+1. .env
+- OPENAI_API_KEY : ta clé API OpenAI.
+- OPENAI_MODEL : modèle texte configuré.
+- OPENAI_IMAGE_MODEL : modèle image configuré.
+- STRIPE_SECRET_KEY : clé secrète Stripe.\n- STRIPE_PRICE_ESSENTIAL : Price ID du produit LUXURIID – Identité Essentielle (9,90 €).\n- STRIPE_PRICE_PREMIUM : Price ID du produit LUXURIID – Identité Pro (19,90 €).\n- STRIPE_PRICE_STUDIO : Price ID du produit LUXURIID – Identité Premium (29,90 €).
+- STRIPE_WEBHOOK_SECRET : secret du webhook Stripe.
+- SITE_URL : URL publique HTTPS de LUXURIID.
+
+2. STRIPE
+- Crée/active ton compte Stripe et vérifie ton entreprise.
+- Crée un endpoint webhook public vers : https://TON-DOMAINE/api/stripe/webhook
+- Active au minimum l'événement checkout.session.completed.
+- Copie le secret whsec_... dans .env.
+- Teste d'abord en mode Stripe test, puis remplace la clé par la clé live au lancement.
+
+3. INFORMATIONS LÉGALES
+Dans LUXURIID_FINAL.html, remplace les placeholders [Nom légal...], [Adresse...], [SIRET...] et l'email de contact. Ajoute tes mentions légales et ta politique de confidentialité réelles avant la mise en ligne.
+
+4. HÉBERGEMENT
+- Déploie le dossier sur un hébergeur Node.js capable d'exécuter server.mjs.
+- Configure les variables d'environnement sur l'hébergeur au lieu de publier le fichier .env.
+- Active HTTPS.
+
+5. IMPORTANT
+- Ne publie jamais .env.
+- Ne mets jamais une clé OpenAI ou Stripe dans le HTML.
+- Le bouton de paiement passe par Stripe Checkout côté serveur et utilise les Price IDs Stripe si renseignés.
+- Le webhook Stripe est vérifié côté serveur.
+- Les projets locaux sont un confort ; une vraie synchronisation de compte nécessite une base de données et une authentification.
+- Vérifie les droits des logos/noms générés avant usage commercial.
