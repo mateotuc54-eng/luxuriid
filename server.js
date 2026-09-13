@@ -1,5 +1,5 @@
 import http from "http";
-import handler from "./API/generate.js";
+import handler from "./api/generate.js";
 
 const PORT = process.env.PORT || 3000;
 
