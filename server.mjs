@@ -73,7 +73,34 @@ app.post("/api/stripe/webhook", express.raw({type:"application/json"}), (req,res
 
 app.use(express.json({limit:"2mb"}));
 app.use(express.static("."));
+const AI_RATE_LIMIT = new Map();
+const AI_RATE_WINDOW = 10 * 60 * 1000;
+const AI_RATE_MAX = 10;
 
+function aiRateLimit(req,res,next){
+  const forwarded=req.headers["x-forwarded-for"];
+  const ip=String(forwarded||req.ip||"").split(",")[0].trim()||"unknown";
+  const now=Date.now();
+  const entry=AI_RATE_LIMIT.get(ip);
+
+  if(!entry || now-entry.start>AI_RATE_WINDOW){
+    AI_RATE_LIMIT.set(ip,{start:now,count:1});
+    return next();
+  }
+
+  entry.count++;
+
+  if(entry.count>AI_RATE_MAX){
+    return res.status(429).json({
+      error:"Trop de générations. Réessaie dans quelques minutes."
+    });
+  }
+
+  next();
+}
+
+app.use("/api/brand-kit",aiRateLimit);
+app.use("/api/brand-logo",aiRateLimit);
 app.get("/api/health",(_req,res)=>res.json({ok:true,aiKeyConfigured:Boolean(process.env.OPENAI_API_KEY),stripeConfigured:Boolean(stripe),webhookConfigured:Boolean(process.env.STRIPE_WEBHOOK_SECRET),model,imageModel}));
 
 app.post("/api/brand-kit", async (req,res)=>{
