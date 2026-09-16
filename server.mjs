@@ -44,11 +44,21 @@ async function createWatermarkedPreview(input){
   return sharp(input).resize(1024,1024,{fit:'contain',background:{r:13,g:13,b:12}}).composite([{input:watermarkSvg}]).png().toBuffer();
 }
 
+const ALLOWED_ORIGIN = "https://mateotuc54-eng.github.io";
+
 app.use((req,res,next)=>{
-  res.setHeader("Access-Control-Allow-Origin","*");
+  const origin=req.headers.origin;
+
+  if(origin===ALLOWED_ORIGIN){
+    res.setHeader("Access-Control-Allow-Origin",origin);
+  }
+
+  res.setHeader("Vary","Origin");
   res.setHeader("Access-Control-Allow-Headers","Content-Type");
   res.setHeader("Access-Control-Allow-Methods","GET,POST,OPTIONS");
+
   if(req.method==="OPTIONS") return res.sendStatus(204);
+
   next();
 });
 // Stripe webhook must receive the raw body before express.json().
