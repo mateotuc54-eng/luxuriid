@@ -1,0 +1,9 @@
+LUXURIID V2 — PROTECTION DU LIVRABLE
+
+- Le navigateur reçoit uniquement une image d’aperçu avec watermark avant paiement.
+- Le PNG propre reste en mémoire côté serveur et n’est jamais envoyé avant confirmation Stripe.
+- Le paiement est vérifié côté serveur via Stripe.
+- L’endpoint /api/asset/clean exige une session Stripe payée dont le metadata assetId correspond à l’export demandé.
+- Les assets privés expirent après 1 heure en mémoire.
+- Le stockage mémoire est adapté à cette V2 mais peut perdre un export lors d’un redémarrage du service Render ; pour une production à grande échelle, utiliser un stockage objet privé (S3/R2/etc.) et une base de données.
+- Ne jamais mettre STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET ou OPENAI_API_KEY dans le HTML.

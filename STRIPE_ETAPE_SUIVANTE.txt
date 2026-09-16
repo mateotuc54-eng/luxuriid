@@ -1,0 +1,20 @@
+LUXURIID — STRIPE
+
+Cette version contient le parcours Stripe Checkout côté serveur.
+
+Produits attendus :
+1. LUXURIID – Identité Essentielle — 9,90 €
+2. LUXURIID – Identité Pro — 19,90 €
+3. LUXURIID – Identité Premium — 29,90 €
+
+À faire avant un vrai paiement :
+- Copier les 3 Price IDs depuis Stripe dans .env :
+  STRIPE_PRICE_ESSENTIAL=price_...
+  STRIPE_PRICE_PREMIUM=price_...
+  STRIPE_PRICE_STUDIO=price_...
+- Renseigner STRIPE_SECRET_KEY.
+- Renseigner SITE_URL.
+- Pour la confirmation serveur en production, renseigner STRIPE_WEBHOOK_SECRET et créer le webhook checkout.session.completed.
+
+Ne jamais publier le fichier .env ni une clé secrète.
+Le mode test Stripe peut être utilisé avant le lancement réel.

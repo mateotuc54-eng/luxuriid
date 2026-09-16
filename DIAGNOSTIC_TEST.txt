@@ -1,0 +1,12 @@
+LUXURIID — TEST GRATUIT
+
+1. Double-clique sur LANCER_LUXURIID.bat.
+2. Si .env est cree, colle ta cle OpenAI dans OPENAI_API_KEY puis enregistre.
+3. Relance LANCER_LUXURIID.bat.
+4. Le navigateur doit s’ouvrir sur http://localhost:3000/LUXURIID_FINAL.html
+5. Vérification : ouvre http://localhost:3000/api/health
+   - ok doit être true
+   - aiKeyConfigured doit être true
+
+NE PAS ouvrir LUXURIID_FINAL.html directement depuis l’explorateur.
+Le paiement Stripe est désactivé dans cette version de test.
