@@ -150,8 +150,8 @@ app.post("/api/create-checkout",async(req,res)=>{
     const session=await stripe.checkout.sessions.create({
       mode:"payment",
       line_items:[lineItem],
-      success_url:`${SITE_URL}/LUXURIID_FINAL.html?payment=success&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url:`${SITE_URL}/LUXURIID_FINAL.html?payment=cancelled`,
+      success_url:`${SITE_URL}/?payment=success&session_id={CHECKOUT_SESSION_ID}`,
+cancel_url:`${SITE_URL}/?payment=cancelled`,
       customer_creation:"always",
       locale:"fr",
       allow_promotion_codes:true,
