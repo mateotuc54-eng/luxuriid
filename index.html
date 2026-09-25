@@ -4,8 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LUXURIID — Studio de Branding IA Premium</title>
-  <meta name="description" content="LUXURIID crée des identités visuelles et des Brand Kits personnalisés grâce à l’intelligence artificielle. Créez votre identité de marque en quelques minutes.">
-<link rel="canonical" href="https://mateotuc54-eng.github.io/luxuriid/">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
 :root{--bg:#0d0d0c;--panel:#141412;--line:#37342d;--cream:#efe8dc;--muted:#9d958a;--gold:#b8945b}
@@ -515,7 +513,7 @@ main{max-width:1440px;margin:auto;padding:52px 30px 80px}.hero{text-align:center
 </div>
 </section>
 <section id="s4" class="step">
-<div class="panel"><div class="head"><div><div class="num">04 · OFFRE</div><h2>Votre Brand Kit est prêt.</h2></div><div class="hint">Choisissez votre formule puis finalisez le paiement sécurisé.</div></div>
+<div class="panel"><div class="head"><div><div class="num">04 · OFFRE</div><h2>Choisissez votre formule.</h2></div><div class="hint">Votre création sera lancée uniquement après confirmation du paiement.</div></div>
 <div class="plans">
 <button class="plan" data-plan="essential" type="button"><div class="num">ESSENTIEL</div><div class="price">9,90 €</div><div class="hint">Une identité visuelle personnalisée pour démarrer.</div></button>
 <button class="plan selected" data-plan="premium" type="button"><div class="num">PRO · RECOMMANDÉ</div><div class="price">19,90 €</div><div class="hint">Identité visuelle professionnelle avec Brand Kit complet.</div></button>
@@ -667,10 +665,11 @@ async function apiFetch(path, options={}){
   catch(e){ throw new Error("Impossible de joindre le serveur LUXURIID. Vérifie la connexion puis réessaie."); }
 }
 
-async function generateAIVisual(){
+async function generateAIVisual(sessionId=paymentSessionId){
   const btn=$("aiVisualGenerate"), hero=$("brandHero");
+  if(!sessionId) throw new Error("Paiement requis avant la génération.");
   btn.disabled=true;btn.textContent="CRÉATION DU LOGO PREMIUM…";hero.classList.add("ai-image-loading");$("aiError").textContent="";
-  const payload={brand,sector,style,audience,request,directionName:base[chosen]?.title||"",kit:currentKit||{}};
+  const payload={session_id:sessionId,brand,sector,style,audience,request,directionName:base[chosen]?.title||"Sur mesure",kit:currentKit||{}};
   try{
     const r=await apiFetch("/api/brand-logo",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
     const body=await r.json().catch(()=>({}));
@@ -682,13 +681,20 @@ async function generateAIVisual(){
     document.body.classList.add("ai-visual-ready");
     $("aiState").textContent="Logo premium généré · présentation de marque appliquée";
     $("aiPhotoNote").textContent="LOGO PREMIUM · DIRECTION SUR MESURE";
-    // The generated logo is the visual source of truth. Do not cover it with a second AI moodboard.
     ["mark","slogan"].forEach(id=>{if($(id))$(id).style.visibility="hidden"});
     $("name").textContent=(currentKit?.name||brand).toUpperCase();
     $("heroSector").textContent=(sector||"").toUpperCase();
     updateLogoSuite(body.image);
-  }catch(err){console.error("LUXURIID VISUAL AI:",err);$("aiError").textContent=(err.message||"Erreur visuelle inconnue");}
-  finally{hero.classList.remove("ai-image-loading");btn.disabled=false;btn.textContent="RÉGÉNÉRER LE LOGO + LA PRÉSENTATION IA";}
+    return body;
+  }catch(err){
+    console.error("LUXURIID VISUAL AI:",err);
+    $("aiError").textContent=(err.message||"Erreur visuelle inconnue");
+    throw err;
+  }finally{
+    hero.classList.remove("ai-image-loading");
+    btn.disabled=false;
+    btn.textContent="RÉGÉNÉRER LE LOGO + LA PRÉSENTATION IA";
+  }
 }
 
 function updateLogoSuite(image){
@@ -703,29 +709,51 @@ function updateLogoSuite(image){
   });
 }
 
-async function generateRealAI(){
-  const box=$("aiGenerateBox"),btn=$("aiGenerate");box.classList.add("ai-generating");btn.disabled=true;btn.textContent="CRÉATION DU SYSTÈME…";$("aiError").textContent="";
-  const payload={brand,sector,style,audience,request,direction:chosen,directionName:base[chosen]?.title||""};
+async function generateRealAI(sessionId=paymentSessionId){
+  const box=$("aiGenerateBox"),btn=$("aiGenerate");
+  if(!sessionId) throw new Error("Paiement requis avant la génération.");
+  box.classList.add("ai-generating");btn.disabled=true;btn.textContent="CRÉATION DU SYSTÈME…";$("aiError").textContent="";
+  const payload={session_id:sessionId,brand,sector,style,audience,request,direction:chosen,directionName:base[chosen]?.title||"Sur mesure"};
   try{
     const r=await apiFetch("/api/brand-kit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
     let body={};try{body=await r.json()}catch{}
     if(!r.ok) throw new Error(body.error||`API ${r.status}`);
     if(!body.palette || body.palette.length!==4) throw new Error("Le Brand Kit IA reçu est incomplet.");
     applyKit(body);
-    // One-click workflow: once the AI brand system is ready, generate its hero visual automatically.
-    await generateAIVisual();
+    return await generateAIVisual(sessionId);
   }catch(err){
-    console.error("LUXURIID AI:",err);$("aiState").textContent="Erreur IA";$("aiError").textContent=err.message||"Erreur inconnue";
-  }finally{box.classList.remove("ai-generating");btn.disabled=false;btn.textContent="RÉGÉNÉRER LE BRAND KIT IA"}
+    console.error("LUXURIID AI:",err);
+    $("aiState").textContent="Erreur IA";
+    $("aiError").textContent=err.message||"Erreur inconnue";
+    throw err;
+  }finally{
+    box.classList.remove("ai-generating");
+    btn.disabled=false;
+    btn.textContent="RÉGÉNÉRER LE BRAND KIT IA";
+  }
 }
 
 $("aiGenerate").onclick=generateRealAI;
 $("aiVisualGenerate").onclick=generateAIVisual;
 $("go").onclick=()=>{
- brand=$("brand").value.trim()||"MAISON NOVA";sector=$("sector").value.trim()||"marque premium";audience=$("audience").value.trim()||"clientèle premium";request=$("request").value.trim()||"Une identité haut de gamme, élégante et distinctive.";style=$("style").value;let ai=aiAnalyze();renderAI(ai);
- $("brief").innerHTML=briefText();
- $("directions").innerHTML=base.map((d,i)=>`<article class="card"><div class="shot" style="background-image:url('${d.img}')"><div class="overlay"><div class="tag">0${i+1} · ${d.tone.toUpperCase()}</div><div><h3>${d.title}</h3><p>${adapt(d,i)}<br><span style="color:#d4bd98">IA · ${ai.image} · ${ai.palette}</span><br>Construite autour de la demande : « ${request.slice(0,115)}${request.length>115?"…":""} »</p></div></div></div><div class="bottom"><div class="mini"><span>PALETTE</span><span>${d.fonts}</span></div><div>${d.palette.map(c=>`<i class="sw" style="background:${c}"></i>`).join("")}</div><button class="btn gold choose" data-i="${i}">CHOISIR CETTE DIRECTION →</button></div></article>`).join("");
- show(2);
+ brand=$("brand").value.trim()||"MAISON NOVA";
+ sector=$("sector").value.trim()||"marque premium";
+ audience=$("audience").value.trim()||"clientèle premium";
+ request=$("request").value.trim()||"Une identité haut de gamme, élégante et distinctive.";
+ style=$("style").value;
+ currentKit=null;
+ currentAssetId="";
+ unlockedCleanImage="";
+ paymentSessionId="";
+ chosen=0;
+ $("successBanner").classList.remove("show");
+ $("checkoutLabel").textContent="Pro · 19,90 €";
+ document.querySelectorAll(".plan").forEach(x=>x.classList.remove("selected"));
+ document.querySelector('.plan[data-plan="premium"]')?.classList.add("selected");
+ $("checkoutLabel").textContent="Pro · 19,90 €";
+ $("checkoutNotice")?.classList?.remove("err");
+ $("checkoutNotice") && ($("checkoutNotice").textContent="Votre création sera lancée uniquement après confirmation du paiement.");
+ show(4);
 };
 $("edit").onclick=()=>show(1);
 $("directions").onclick=e=>{
@@ -739,8 +767,29 @@ $("directions").onclick=e=>{
 $("back2").onclick=()=>show(2);$("prices").onclick=()=>show(4);
 async function startCheckout(){
   const plan=document.querySelector('.plan.selected')?.dataset.plan||'premium';
-  try{const r=await apiFetch('/api/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan,brand,sector,request,assetId:currentAssetId})});const body=await r.json().catch(()=>({}));if(!r.ok)throw new Error(body.error||`Paiement indisponible (${r.status})`);if(!body.url)throw new Error('Stripe n’a pas renvoyé d’URL de paiement.');location.href=body.url;}catch(e){toast(e.message||'Impossible de lancer le paiement.');}
+  try{
+    const r=await apiFetch('/api/create-checkout',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        plan,
+        brand,
+        sector,
+        style,
+        audience,
+        request,
+        directionName:base[chosen]?.title||"Sur mesure"
+      })
+    });
+    const body=await r.json().catch(()=>({}));
+    if(!r.ok)throw new Error(body.error||`Paiement indisponible (${r.status})`);
+    if(!body.url)throw new Error('Stripe n’a pas renvoyé d’URL de paiement.');
+    location.href=body.url;
+  }catch(e){
+    toast(e.message||'Impossible de lancer le paiement.');
+  }
 }
+
 $("unlock").onclick=startCheckout;
 async function unlockCleanAsset(sessionId,assetId){
   if(!sessionId||!assetId) throw new Error("Session de paiement ou export introuvable.");
@@ -878,23 +927,61 @@ $('restart').onclick=()=>{currentKit=null;document.body.classList.remove('ai-vis
 async function verifyPayment(){
  const q=new URLSearchParams(location.search);
  if(q.get('payment')!=='success'||!q.get('session_id'))return;
+
  paymentSessionId=q.get('session_id');
+
  try{
    const r=await apiFetch('/api/checkout/verify?session_id='+encodeURIComponent(paymentSessionId));
    const body=await r.json();
-   if(body.paid && body.assetId){
-     currentAssetId=body.assetId;
-     await unlockCleanAsset(paymentSessionId,currentAssetId);
-     sessionStorage.setItem('luxuriid_session_id',paymentSessionId);
-     sessionStorage.setItem('luxuriid_asset_id',currentAssetId);
-     $('successBanner').textContent='✓ Paiement confirmé. Votre Brand Kit est débloqué.';
-     $('successBanner').classList.add('show');
-     prepareExport();
-     toast('✓ Paiement confirmé. L’export final est débloqué.');
-   }else toast('Paiement non confirmé.');
- }catch(e){toast(e.message||'Impossible de vérifier le paiement.')}
+
+   if(!r.ok || !body.paid){
+     throw new Error(body.error||'Paiement non confirmé.');
+   }
+
+   if(body.brand)$("brand").value=body.brand;
+   if(body.sector)$("sector").value=body.sector;
+   if(body.style)$("style").value=body.style;
+   if(body.audience)$("audience").value=body.audience;
+   if(body.request)$("request").value=body.request;
+
+   chosen=0;
+   currentAssetId="";
+   unlockedCleanImage="";
+
+   show(3);
+   $("aiState").textContent="Paiement confirmé · génération de votre identité en cours…";
+   $("aiError").textContent="";
+   $("aiGenerateBox").classList.add("ai-generating");
+
+   const result=await generateRealAI(paymentSessionId);
+
+   if(!result?.assetId){
+     throw new Error("Aucun export n’a été créé.");
+   }
+
+   currentAssetId=result.assetId;
+
+   await unlockCleanAsset(paymentSessionId,currentAssetId);
+
+   sessionStorage.setItem('luxuriid_session_id',paymentSessionId);
+   sessionStorage.setItem('luxuriid_asset_id',currentAssetId);
+
+   $("successBanner").textContent='✓ Paiement confirmé. Votre Brand Kit est débloqué.';
+   $("successBanner").classList.add('show');
+
+   prepareExport();
+   toast('✓ Paiement confirmé. L’export final est débloqué.');
+
+ }catch(e){
+   console.error("LUXURIID PAYMENT:",e);
+   $("aiError").textContent=e.message||'Impossible de finaliser la génération.';
+   show(4);
+   toast(e.message||'Impossible de vérifier le paiement.');
+ }
+
  history.replaceState({},'',location.pathname);
 }
+
 verifyPayment();
 document.querySelectorAll('.plan').forEach(p=>p.addEventListener('click',()=>{document.querySelectorAll('.plan').forEach(x=>x.classList.remove('selected'));p.classList.add('selected');const n=p.dataset.plan;const names={essential:'Essentiel · 9,90 €',premium:'Pro · 19,90 €',studio:'Premium · 29,90 €'};$('checkoutLabel').textContent=names[n]||'Pro · 19,90 €';}));
 
